@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Overview"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_installation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Installation"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_commands"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Commands"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_syntax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Syntax"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_data_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data Type"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_create_database"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CREATE Database"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_attach_database"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ATTACH Database"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_detach_database"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DETACH Database"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_create_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CREATE Table"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_drop_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DROP Table"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_isert_query"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="INSERT Query"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_select_query"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SElECT Query"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_operators"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Operators"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_expressions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expressions"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_where_clause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="WHERE Clause"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView8
+            android:id="@+id/card_view17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_AND_and_OR_operators"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AND and OR Operators"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView8>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_update_Query"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="UPDATE Query"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_delete_query"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DELETE Query"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_like_clause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LIKE Clause"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_glob_clause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GLOB Clause"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_limit_clause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LIMIT Clause"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view23"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_ORDER_BY_Clause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ORDER BY Clause"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_group_by_clause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Group By Clause"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_having_by_clause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HAVING By Clause"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view26"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_sqlite_distinct_keyword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DISTINCT Keyword"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
+

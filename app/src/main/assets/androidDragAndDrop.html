@@ -1,0 +1,820 @@
+<html>
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Android Drag and Drop<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Android drag/drop framework allows
+your users to move data from one View to another View in the current layout
+using a graphical drag and drop gesture. The framework includes following three
+important components to support drag &amp; drop functionality:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Drag event class:</span></b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Drag listeners:</span></b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Helper methods and classes:</span></b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'><o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>The Drag/Drop Process<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>There are basically four steps or
+states in the drag and drop process:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo2;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Started:</span></b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     This event occurs when you start dragging an item in a layout, your
+     application calls <span class=SpellE><span class=GramE><i>startDrag</i></span></span><span
+     class=GramE><i>(</i></span><i>)</i> method to tell the system to start a
+     drag. The arguments inside <span class=SpellE><span class=GramE>startDrag</span></span><span
+     class=GramE>(</span>) method provide the data to be dragged, metadata for
+     this data, and a callback for drawing the drag shadow.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.5in;line-height:normal'><span style='font-size:12.0pt;font-family:
+"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>The system
+first responds by calling back to your application to get a drag shadow. It
+then displays the drag shadow on the device.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.5in;line-height:normal'><span style='font-size:12.0pt;font-family:
+"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Next, the
+system sends a drag event with action type <i>ACTION_DRAG_STARTED</i> to the
+registered drag event listeners for all the View objects in the current layout.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.5in;line-height:normal'><span style='font-size:12.0pt;font-family:
+"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>To
+continue to receive drag events, including a possible drop event, a drag event
+listener must return <b>true</b>, <span class=GramE>If</span> the drag event
+listener returns false, then it will not receive drag events for the current
+operation until the system sends a drag event with action type
+ACTION_DRAG_ENDED.<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo2;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Continuing:</span></b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     The user continues the drag. System sends ACTION_DRAG_ENTERED action
+     followed by ACTION_DRAG_LOCATION action to the registered drag event
+     listener for the View where dragging point enters. The listener may choose
+     to alter its View object's appearance in response to the event or can
+     react by highlighting its View.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.5in;line-height:normal'><span style='font-size:12.0pt;font-family:
+"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>The drag
+event listener receives <span class=GramE>a</span> ACTION_DRAG_EXITED action
+after the user has moved the drag shadow outside the bounding box of the View.<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo2;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Dropped:</span></b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     The user releases the dragged item within the bounding box of a View. The
+     system sends the View object's listener a drag event with action type
+     ACTION_DROP.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo2;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Ended:</span></b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     Just after the action type ACTION_DROP, the system sends out a drag event
+     with action type ACTION_DRAG_ENDED to indicate that the drag operation is
+     over.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>The <span class=SpellE>DragEvent</span> Class<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The <span class=SpellE><b>DragEvent</b></span>
+represents an event that is sent out by the system at various times during a
+drag and drop operation. This class provides few Constants and important
+methods which we use during Drag/Drop process.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='mso-bidi-font-size:
+10.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Constants<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following are all constants integers
+available as a part of <span class=SpellE>DragEvent</span> class.<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>S.N.<o:p></o:p></span></b></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Constants
+  &amp; Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>ACTION_DRAG_STARTED</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  Signals the start of a drag and drop operation.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>2<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>ACTION_DRAG_ENTERED</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  Signals to a View that the drag point has entered the bounding box of the
+  View.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>3<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>ACTION_DRAG_LOCATION</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  Sent to a View after ACTION_DRAG_ENTERED if the drag shadow is still within
+  the View object's bounding box.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>4<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>ACTION_DRAG_EXITED</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  Signals that the user has moved the drag shadow outside the bounding box of
+  the View.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>5<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>ACTION_DROP</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  Signals to a View that the user has released the drag shadow, and the drag
+  point is within the bounding box of the View.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>6<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>ACTION_DRAG_ENDED</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  Signals to a View that the drag and drop operation has concluded.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='mso-bidi-font-size:
+10.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Methods<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following are few important and most
+frequently used methods available as a part of <span class=SpellE>DragEvent</span>
+class.<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>S.N.<o:p></o:p></span></b></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Constants
+  &amp; Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span class=GramE><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>int</span></b></span></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>getAction</span>()</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  Inspect the action value of this event..<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>2<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>ClipData</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE><span class=GramE>getClipData</span></span><span
+  class=GramE>(</span>)</span></b><span style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'> <br>
+  Returns the <span class=SpellE>ClipData</span> object sent to the system as
+  part of the call to <span class=SpellE>startDrag</span>().<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>3<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>ClipDescription</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE><span class=GramE>getClipDescription</span></span><span
+  class=GramE>(</span>)</span></b><span style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'> <br>
+  Returns the <span class=SpellE>ClipDescription</span> object contained in the
+  <span class=SpellE>ClipData</span>.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>4<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span class=GramE><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>boolean</span></b></span></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>getResult</span>()</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  Returns an indication of the result of the drag and drop operation.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>5<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>float</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>getX</span>()</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  Gets the X coordinate of the drag point.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>6<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>float</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>getY</span>()</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  Gets the Y coordinate of the drag point.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;mso-yfti-lastrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>7<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>String <span class=SpellE><span
+  class=GramE>toString</span></span><span class=GramE>(</span>)</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  Returns a string representation of this <span class=SpellE>DragEvent</span>
+  object.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Listening for Drag Event<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>I</span><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>f you want any of your views within a Layout should respond
+Drag event then your view either implements <span class=SpellE><b>View.OnDragListener</b></span>
+or setup <span class=SpellE><span class=GramE><b>onDragEvent</b></span></span><span
+class=GramE><b>(</b></span><span class=SpellE><b>DragEvent</b></span><b>)</b>
+callback method. When the system calls the method or listener, it passes to
+them a <span class=SpellE>DragEvent</span> object explained above. You can have
+both a listener and a callback method for View object. If this occurs, the
+system first calls the listener and then defined callback as long as listener
+returns true.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The combination of the <span
+class=SpellE><span class=GramE><i>onDragEvent</i></span></span><span
+class=GramE><i>(</i></span><span class=SpellE><i>DragEvent</i></span><i>)</i>
+method and <span class=SpellE><i>View.OnDragListener</i></span> is analogous to
+the combination of the <span class=SpellE><b>onTouchEvent</b></span><b>()</b>
+and <span class=SpellE><b>View.OnTouchListener</b></span> used with touch
+events in old versions of Android.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Starting a Drag Event<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You start with creating a <span
+class=SpellE><b>ClipData</b></span> and <span class=SpellE><b>ClipData.Item</b></span>
+for the data being moved. As part of the <span class=SpellE><i>ClipData</i></span>
+object, supply metadata that is stored in a <span class=SpellE><b>ClipDescription</b></span>
+object within the <span class=SpellE>ClipData</span>. For a drag and drop
+operation that does not represent data movement, you may want to use <b>null</b>
+instead of an actual object.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Next either you can extend <span
+class=SpellE>extend</span> <span class=SpellE><b>View.DragShadowBuilder</b></span>
+to create a drag shadow for dragging the view or simply you can use <span
+class=SpellE><i>View.DragShadowBuilder</i></span><i>(View)</i> to create a
+default drag shadow that's the same size as the View argument passed to it,
+with the touch point centered in the drag shadow.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following example shows the
+functionality of a simple Drag &amp; Drop using a <span class=SpellE><span
+class=GramE><b>View.setOnLongClickListener</b></span></span><span class=GramE><b>(</b></span><b>)</b>
+event listener along with <span class=SpellE><b>View.OnDragEventListener</b></span><b>()</b>.<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Step<o:p></o:p></span></b></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>You will use Eclipse IDE to create
+  an Android application and name it as <span class=SpellE><i>DragNDropDemo</i></span>
+  under a package <span class=SpellE><i>com.example.dragndropdemo</i></span>.
+  While creating this project, make sure you <i>Target SDK</i> and <i>Compile
+  With</i> at the latest version of Android SDK to use higher levels of APIs.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>2<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify <span class=SpellE><i>src</i></span><i>/MainActivity.java</i>
+  file and add the code to define event listeners as well as a call back
+  methods for the logo image used in the example.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>3<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Copy image logo.png in <i>res/<span
+  class=SpellE>drawable</span>-*</i> folders. You can use images with different
+  resolution in case you want to provide them for different devices.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>4<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify layout XML file <i>res/layout/activity_main.xml</i>
+  to define default view of the logo images.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;mso-yfti-lastrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>5<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Run the application to launch
+  Android emulator and verify the result of the changes done in the <span
+  class=SpellE>aplication</span>.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the content of the
+modified main activity file <span class=SpellE><b>src</b></span><b>/<span
+class=SpellE>com.example.dragndropdemo</span>/MainActivity.java</b>. This file
+can include each of the fundamental lifecycle methods.<o:p></o:p></span></p>
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">package</span> com<span style="color: #666666">.</span><span style="color: #7D9029">example</span><span style="color: #666666">.</span><span style="color: #7D9029">dragndropdemo</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.os.Bundle</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.Activity</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.content.ClipData</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.content.ClipDescription</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.util.Log</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.DragEvent</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.View</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.View.DragShadowBuilder</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.View.OnDragListener</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.widget.*</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">MainActivity</span> <span style="color: #008000; font-weight: bold">extends</span> Activity<span style="color: #666666">{</span>
+   ImageView ima<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">private</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #008000; font-weight: bold">final</span> String IMAGEVIEW_TAG <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Android Logo&quot;</span><span style="color: #666666">;</span>
+   String msg<span style="color: #666666">;</span>
+ 
+   <span style="color: #008000; font-weight: bold">private</span> android<span style="color: #666666">.</span><span style="color: #7D9029">widget</span><span style="color: #666666">.</span><span style="color: #7D9029">RelativeLayout</span><span style="color: #666666">.</span><span style="color: #7D9029">LayoutParams</span> layoutParams<span style="color: #666666">;</span>
+ 
+   <span style="color: #AA22FF">@Override</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onCreate</span><span style="color: #666666">(</span>Bundle savedInstanceState<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onCreate</span><span style="color: #666666">(</span>savedInstanceState<span style="color: #666666">);</span>
+      setContentView<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">layout</span><span style="color: #666666">.</span><span style="color: #7D9029">activity_main</span><span style="color: #666666">);</span>
+ 
+      ima <span style="color: #666666">=</span> <span style="color: #666666">(</span>ImageView<span style="color: #666666">)</span>findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">iv_logo</span><span style="color: #666666">);</span>
+      <span style="color: #408080; font-style: italic">// Sets the tag</span>
+      ima<span style="color: #666666">.</span><span style="color: #7D9029">setTag</span><span style="color: #666666">(</span>IMAGEVIEW_TAG<span style="color: #666666">);</span>
+ 
+      ima<span style="color: #666666">.</span><span style="color: #7D9029">setOnLongClickListener</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> View<span style="color: #666666">.</span><span style="color: #7D9029">OnLongClickListener</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+         <span style="color: #AA22FF">@Override</span>
+         <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">boolean</span> <span style="color: #0000FF">onLongClick</span><span style="color: #666666">(</span>View v<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            ClipData<span style="color: #666666">.</span><span style="color: #7D9029">Item</span> item <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> ClipData<span style="color: #666666">.</span><span style="color: #7D9029">Item</span><span style="color: #666666">((</span>CharSequence<span style="color: #666666">)</span>v<span style="color: #666666">.</span><span style="color: #7D9029">getTag</span><span style="color: #666666">());</span>
+ 
+            String<span style="color: #666666">[]</span> mimeTypes <span style="color: #666666">=</span> <span style="color: #666666">{</span>ClipDescription<span style="color: #666666">.</span><span style="color: #7D9029">MIMETYPE_TEXT_PLAIN</span><span style="color: #666666">};</span>
+            ClipData dragData <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> ClipData<span style="color: #666666">(</span>v<span style="color: #666666">.</span><span style="color: #7D9029">getTag</span><span style="color: #666666">().</span><span style="color: #7D9029">toString</span><span style="color: #666666">(),</span>
+            mimeTypes<span style="color: #666666">,</span> item<span style="color: #666666">);</span>
+ 
+            <span style="color: #408080; font-style: italic">// Instantiates the drag shadow builder.</span>
+            View<span style="color: #666666">.</span><span style="color: #7D9029">DragShadowBuilder</span> myShadow <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> DragShadowBuilder<span style="color: #666666">(</span>ima<span style="color: #666666">);</span>
+ 
+            <span style="color: #408080; font-style: italic">// Starts the drag</span>
+            v<span style="color: #666666">.</span><span style="color: #7D9029">startDrag</span><span style="color: #666666">(</span>dragData<span style="color: #666666">,</span>  <span style="color: #408080; font-style: italic">// the data to be dragged</span>
+            myShadow<span style="color: #666666">,</span>  <span style="color: #408080; font-style: italic">// the drag shadow builder</span>
+            <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">,</span>      <span style="color: #408080; font-style: italic">// no need to use local data</span>
+            <span style="color: #666666">0</span>          <span style="color: #408080; font-style: italic">// flags (not currently used, set to 0)</span>
+            <span style="color: #666666">);</span>
+            <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">;</span>
+         <span style="color: #666666">}</span>
+      <span style="color: #666666">});</span>
+ 
+      <span style="color: #408080; font-style: italic">// Create and set the drag event listener for the View</span>
+      ima<span style="color: #666666">.</span><span style="color: #7D9029">setOnDragListener</span><span style="color: #666666">(</span> <span style="color: #008000; font-weight: bold">new</span> OnDragListener<span style="color: #666666">(){</span>
+         <span style="color: #AA22FF">@Override</span>
+         <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">boolean</span> <span style="color: #0000FF">onDrag</span><span style="color: #666666">(</span>View v<span style="color: #666666">,</span>  DragEvent event<span style="color: #666666">){</span>
+         <span style="color: #008000; font-weight: bold">switch</span><span style="color: #666666">(</span>event<span style="color: #666666">.</span><span style="color: #7D9029">getAction</span><span style="color: #666666">())</span>                  
+         <span style="color: #666666">{</span>
+            <span style="color: #008000; font-weight: bold">case</span> DragEvent<span style="color: #666666">.</span><span style="color: #7D9029">ACTION_DRAG_STARTED</span><span style="color: #666666">:</span>
+               layoutParams <span style="color: #666666">=</span> <span style="color: #666666">(</span>RelativeLayout<span style="color: #666666">.</span><span style="color: #7D9029">LayoutParams</span><span style="color: #666666">)</span>
+               v<span style="color: #666666">.</span><span style="color: #7D9029">getLayoutParams</span><span style="color: #666666">();</span>
+               Log<span style="color: #666666">.</span><span style="color: #7D9029">d</span><span style="color: #666666">(</span>msg<span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Action is DragEvent.ACTION_DRAG_STARTED&quot;</span><span style="color: #666666">);</span>
+               <span style="color: #408080; font-style: italic">// Do nothing</span>
+               <span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+            <span style="color: #008000; font-weight: bold">case</span> DragEvent<span style="color: #666666">.</span><span style="color: #7D9029">ACTION_DRAG_ENTERED</span><span style="color: #666666">:</span>
+               Log<span style="color: #666666">.</span><span style="color: #7D9029">d</span><span style="color: #666666">(</span>msg<span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Action is DragEvent.ACTION_DRAG_ENTERED&quot;</span><span style="color: #666666">);</span>
+               <span style="color: #B00040">int</span> x_cord <span style="color: #666666">=</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span><span style="color: #666666">)</span> event<span style="color: #666666">.</span><span style="color: #7D9029">getX</span><span style="color: #666666">();</span>
+               <span style="color: #B00040">int</span> y_cord <span style="color: #666666">=</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span><span style="color: #666666">)</span> event<span style="color: #666666">.</span><span style="color: #7D9029">getY</span><span style="color: #666666">();</span> 
+               <span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+            <span style="color: #008000; font-weight: bold">case</span> DragEvent<span style="color: #666666">.</span><span style="color: #7D9029">ACTION_DRAG_EXITED</span> <span style="color: #666666">:</span>
+               Log<span style="color: #666666">.</span><span style="color: #7D9029">d</span><span style="color: #666666">(</span>msg<span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Action is DragEvent.ACTION_DRAG_EXITED&quot;</span><span style="color: #666666">);</span>
+               x_cord <span style="color: #666666">=</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span><span style="color: #666666">)</span> event<span style="color: #666666">.</span><span style="color: #7D9029">getX</span><span style="color: #666666">();</span>
+               y_cord <span style="color: #666666">=</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span><span style="color: #666666">)</span> event<span style="color: #666666">.</span><span style="color: #7D9029">getY</span><span style="color: #666666">();</span>
+               layoutParams<span style="color: #666666">.</span><span style="color: #7D9029">leftMargin</span> <span style="color: #666666">=</span> x_cord<span style="color: #666666">;</span>
+               layoutParams<span style="color: #666666">.</span><span style="color: #7D9029">topMargin</span> <span style="color: #666666">=</span> y_cord<span style="color: #666666">;</span>
+               v<span style="color: #666666">.</span><span style="color: #7D9029">setLayoutParams</span><span style="color: #666666">(</span>layoutParams<span style="color: #666666">);</span>
+               <span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+            <span style="color: #008000; font-weight: bold">case</span> DragEvent<span style="color: #666666">.</span><span style="color: #7D9029">ACTION_DRAG_LOCATION</span>  <span style="color: #666666">:</span>
+               Log<span style="color: #666666">.</span><span style="color: #7D9029">d</span><span style="color: #666666">(</span>msg<span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Action is DragEvent.ACTION_DRAG_LOCATION&quot;</span><span style="color: #666666">);</span>
+               x_cord <span style="color: #666666">=</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span><span style="color: #666666">)</span> event<span style="color: #666666">.</span><span style="color: #7D9029">getX</span><span style="color: #666666">();</span>
+               y_cord <span style="color: #666666">=</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span><span style="color: #666666">)</span> event<span style="color: #666666">.</span><span style="color: #7D9029">getY</span><span style="color: #666666">();</span>
+               <span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+            <span style="color: #008000; font-weight: bold">case</span> DragEvent<span style="color: #666666">.</span><span style="color: #7D9029">ACTION_DRAG_ENDED</span>   <span style="color: #666666">:</span>
+               Log<span style="color: #666666">.</span><span style="color: #7D9029">d</span><span style="color: #666666">(</span>msg<span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Action is DragEvent.ACTION_DRAG_ENDED&quot;</span><span style="color: #666666">);</span>
+               <span style="color: #408080; font-style: italic">// Do nothing</span>
+               <span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+            <span style="color: #008000; font-weight: bold">case</span> DragEvent<span style="color: #666666">.</span><span style="color: #7D9029">ACTION_DROP</span><span style="color: #666666">:</span>
+               Log<span style="color: #666666">.</span><span style="color: #7D9029">d</span><span style="color: #666666">(</span>msg<span style="color: #666666">,</span> <span style="color: #BA2121">&quot;ACTION_DROP event&quot;</span><span style="color: #666666">);</span>
+               <span style="color: #408080; font-style: italic">// Do nothing</span>
+               <span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+            <span style="color: #008000; font-weight: bold">default</span><span style="color: #666666">:</span> <span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+            <span style="color: #666666">}</span>
+            <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">;</span>
+         <span style="color: #666666">}</span>
+      <span style="color: #666666">});</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following will be the content of <b>res/layout/activity_main.xml</b>
+file:<o:p></o:p></span></p>
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;RelativeLayout</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/container&quot;</span>
+    <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+    <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+    <span style="color: #7D9029">android:orientation=</span><span style="color: #BA2121">&quot;vertical&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+       
+    <span style="color: #008000; font-weight: bold">&lt;ImageView</span>
+        <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/iv_logo&quot;</span>
+        <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+        <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+        <span style="color: #7D9029">android:src=</span><span style="color: #BA2121">&quot;@drawable/logo&quot;</span>
+        <span style="color: #7D9029">android:contentDescription=</span><span style="color: #BA2121">&quot;@string/drag_drop&quot;</span>  <span style="color: #008000; font-weight: bold">/&gt;</span>
+          
+<span style="color: #008000; font-weight: bold">&lt;/RelativeLayout&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following will be the content of <b>res/values/strings.xml</b>
+to define two new constants:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;resources&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;app_name&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>DragNDropDemo<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;action_settings&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Settings<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;hello_world&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Hello world!<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;drag_drop&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Click on the image to drag and drop<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/resources&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the default content of <b>AndroidManifest.xml</b>:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;manifest</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span style="color: #7D9029">package=</span><span style="color: #BA2121">&quot;com.example.guidemo&quot;</span>
+    <span style="color: #7D9029">android:versionCode=</span><span style="color: #BA2121">&quot;1&quot;</span>
+    <span style="color: #7D9029">android:versionName=</span><span style="color: #BA2121">&quot;1.0&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;uses-sdk</span>
+        <span style="color: #7D9029">android:minSdkVersion=</span><span style="color: #BA2121">&quot;16&quot;</span>
+        <span style="color: #7D9029">android:targetSdkVersion=</span><span style="color: #BA2121">&quot;17&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;application</span>
+        <span style="color: #7D9029">android:allowBackup=</span><span style="color: #BA2121">&quot;true&quot;</span>
+        <span style="color: #7D9029">android:icon=</span><span style="color: #BA2121">&quot;@drawable/ic_launcher&quot;</span>
+        <span style="color: #7D9029">android:label=</span><span style="color: #BA2121">&quot;@string/app_name&quot;</span>
+        <span style="color: #7D9029">android:theme=</span><span style="color: #BA2121">&quot;@style/AppTheme&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+        <span style="color: #008000; font-weight: bold">&lt;activity</span>
+            <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;com.example.guidemo.MainActivity&quot;</span>
+            <span style="color: #7D9029">android:label=</span><span style="color: #BA2121">&quot;@string/app_name&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+            <span style="color: #008000; font-weight: bold">&lt;intent-filter&gt;</span>
+                <span style="color: #008000; font-weight: bold">&lt;action</span> <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;android.intent.action.MAIN&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+                <span style="color: #008000; font-weight: bold">&lt;category</span> <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;android.intent.category.LAUNCHER&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+            <span style="color: #008000; font-weight: bold">&lt;/intent-filter&gt;</span>
+        <span style="color: #008000; font-weight: bold">&lt;/activity&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;/application&gt;</span>
+ 
+<span style="color: #008000; font-weight: bold">&lt;/manifest&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Let's try to run your <span
+class=SpellE><b>DragNDropDemo</b></span> application. I assume you had created
+your <b>AVD</b> while doing environment <span class=GramE>setup</span>. To run
+the app from Eclipse, open one of your project's activity files and click Run </span><!--[if mso & !supportInlineShapes & supportFields]><span
+style='mso-element:field-begin;mso-field-lock:yes'></span><span
+style='mso-spacerun:yes'> </span>SHAPE <span
+style='mso-spacerun:yes'> </span>\* MERGEFORMAT <span style='mso-element:field-separator'></span><![endif]--><!--[if gte vml 1]><v:rect
+ id="Rectangle_x0020_2" o:spid="_x0000_s1026" alt="Eclipse Run Icon" style='width:24pt;
+ height:24pt;visibility:visible;mso-wrap-style:square;mso-left-percent:-10001;
+ mso-top-percent:-10001;mso-position-horizontal:absolute;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line;mso-left-percent:-10001;mso-top-percent:-10001;
+ v-text-anchor:top' o:gfxdata="UEsDBBQABgAIAAAAIQC2gziS/gAAAOEBAAATAAAAW0NvbnRlbnRfVHlwZXNdLnhtbJSRQU7DMBBF
+90jcwfIWJU67QAgl6YK0S0CoHGBkTxKLZGx5TGhvj5O2G0SRWNoz/78nu9wcxkFMGNg6quQqL6RA
+0s5Y6ir5vt9lD1JwBDIwOMJKHpHlpr69KfdHjyxSmriSfYz+USnWPY7AufNIadK6MEJMx9ApD/oD
+OlTrorhX2lFEilmcO2RdNtjC5xDF9pCuTyYBB5bi6bQ4syoJ3g9WQ0ymaiLzg5KdCXlKLjvcW893
+SUOqXwnz5DrgnHtJTxOsQfEKIT7DmDSUCaxw7Rqn8787ZsmRM9e2VmPeBN4uqYvTtW7jvijg9N/y
+JsXecLq0q+WD6m8AAAD//wMAUEsDBBQABgAIAAAAIQA4/SH/1gAAAJQBAAALAAAAX3JlbHMvLnJl
+bHOkkMFqwzAMhu+DvYPRfXGawxijTi+j0GvpHsDYimMaW0Yy2fr2M4PBMnrbUb/Q94l/f/hMi1qR
+JVI2sOt6UJgd+ZiDgffL8ekFlFSbvV0oo4EbChzGx4f9GRdb25HMsYhqlCwG5lrLq9biZkxWOiqY
+22YiTra2kYMu1l1tQD30/bPm3wwYN0x18gb45AdQl1tp5j/sFB2T0FQ7R0nTNEV3j6o9feQzro1i
+OWA14Fm+Q8a1a8+Bvu/d/dMb2JY5uiPbhG/ktn4cqGU/er3pcvwCAAD//wMAUEsDBBQABgAIAAAA
+IQDeZAIgxQIAANAFAAAOAAAAZHJzL2Uyb0RvYy54bWysVNtu2zAMfR+wfxD07vpS52KjTtHGyVCg
+24p2+wBFlmNhsuRJSpxu2L+PkpM0aV+GbX4wJFI65CGPeHW9awXaMm24kgWOLyKMmKSq4nJd4K9f
+lsEUI2OJrIhQkhX4mRl8PXv/7qrvcpaoRomKaQQg0uR9V+DG2i4PQ0Mb1hJzoTomwVkr3RILW70O
+K016QG9FmETROOyVrjqtKDMGrOXgxDOPX9eM2s91bZhFosCQm/V/7f8r9w9nVyRfa9I1nO7TIH+R
+RUu4hKBHqJJYgjaav4FqOdXKqNpeUNWGqq45ZZ4DsImjV2yeGtIxzwWKY7pjmcz/g6Wftg8a8arA
+CUaStNCiRygakWvBEJgqZiiUa0EF7wxDjxuJ7qiSrm59Z3K4/tQ9aMfcdPeKfjNIqnkD19mN6QAI
+NAG4B5PWqm8YqYBA7CDCMwy3MYCGVv1HVUEmZGOVr+qu1q2LAfVCO9+852Pz2M4iCsbLKJ1G0GIK
+rv3aRSD54XKnjf3AVIvcosAasvPgZHtv7HD0cMTFkmrJhQA7yYU8MwDmYIHQcNX5XBK+3T+zKFtM
+F9M0SJPxIkijsgxulvM0GC/jyai8LOfzMv7l4sZp3vCqYtKFOUgvTv+stftHMIjmKD6jBK8cnEvJ
+6PVqLjTaEpD+0n++5OB5ORaep+HrBVxeUYqTNLpNsmA5nk6CdJmOgmwSTYMozm6zcZRmabk8p3TP
+Jft3SqgvcDZKRr5LJ0m/4hb57y03krfcwnARvC0wSAM+d4jkToELWfm1JVwM65NSuPRfSgHtPjTa
+69VJdFD/SlXPIFetQE6gPBiDsGiU/oFRDyOlwOb7hmiGkbiTIPksTlM3g/wmHU0S2OhTz+rUQyQF
+qAJbjIbl3A5za9Npvm4gUuwLI9UNPJOaewm7JzRktX9cMDY8k/2Ic3PpdO9PvQzi2W8AAAD//wMA
+UEsDBBQABgAIAAAAIQBMoOks2AAAAAMBAAAPAAAAZHJzL2Rvd25yZXYueG1sTI9BS8NAEIXvgv9h
+GcGL2I0iUmI2RQpiEaGYas/T7JgEs7NpdpvEf9+pHvQyw+MNb76XLSbXqoH60Hg2cDNLQBGX3jZc
+GXjfPF3PQYWIbLH1TAa+KcAiPz/LMLV+5DcailgpCeGQooE6xi7VOpQ1OQwz3xGL9+l7h1FkX2nb
+4yjhrtW3SXKvHTYsH2rsaFlT+VUcnIGxXA/bzeuzXl9tV573q/2y+Hgx5vJienwAFWmKf8dwwhd0
+yIVp5w9sg2oNSJH4M8W7m4va/W6dZ/o/e34EAAD//wMAUEsBAi0AFAAGAAgAAAAhALaDOJL+AAAA
+4QEAABMAAAAAAAAAAAAAAAAAAAAAAFtDb250ZW50X1R5cGVzXS54bWxQSwECLQAUAAYACAAAACEA
+OP0h/9YAAACUAQAACwAAAAAAAAAAAAAAAAAvAQAAX3JlbHMvLnJlbHNQSwECLQAUAAYACAAAACEA
+3mQCIMUCAADQBQAADgAAAAAAAAAAAAAAAAAuAgAAZHJzL2Uyb0RvYy54bWxQSwECLQAUAAYACAAA
+ACEATKDpLNgAAAADAQAADwAAAAAAAAAAAAAAAAAfBQAAZHJzL2Rvd25yZXYueG1sUEsFBgAAAAAE
+AAQA8wAAACQGAAAAAA==
+" filled="f" stroked="f">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <w:wrap type="none"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><![endif]--><!--[if mso & !supportInlineShapes & supportFields]><v:shape
+ id="_x0000_i1025" type="#_x0000_t75" style='width:24pt;height:24pt'>
+ <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+</v:shape><span style='mso-element:field-end'></span><![endif]--><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>icon from the toolbar. Eclipse installs the app on your AVD
+and starts it and if everything is fine with your setup and application, it
+will display following Emulator window:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now do long click on the displayed
+android logo and you will see that logo image moves a little after 1 seconds
+long click from its place, <span class=SpellE><span class=GramE>its</span></span>
+the time when you should start dragging the image. You can drag it around the
+screen and drop it at a new location.<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

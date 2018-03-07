@@ -1,0 +1,1079 @@
+<html>
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Android Notifications<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Android <b>Toast</b> class provides
+a handy way to show users alerts but problem is that these alerts are not
+persistent which means alert flashes on the screen for a few seconds and then
+disappears.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>For important messages to be given
+to the user, it is required to have more persistent method. A <b>notification</b>
+is a message you can display as an icon at the top of the device which we call
+notification bar or status bar.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To see the details of the
+notification, you will have to select the icon which will display notification <span
+class=SpellE>drwer</span> having detail about the notification. While working
+with emulator with virtual device, you will have to click and drag down the
+status bar to expand it which will give you detail as follows. This will be
+just <b>64 <span class=SpellE><span class=GramE>dp</span></span></b> tall and
+called normal view.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Above expanded form can have a <b>Big
+View</b> which will have additional detail about the notification? You can add <span
+class=SpellE>upto</span> six additional lines in the notification. The
+following screenshot shows such notification.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Create and Send Notifications<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You have simple way to create a
+notification. Follow the following steps in your application to create a
+notification:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Step
+1 - Create Notification Builder<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>As a first step is to create a
+notification builder using <span class=SpellE><span class=GramE><i>NotificationCompat.Builder.build</i></span></span><span
+class=GramE><i>(</i></span><i>)</i>. You will use Notification Builder to set
+various Notification properties like its small and large icons, title, priority
+etc.<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">NotificationCompat<span style="color: #666666">.</span><span style="color: #7D9029">Builder</span> mBuilder <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> NotificationCompat<span style="color: #666666">.</span><span style="color: #7D9029">Builder</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">)</span>
+</pre></div>
+
+<!-- <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=SpellE><span style='font-size:12.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#5B9BD5;mso-themecolor:accent1'>NotificationCompat.Builder</span></span><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'> <span class=SpellE>mBuilder</span> = new
+<span class=SpellE><span class=GramE>NotificationCompat.Builder</span></span><span
+class=GramE>(</span>this)<o:p></o:p></span></p>
+ -->
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Step
+2 - Setting Notification Properties<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Once you have <b>Builder</b> object,
+you can set its Notification properties using Builder object as per your
+requirement. But this is mandatory to set at least following:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A small icon, set by <span class=SpellE><b>setSmallIcon</b></span><b>()</b><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A title, set by <span class=SpellE><b>setContentTitle</b></span><b>()</b><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Detail text, set by <span class=SpellE><b>setContentText</b></span><b>()</b><o:p></o:p></span></li>
+</ul>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setSmallIcon</span><span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">drawable</span><span style="color: #666666">.</span><span style="color: #7D9029">notification_icon</span><span style="color: #666666">);</span>
+mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setContentTitle</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Notification Alert, Click Me!&quot;</span><span style="color: #666666">);</span>
+mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setContentText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Hi, This is Android Notification Detail!&quot;</span><span style="color: #666666">);</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You have plenty of optional
+properties which you can set for your notification. To learn more about them,
+see the reference documentation for <span class=SpellE>NotificationCompat.Builder</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Step
+3 - Attach Actions<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This is an optional part and required
+if you want to attach an action with the notification. An action allows users
+to go directly from the notification to an <b>Activity</b> in your application,
+where they can look at one or more events or do further work.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The action is defined by a <span
+class=SpellE><b>PendingIntent</b></span> containing an <b>Intent</b> that
+starts an Activity in your application. To associate the <span class=SpellE>PendingIntent</span>
+with a gesture, call the appropriate method of <span class=SpellE><i>NotificationCompat.Builder</i></span>.
+For example, if you want to start Activity when the user clicks the notification
+text in the notification drawer, you add the <span class=SpellE>PendingIntent</span>
+by calling <span class=SpellE><span class=GramE><b>setContentIntent</b></span></span><span
+class=GramE><b>(</b></span><b>)</b>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A <span class=SpellE>PendingIntent</span>
+object helps you to perform an action on your application’s behalf, often at a
+later time, without caring of whether or not your application is running.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>We take help of stack builder object
+which will contain an artificial back stack for the started Activity. This
+ensures that navigating backward from the Activity leads out of your
+application to the Home screen.<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">Intent resultIntent <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Intent<span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">,</span> ResultActivity<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">);</span>
+TaskStackBuilder stackBuilder <span style="color: #666666">=</span> TaskStackBuilder<span style="color: #666666">.</span><span style="color: #7D9029">create</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">);</span>
+stackBuilder<span style="color: #666666">.</span><span style="color: #7D9029">addParentStack</span><span style="color: #666666">(</span>ResultActivity<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">);</span>
+ 
+<span style="color: #408080; font-style: italic">// Adds the Intent that starts the Activity to the top of the stack</span>
+stackBuilder<span style="color: #666666">.</span><span style="color: #7D9029">addNextIntent</span><span style="color: #666666">(</span>resultIntent<span style="color: #666666">);</span>
+PendingIntent resultPendingIntent <span style="color: #666666">=</span>
+        stackBuilder<span style="color: #666666">.</span><span style="color: #7D9029">getPendingIntent</span><span style="color: #666666">(</span>
+            <span style="color: #666666">0,</span>
+            PendingIntent<span style="color: #666666">.</span><span style="color: #7D9029">FLAG_UPDATE_CURRENT</span>
+        <span style="color: #666666">);</span>
+mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setContentIntent</span><span style="color: #666666">(</span>resultPendingIntent<span style="color: #666666">);</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Step
+4 - Issue the notification<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Finally, you pass the Notification
+object to the system by calling <span class=SpellE><span class=GramE>NotificationManager.notify</span></span><span
+class=GramE>(</span>) to send your notification. Make sure you call <span
+class=SpellE><span class=GramE><b>NotificationCompat.Builder.build</b></span></span><span
+class=GramE><b>(</b></span><b>)</b> method on builder object before notifying
+it. This method combines all of the options that have been set and return a new
+<b>Notification</b> object.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">NotificationManager mNotificationManager <span style="color: #666666">=</span>
+    <span style="color: #666666">(</span>NotificationManager<span style="color: #666666">)</span> getSystemService<span style="color: #666666">(</span>Context<span style="color: #666666">.</span><span style="color: #7D9029">NOTIFICATION_SERVICE</span><span style="color: #666666">);</span>
+   
+<span style="color: #408080; font-style: italic">// notificationID allows you to update the notification later on.</span>
+mNotificationManager<span style="color: #666666">.</span><span style="color: #7D9029">notify</span><span style="color: #666666">(</span>notificationID<span style="color: #666666">,</span> mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">build</span><span style="color: #666666">());</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>The <span class=SpellE>NotificationCompat.Builder</span>
+Class<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The <span class=SpellE>NotificationCompat.Builder</span>
+class allows easier control over all the flags, as well as help constructing
+the typical notification layouts. Following are few important and most
+frequently used methods available as a part of <span class=SpellE>NotificationCompat.Builder</span>
+class.<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>S.N.<o:p></o:p></span></b></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Constants
+  &amp; Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Notification <span class=GramE>build(</span>)</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  Combine all of the options that have been set and return a new Notification
+  object.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>2<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>NotificationCompat.Builder</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>setAutoCancel</span> (<span
+  class=SpellE>boolean</span> <span class=SpellE>autoCancel</span>)</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  Setting this flag will make it so the notification is automatically canceled
+  when the user clicks it in the panel. <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>3<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>NotificationCompat.Builder</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>setContent</span> (<span class=SpellE>RemoteViews</span>
+  views)</span></b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'> <br>
+  Supply a custom <span class=SpellE>RemoteViews</span> to use instead of the
+  standard one.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>4<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>NotificationCompat.Builder</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>setContentInfo</span> (<span
+  class=SpellE>CharSequence</span> info)</span></b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+  <br>
+  Set the large text at the right-hand side of the notification.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>5<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>NotificationCompat.Builder</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>setContentIntent</span> (<span
+  class=SpellE>PendingIntent</span> intent)</span></b><span style='font-size:
+  10.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+  <br>
+  Supply a <span class=SpellE>PendingIntent</span> to send when the
+  notification is clicked.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>6<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>NotificationCompat.Builder</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>setContentText</span> (<span
+  class=SpellE>CharSequence</span> text)</span></b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+  <br>
+  Set the text (second row) of the notification, in a standard notification.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>7<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>NotificationCompat.Builder</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>setContentTitle</span> (<span
+  class=SpellE>CharSequence</span> title)</span></b><span style='font-size:
+  10.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+  <br>
+  Set the text (first row) of the notification, in a standard notification.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>8<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>NotificationCompat.Builder</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>setDefaults</span> (<span
+  class=SpellE>int</span> defaults)</span></b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+  <br>
+  Set the default notification options that will be used.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>9<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>NotificationCompat.Builder</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>setLargeIcon</span> (Bitmap icon)</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  Set the large icon that is shown in the ticker and notification.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>10<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>NotificationCompat.Builder</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>setNumber</span> (<span class=SpellE>int</span>
+  number)</span></b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'> <br>
+  Set the large number at the right-hand side of the notification.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>11<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>NotificationCompat.Builder</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>setOngoing</span> (<span class=SpellE>boolean</span>
+  ongoing)</span></b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'> <br>
+  Set whether this is an ongoing notification.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>12<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>NotificationCompat.Builder</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>setSmallIcon</span> (<span
+  class=SpellE>int</span> icon)</span></b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+  <br>
+  Set the small icon to use in the notification layouts.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>13<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>NotificationCompat.Builder</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>setStyle</span> (<span class=SpellE>NotificationCompat.Style</span>
+  style)</span></b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'> <br>
+  Add a rich notification style to be applied at build time. <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>14<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>NotificationCompat.Builder</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>setTicker</span> (<span class=SpellE>CharSequence</span>
+  <span class=SpellE>tickerText</span>)</span></b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+  <br>
+  Set the text that is displayed in the status bar when the notification first
+  arrives.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>15<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>NotificationCompat.Builder</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>setVibrate</span> (<span class=GramE>long[</span>]
+  pattern)</span></b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'> <br>
+  Set the vibration pattern to use.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:16;mso-yfti-lastrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>16<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>NotificationCompat.Builder</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>setWhen</span> (long when)</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  Set the time that the event occurred. Notifications in the panel are sorted
+  by this time.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following example shows the
+functionality of <span class=SpellE><span class=GramE>a</span></span> Android
+notification using a <span class=SpellE><b>NotificationCompat.Builder</b></span>
+Class which has been introduced in Android 4.1.<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Step<o:p></o:p></span></b></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>You will use Eclipse IDE to create
+  an Android application and name it as <span class=SpellE><i>NotificationDemo</i></span>
+  under a package <span class=SpellE><i>com.example.notificationdemo</i></span>.
+  While creating this project, make sure you <i>Target SDK</i> and <i>Compile
+  With</i> at the latest version of Android SDK to use higher levels of APIs.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>2<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify <span class=SpellE><i>src</i></span><i>/MainActivity.java</i>
+  file and add the code to define three methods <span class=SpellE><span
+  class=GramE>startNotification</span></span><span class=GramE>(</span>), <span
+  class=SpellE>cancelNotification</span>() and <span class=SpellE>updateNotification</span>()
+  to cover maximum functionality related to Android notifications.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>3<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Create a new Java file <span
+  class=SpellE><i>src</i></span><i>/NotificationView.java</i>, which will be
+  used to display new layout as a part of new activity which will be started
+  when user will click any of the notifications<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>4<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Copy image woman.png in <i>res/<span
+  class=SpellE>drawable</span>-*</i> folders and this image will be used as
+  Notification icons. You can use images with different resolution in case you
+  want to provide them for different devices.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>5<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify layout XML file <i>res/layout/activity_main.xml</i>
+  to add three buttons in linear layout.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>6<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Create a new layout XML file <i>res/layout/notification.xml</i>.
+  This will be used as layout file for new activity which will start when user
+  will click any of the notifications.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>7<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify <i>res/values/strings.xml</i>
+  to define required constant values<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>8<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Run the application to launch
+  Android emulator and verify the result of the changes done in the <span
+  class=SpellE>aplication</span>.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the content of the
+modified main activity file <span class=SpellE><b>src</b></span><b>/<span
+class=SpellE>com.example.notificationdemo</span>/MainActivity.java</b>. This
+file can include each of the fundamental lifecycle methods.<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">package</span> com<span style="color: #666666">.</span><span style="color: #7D9029">example</span><span style="color: #666666">.</span><span style="color: #7D9029">notificationdemo</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.os.Bundle</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.Activity</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.NotificationManager</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.PendingIntent</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.TaskStackBuilder</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.content.Context</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.content.Intent</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.support.v4.app.NotificationCompat</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.util.Log</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.View</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.widget.Button</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">MainActivity</span> <span style="color: #008000; font-weight: bold">extends</span> Activity <span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">private</span> NotificationManager mNotificationManager<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">int</span> notificationID <span style="color: #666666">=</span> <span style="color: #666666">100;</span>
+   <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">int</span> numMessages <span style="color: #666666">=</span> <span style="color: #666666">0;</span>
+ 
+   <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onCreate</span><span style="color: #666666">(</span>Bundle savedInstanceState<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onCreate</span><span style="color: #666666">(</span>savedInstanceState<span style="color: #666666">);</span>
+      setContentView<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">layout</span><span style="color: #666666">.</span><span style="color: #7D9029">activity_main</span><span style="color: #666666">);</span>
+ 
+      Button startBtn <span style="color: #666666">=</span> <span style="color: #666666">(</span>Button<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">start</span><span style="color: #666666">);</span>
+      startBtn<span style="color: #666666">.</span><span style="color: #7D9029">setOnClickListener</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> View<span style="color: #666666">.</span><span style="color: #7D9029">OnClickListener</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+         <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onClick</span><span style="color: #666666">(</span>View view<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            displayNotification<span style="color: #666666">();</span>
+         <span style="color: #666666">}</span>
+      <span style="color: #666666">});</span>
+ 
+      Button cancelBtn <span style="color: #666666">=</span> <span style="color: #666666">(</span>Button<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">cancel</span><span style="color: #666666">);</span>
+      cancelBtn<span style="color: #666666">.</span><span style="color: #7D9029">setOnClickListener</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> View<span style="color: #666666">.</span><span style="color: #7D9029">OnClickListener</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+         <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onClick</span><span style="color: #666666">(</span>View view<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            cancelNotification<span style="color: #666666">();</span>
+         <span style="color: #666666">}</span>
+      <span style="color: #666666">});</span>
+  
+      Button updateBtn <span style="color: #666666">=</span> <span style="color: #666666">(</span>Button<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">update</span><span style="color: #666666">);</span>
+      updateBtn<span style="color: #666666">.</span><span style="color: #7D9029">setOnClickListener</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> View<span style="color: #666666">.</span><span style="color: #7D9029">OnClickListener</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+         <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onClick</span><span style="color: #666666">(</span>View view<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+            updateNotification<span style="color: #666666">();</span>
+         <span style="color: #666666">}</span>
+      <span style="color: #666666">});</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">displayNotification</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+      Log<span style="color: #666666">.</span><span style="color: #7D9029">i</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Start&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;notification&quot;</span><span style="color: #666666">);</span>
+ 
+      <span style="color: #408080; font-style: italic">/* Invoking the default notification service */</span>
+      NotificationCompat<span style="color: #666666">.</span><span style="color: #7D9029">Builder</span>  mBuilder <span style="color: #666666">=</span>
+      <span style="color: #008000; font-weight: bold">new</span> NotificationCompat<span style="color: #666666">.</span><span style="color: #7D9029">Builder</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">);</span>  
+ 
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setContentTitle</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;New Message&quot;</span><span style="color: #666666">);</span>
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setContentText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;You&#39;ve received new message.&quot;</span><span style="color: #666666">);</span>
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setTicker</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;New Message Alert!&quot;</span><span style="color: #666666">);</span>
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setSmallIcon</span><span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">drawable</span><span style="color: #666666">.</span><span style="color: #7D9029">woman</span><span style="color: #666666">);</span>
+ 
+      <span style="color: #408080; font-style: italic">/* Increase notification number every time a new notification arrives */</span>
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setNumber</span><span style="color: #666666">(++</span>numMessages<span style="color: #666666">);</span>
+     
+      <span style="color: #408080; font-style: italic">/* Creates an explicit intent for an Activity in your app */</span>
+      Intent resultIntent <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Intent<span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">,</span> NotificationView<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">);</span>
+ 
+      TaskStackBuilder stackBuilder <span style="color: #666666">=</span> TaskStackBuilder<span style="color: #666666">.</span><span style="color: #7D9029">create</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">);</span>
+      stackBuilder<span style="color: #666666">.</span><span style="color: #7D9029">addParentStack</span><span style="color: #666666">(</span>NotificationView<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">);</span>
+ 
+      <span style="color: #408080; font-style: italic">/* Adds the Intent that starts the Activity to the top of the stack */</span>
+      stackBuilder<span style="color: #666666">.</span><span style="color: #7D9029">addNextIntent</span><span style="color: #666666">(</span>resultIntent<span style="color: #666666">);</span>
+      PendingIntent resultPendingIntent <span style="color: #666666">=</span>
+         stackBuilder<span style="color: #666666">.</span><span style="color: #7D9029">getPendingIntent</span><span style="color: #666666">(</span>
+            <span style="color: #666666">0,</span>
+            PendingIntent<span style="color: #666666">.</span><span style="color: #7D9029">FLAG_UPDATE_CURRENT</span>
+         <span style="color: #666666">);</span>
+ 
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setContentIntent</span><span style="color: #666666">(</span>resultPendingIntent<span style="color: #666666">);</span>
+ 
+      mNotificationManager <span style="color: #666666">=</span>
+      <span style="color: #666666">(</span>NotificationManager<span style="color: #666666">)</span> getSystemService<span style="color: #666666">(</span>Context<span style="color: #666666">.</span><span style="color: #7D9029">NOTIFICATION_SERVICE</span><span style="color: #666666">);</span>
+ 
+      <span style="color: #408080; font-style: italic">/* notificationID allows you to update the notification later on. */</span>
+      mNotificationManager<span style="color: #666666">.</span><span style="color: #7D9029">notify</span><span style="color: #666666">(</span>notificationID<span style="color: #666666">,</span> mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">build</span><span style="color: #666666">());</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">cancelNotification</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+      Log<span style="color: #666666">.</span><span style="color: #7D9029">i</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Cancel&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;notification&quot;</span><span style="color: #666666">);</span>
+      mNotificationManager<span style="color: #666666">.</span><span style="color: #7D9029">cancel</span><span style="color: #666666">(</span>notificationID<span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">updateNotification</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+      Log<span style="color: #666666">.</span><span style="color: #7D9029">i</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Update&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;notification&quot;</span><span style="color: #666666">);</span>
+ 
+      <span style="color: #408080; font-style: italic">/* Invoking the default notification service */</span>
+      NotificationCompat<span style="color: #666666">.</span><span style="color: #7D9029">Builder</span>  mBuilder <span style="color: #666666">=</span>
+      <span style="color: #008000; font-weight: bold">new</span> NotificationCompat<span style="color: #666666">.</span><span style="color: #7D9029">Builder</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">);</span>  
+ 
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setContentTitle</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Updated Message&quot;</span><span style="color: #666666">);</span>
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setContentText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;You&#39;ve got updated message.&quot;</span><span style="color: #666666">);</span>
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setTicker</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Updated Message Alert!&quot;</span><span style="color: #666666">);</span>
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setSmallIcon</span><span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">drawable</span><span style="color: #666666">.</span><span style="color: #7D9029">woman</span><span style="color: #666666">);</span>
+ 
+     <span style="color: #408080; font-style: italic">/* Increase notification number every time a new notification arrives */</span>
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setNumber</span><span style="color: #666666">(++</span>numMessages<span style="color: #666666">);</span>
+     
+      <span style="color: #408080; font-style: italic">/* Creates an explicit intent for an Activity in your app */</span>
+      Intent resultIntent <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Intent<span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">,</span> NotificationView<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">);</span>
+ 
+      TaskStackBuilder stackBuilder <span style="color: #666666">=</span> TaskStackBuilder<span style="color: #666666">.</span><span style="color: #7D9029">create</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">);</span>
+      stackBuilder<span style="color: #666666">.</span><span style="color: #7D9029">addParentStack</span><span style="color: #666666">(</span>NotificationView<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">);</span>
+ 
+      <span style="color: #408080; font-style: italic">/* Adds the Intent that starts the Activity to the top of the stack */</span>
+      stackBuilder<span style="color: #666666">.</span><span style="color: #7D9029">addNextIntent</span><span style="color: #666666">(</span>resultIntent<span style="color: #666666">);</span>
+      PendingIntent resultPendingIntent <span style="color: #666666">=</span>
+         stackBuilder<span style="color: #666666">.</span><span style="color: #7D9029">getPendingIntent</span><span style="color: #666666">(</span>
+            <span style="color: #666666">0,</span>
+            PendingIntent<span style="color: #666666">.</span><span style="color: #7D9029">FLAG_UPDATE_CURRENT</span>
+         <span style="color: #666666">);</span>
+ 
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setContentIntent</span><span style="color: #666666">(</span>resultPendingIntent<span style="color: #666666">);</span>
+ 
+      mNotificationManager <span style="color: #666666">=</span>
+      <span style="color: #666666">(</span>NotificationManager<span style="color: #666666">)</span> getSystemService<span style="color: #666666">(</span>Context<span style="color: #666666">.</span><span style="color: #7D9029">NOTIFICATION_SERVICE</span><span style="color: #666666">);</span>
+ 
+      <span style="color: #408080; font-style: italic">/* Update the existing notification using same notification ID */</span>
+      mNotificationManager<span style="color: #666666">.</span><span style="color: #7D9029">notify</span><span style="color: #666666">(</span>notificationID<span style="color: #666666">,</span> mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">build</span><span style="color: #666666">());</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the content of the
+modified main activity file <span class=SpellE><b>src</b></span><b>/<span
+class=SpellE>com.example.notificationdemo</span>/NotificationView.java</b>.<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">package</span> com<span style="color: #666666">.</span><span style="color: #7D9029">example</span><span style="color: #666666">.</span><span style="color: #7D9029">notificationdemo</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.os.Bundle</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.Activity</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">NotificationView</span> <span style="color: #008000; font-weight: bold">extends</span> Activity<span style="color: #666666">{</span>
+   <span style="color: #AA22FF">@Override</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onCreate</span><span style="color: #666666">(</span>Bundle savedInstanceState<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onCreate</span><span style="color: #666666">(</span>savedInstanceState<span style="color: #666666">);</span>
+      setContentView<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">layout</span><span style="color: #666666">.</span><span style="color: #7D9029">notification</span><span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+ 
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following will be the content of <b>res/layout/activity_main.xml</b>
+file:<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">&lt;LinearLayout</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:orientation=</span><span style="color: #BA2121">&quot;vertical&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+ 
+   <span style="color: #008000; font-weight: bold">&lt;Button</span> <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/start&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+   <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;@string/start_note&quot;</span><span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+ 
+   <span style="color: #008000; font-weight: bold">&lt;Button</span> <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/cancel&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+   <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;@string/cancel_note&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+  
+   <span style="color: #008000; font-weight: bold">&lt;Button</span> <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/update&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+   <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;@string/update_note&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+<span style="color: #008000; font-weight: bold">&lt;/LinearLayout&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following will be the content of <b>res/layout/notification.xml</b>
+file:<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;LinearLayout</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span style="color: #7D9029">android:orientation=</span><span style="color: #BA2121">&quot;vertical&quot;</span>
+    <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+    <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>    <span style="color: #008000; font-weight: bold">&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;TextView</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;400dp&quot;</span>
+   <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;Hi, Your Detailed notification view goes here....&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/LinearLayout&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following will be the content of <b>res/values/strings.xml</b>
+to define two new constants:<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;resources&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;app_name&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>NotificationDemo<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;action_settings&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Settings<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;hello_world&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Hello world!<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;start_note&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Start Notification<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;cancel_note&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Cancel Notification<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;update_note&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Update Notification<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+ 
+<span style="color: #008000; font-weight: bold">&lt;/resources&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the default content of <b>AndroidManifest.xml</b>:<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;manifest</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span style="color: #7D9029">package=</span><span style="color: #BA2121">&quot;com.example.notificationdemo&quot;</span>
+    <span style="color: #7D9029">android:versionCode=</span><span style="color: #BA2121">&quot;1&quot;</span>
+    <span style="color: #7D9029">android:versionName=</span><span style="color: #BA2121">&quot;1.0&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;uses-sdk</span>
+        <span style="color: #7D9029">android:minSdkVersion=</span><span style="color: #BA2121">&quot;17&quot;</span>
+        <span style="color: #7D9029">android:targetSdkVersion=</span><span style="color: #BA2121">&quot;17&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;application</span>
+        <span style="color: #7D9029">android:allowBackup=</span><span style="color: #BA2121">&quot;true&quot;</span>
+        <span style="color: #7D9029">android:icon=</span><span style="color: #BA2121">&quot;@drawable/ic_launcher&quot;</span>
+        <span style="color: #7D9029">android:label=</span><span style="color: #BA2121">&quot;@string/app_name&quot;</span>
+        <span style="color: #7D9029">android:theme=</span><span style="color: #BA2121">&quot;@style/AppTheme&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+        <span style="color: #008000; font-weight: bold">&lt;activity</span>
+            <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;com.example.notificationdemo.MainActivity&quot;</span>
+            <span style="color: #7D9029">android:label=</span><span style="color: #BA2121">&quot;@string/app_name&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+            <span style="color: #008000; font-weight: bold">&lt;intent-filter&gt;</span>
+                <span style="color: #008000; font-weight: bold">&lt;action</span> <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;android.intent.action.MAIN&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+                <span style="color: #008000; font-weight: bold">&lt;category</span> <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;android.intent.category.LAUNCHER&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+            <span style="color: #008000; font-weight: bold">&lt;/intent-filter&gt;</span>
+        <span style="color: #008000; font-weight: bold">&lt;/activity&gt;</span>
+        <span style="color: #008000; font-weight: bold">&lt;activity</span> <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;.NotificationView&quot;</span>
+             <span style="color: #7D9029">android:label=</span><span style="color: #BA2121">&quot;Details of notification&quot;</span>
+             <span style="color: #7D9029">android:parentActivityName=</span><span style="color: #BA2121">&quot;.MainActivity&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+       <span style="color: #008000; font-weight: bold">&lt;meta-data</span>
+        <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;android.support.PARENT_ACTIVITY&quot;</span>
+        <span style="color: #7D9029">android:value=</span><span style="color: #BA2121">&quot;.MainActivity&quot;</span><span style="color: #008000; font-weight: bold">/&gt;</span>
+        <span style="color: #008000; font-weight: bold">&lt;/activity&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;/application&gt;</span>
+ 
+<span style="color: #008000; font-weight: bold">&lt;/manifest&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Let's try to run your <span
+class=SpellE><b>NotificationDemo</b></span> application. I assume you had
+created your <b>AVD</b> while doing environment setup. To run the app from
+Eclipse, open one of your project's activity files and click Run </span><!--[if mso & !supportInlineShapes & supportFields]><span
+style='mso-element:field-begin;mso-field-lock:yes'></span><span
+style='mso-spacerun:yes'> </span>SHAPE <span
+style='mso-spacerun:yes'> </span>\* MERGEFORMAT <span style='mso-element:field-separator'></span><![endif]--><!--[if gte vml 1]><v:rect
+ id="Rectangle_x0020_6" o:spid="_x0000_s1027" alt="Eclipse Run Icon" style='width:24pt;
+ height:24pt;visibility:visible;mso-wrap-style:square;mso-left-percent:-10001;
+ mso-top-percent:-10001;mso-position-horizontal:absolute;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line;mso-left-percent:-10001;mso-top-percent:-10001;
+ v-text-anchor:top' o:gfxdata="
+" filled="f" stroked="f">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <w:wrap type="none"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><![endif]--><!--[if mso & !supportInlineShapes & supportFields]><v:shape
+ id="_x0000_i1026" type="#_x0000_t75" style='width:24pt;height:24pt'>
+ <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+</v:shape><span style='mso-element:field-end'></span><![endif]--><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>icon from the toolbar. Eclipse installs the app on your AVD
+and starts it and if everything is fine with your setup and application, it
+will display following Emulator window:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now click <b>Start Notification</b>
+button, you will see at the top a message &quot;New Message Alert!&quot; will
+display momentarily and after that you will have following screen having a
+small icon at the top left corner.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now <span class=SpellE><span
+class=GramE>lets</span></span> expand the view, long click on the small icon,
+after a second it will display date information and this is the time when you
+should drag status bar down without releasing mouse. You will see status bar
+will expand and you will get following screen:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now let's try to click on the image
+icon, this will launch your new activity which you have set using intent and
+you will have following screen:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Next, you can click on &quot;Detail
+of notification&quot; and it will take you back to the main screen where you
+can try using <b>Update Notification</b> button which will update existing
+notification and number will increase by 1 but if you will send notification
+with new notification ID then it will keep adding in the stack and you see them
+separately listed on the screen.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Big View Notification<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The following code snippet
+demonstrates how to alter the notification created in the previous snippet to
+use the Inbox big view style. I'm going to update <span class=SpellE><span
+class=GramE>displayNotification</span></span><span class=GramE>(</span>)
+modification method to show this functionality:<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">displayNotification</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+      Log<span style="color: #666666">.</span><span style="color: #7D9029">i</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Start&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;notification&quot;</span><span style="color: #666666">);</span>
+ 
+      <span style="color: #408080; font-style: italic">/* Invoking the default notification service */</span>
+      NotificationCompat<span style="color: #666666">.</span><span style="color: #7D9029">Builder</span>  mBuilder <span style="color: #666666">=</span>
+      <span style="color: #008000; font-weight: bold">new</span> NotificationCompat<span style="color: #666666">.</span><span style="color: #7D9029">Builder</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">);</span>  
+ 
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setContentTitle</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;New Message&quot;</span><span style="color: #666666">);</span>
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setContentText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;You&#39;ve received new message.&quot;</span><span style="color: #666666">);</span>
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setTicker</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;New Message Alert!&quot;</span><span style="color: #666666">);</span>
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setSmallIcon</span><span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">drawable</span><span style="color: #666666">.</span><span style="color: #7D9029">woman</span><span style="color: #666666">);</span>
+ 
+      <span style="color: #408080; font-style: italic">/* Increase notification number every time a new notification arrives */</span>
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setNumber</span><span style="color: #666666">(++</span>numMessages<span style="color: #666666">);</span>
+ 
+ 
+      <span style="color: #408080; font-style: italic">/* Add Big View Specific Configuration */</span>
+      NotificationCompat<span style="color: #666666">.</span><span style="color: #7D9029">InboxStyle</span> inboxStyle <span style="color: #666666">=</span>
+             <span style="color: #008000; font-weight: bold">new</span> NotificationCompat<span style="color: #666666">.</span><span style="color: #7D9029">InboxStyle</span><span style="color: #666666">();</span>
+ 
+      String<span style="color: #666666">[]</span> events <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> String<span style="color: #666666">[6];</span>
+      events<span style="color: #666666">[0]</span> <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> String<span style="color: #666666">(</span><span style="color: #BA2121">&quot;This is first line....&quot;</span><span style="color: #666666">);</span>
+      events<span style="color: #666666">[1]</span> <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> String<span style="color: #666666">(</span><span style="color: #BA2121">&quot;This is second line...&quot;</span><span style="color: #666666">);</span>
+      events<span style="color: #666666">[2]</span> <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> String<span style="color: #666666">(</span><span style="color: #BA2121">&quot;This is third line...&quot;</span><span style="color: #666666">);</span>
+      events<span style="color: #666666">[3]</span> <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> String<span style="color: #666666">(</span><span style="color: #BA2121">&quot;This is 4th line...&quot;</span><span style="color: #666666">);</span>
+      events<span style="color: #666666">[4]</span> <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> String<span style="color: #666666">(</span><span style="color: #BA2121">&quot;This is 5th line...&quot;</span><span style="color: #666666">);</span>
+      events<span style="color: #666666">[5]</span> <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> String<span style="color: #666666">(</span><span style="color: #BA2121">&quot;This is 6th line...&quot;</span><span style="color: #666666">);</span>
+ 
+      <span style="color: #408080; font-style: italic">// Sets a title for the Inbox style big view</span>
+      inboxStyle<span style="color: #666666">.</span><span style="color: #7D9029">setBigContentTitle</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Big Title Details:&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #408080; font-style: italic">// Moves events into the big view</span>
+      <span style="color: #008000; font-weight: bold">for</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span> i<span style="color: #666666">=0;</span> i <span style="color: #666666">&lt;</span> events<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">;</span> i<span style="color: #666666">++)</span> <span style="color: #666666">{</span>
+ 
+         inboxStyle<span style="color: #666666">.</span><span style="color: #7D9029">addLine</span><span style="color: #666666">(</span>events<span style="color: #666666">[</span>i<span style="color: #666666">]);</span>
+      <span style="color: #666666">}</span>
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setStyle</span><span style="color: #666666">(</span>inboxStyle<span style="color: #666666">);</span>
+      
+     
+      <span style="color: #408080; font-style: italic">/* Creates an explicit intent for an Activity in your app */</span>
+      Intent resultIntent <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Intent<span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">,</span> NotificationView<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">);</span>
+ 
+      TaskStackBuilder stackBuilder <span style="color: #666666">=</span> TaskStackBuilder<span style="color: #666666">.</span><span style="color: #7D9029">create</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">);</span>
+      stackBuilder<span style="color: #666666">.</span><span style="color: #7D9029">addParentStack</span><span style="color: #666666">(</span>NotificationView<span style="color: #666666">.</span><span style="color: #7D9029">class</span><span style="color: #666666">);</span>
+ 
+      <span style="color: #408080; font-style: italic">/* Adds the Intent that starts the Activity to the top of the stack */</span>
+      stackBuilder<span style="color: #666666">.</span><span style="color: #7D9029">addNextIntent</span><span style="color: #666666">(</span>resultIntent<span style="color: #666666">);</span>
+      PendingIntent resultPendingIntent <span style="color: #666666">=</span>
+         stackBuilder<span style="color: #666666">.</span><span style="color: #7D9029">getPendingIntent</span><span style="color: #666666">(</span>
+            <span style="color: #666666">0,</span>
+            PendingIntent<span style="color: #666666">.</span><span style="color: #7D9029">FLAG_UPDATE_CURRENT</span>
+         <span style="color: #666666">);</span>
+ 
+      mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">setContentIntent</span><span style="color: #666666">(</span>resultPendingIntent<span style="color: #666666">);</span>
+ 
+      mNotificationManager <span style="color: #666666">=</span>
+      <span style="color: #666666">(</span>NotificationManager<span style="color: #666666">)</span> getSystemService<span style="color: #666666">(</span>Context<span style="color: #666666">.</span><span style="color: #7D9029">NOTIFICATION_SERVICE</span><span style="color: #666666">);</span>
+ 
+      <span style="color: #408080; font-style: italic">/* notificationID allows you to update the notification later on. */</span>
+      mNotificationManager<span style="color: #666666">.</span><span style="color: #7D9029">notify</span><span style="color: #666666">(</span>notificationID<span style="color: #666666">,</span> mBuilder<span style="color: #666666">.</span><span style="color: #7D9029">build</span><span style="color: #666666">());</span>
+   <span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now you will try to run your
+application.<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

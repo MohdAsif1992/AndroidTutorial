@@ -1,0 +1,506 @@
+<html>
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Android Sending Email</span></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You have learnt Android Intent,
+which is an object carrying an intent <span class=SpellE>ie</span>. Message
+from one component to another component with-in the application or outside the
+application.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>As such you do not need to develop
+your email client from scratch because they are already available like Gmail
+and K9mail. But you will need to send email from your Android application,
+where you will have to write an Activity that needs to launch an email client
+and sends an email using your Android device. For this purpose, your Activity
+will send an ACTION_SEND along with appropriate data load, to the Android
+Intent Resolver. The specified chooser gives the proper interface for the user
+to pick how to send your email data.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following section explains different
+parts of our Intent object required to send an email.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Intent Object - Action to send Email<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You will use <b>ACTION_SEND</b>
+action to launch an email client installed on your Android device. Following is
+simple syntax to create an intent with ACTION_SEND action<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">Intent emailIntent <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Intent<span style="color: #666666">(</span>Intent<span style="color: #666666">.</span><span style="color: #7D9029">ACTION_SEND</span><span style="color: #666666">);</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Intent Object - Data/Type to send Email<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To send an email you need to specify
+<b>mailto:</b> as URI using <span class=SpellE><span class=GramE>setData</span></span><span
+class=GramE>(</span>) method and data type will be to <b>text/plain</b> using <span
+class=SpellE>setType</span>() method as follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">emailIntent<span style="color: #666666">.</span><span style="color: #7D9029">setData</span><span style="color: #666666">(</span>Uri<span style="color: #666666">.</span><span style="color: #7D9029">parse</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;mailto:&quot;</span><span style="color: #666666">));</span>
+emailIntent<span style="color: #666666">.</span><span style="color: #7D9029">setType</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;text/plain&quot;</span><span style="color: #666666">);</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Intent Object - Extra to send Email<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Android has built-in support to add
+TO, SUBJECT, CC, TEXT etc. fields which can be attached to the intent before
+sending the intent to a target email client. You can use following extra fields
+in your email:<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width="5%" style='width:5.0%;border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>S.N.<o:p></o:p></span></b></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Extra
+  Data &amp; Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>EXTRA_BCC</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  A <span class=GramE>String[</span>] holding e-mail addresses that should be
+  blind carbon copied.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>2<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>EXTRA_CC</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  A <span class=GramE>String[</span>] holding e-mail addresses that should be
+  carbon copied.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>3<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>EXTRA_EMAIL</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  A <span class=GramE>String[</span>] holding e-mail addresses that should be
+  delivered to.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>4<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>EXTRA_HTML_TEXT</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  A constant String that is associated with the Intent, used with ACTION_SEND
+  to supply an alternative to EXTRA_TEXT as HTML formatted text.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>5<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>EXTRA_SUBJECT</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  A constant string holding the desired subject line of a message.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>6<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>EXTRA_TEXT</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  A constant <span class=SpellE>CharSequence</span> that is associated with the
+  Intent, used with ACTION_SEND to supply the literal data to be sent. <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;mso-yfti-lastrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>7<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>EXTRA_TITLE</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <br>
+  A <span class=SpellE>CharSequence</span> dialog title to provide to the user
+  when used with <span class=GramE>a</span> ACTION_CHOOSER.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here is an example showing you how
+to assign extra data to your intent:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">emailIntent<span style="color: #666666">.</span><span style="color: #7D9029">putExtra</span><span style="color: #666666">(</span>Intent<span style="color: #666666">.</span><span style="color: #7D9029">EXTRA_EMAIL</span>  <span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">new</span> String<span style="color: #666666">[]{</span><span style="color: #BA2121">&quot;recipient@example.com&quot;</span><span style="color: #666666">});</span>
+emailIntent<span style="color: #666666">.</span><span style="color: #7D9029">putExtra</span><span style="color: #666666">(</span>Intent<span style="color: #666666">.</span><span style="color: #7D9029">EXTRA_SUBJECT</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;subject of email&quot;</span><span style="color: #666666">);</span>
+emailIntent<span style="color: #666666">.</span><span style="color: #7D9029">putExtra</span><span style="color: #666666">(</span>Intent<span style="color: #666666">.</span><span style="color: #7D9029">EXTRA_TEXT</span>   <span style="color: #666666">,</span> <span style="color: #BA2121">&quot;body of email&quot;</span><span style="color: #666666">);</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following example shows you in
+practical how to use Intent object to launch Email client to send an Email to
+the given recipients.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>To experiment with this example, you will need actual Mobile
+device equipped with latest Android OS, otherwise you will have to struggle
+with emulator which may not work. Second you will need to have an Email client
+like <span class=SpellE>GMail</span> or K9mail installed on your device.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Step<o:p></o:p></span></b></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>You will use Eclipse IDE to create
+  an Android application and name it as <span class=SpellE><i>SendEmailDemo</i></span>
+  under a package <span class=SpellE><i>com.example.sendemaildemo</i></span>.
+  While creating this project, make sure you <i>Target SDK</i> and <i>Compile
+  With</i> at the latest version of Android SDK to use higher levels of APIs.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>2<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify <span class=SpellE><i>src</i></span><i>/MainActivity.java</i>
+  file and add required code to take care of sending email.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>3<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify layout XML file <i>res/layout/activity_main.xml</i>
+  add any GUI component if required. I'm adding a simple button to launch Email
+  Client.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>4<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify <i>res/values/strings.xml</i>
+  to define required constant values<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>5<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify <i>AndroidManifest.xml</i>
+  as shown below<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>6<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Run the application to launch
+  Android emulator and verify the result of the changes done in the <span
+  class=SpellE>aplication</span>.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the content of the
+modified main activity file <span class=SpellE><b>src</b></span><b>/<span
+class=SpellE>com.example.sendemaildemo</span>/MainActivity.java</b>.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">package</span> com<span style="color: #666666">.</span><span style="color: #7D9029">example</span><span style="color: #666666">.</span><span style="color: #7D9029">sendemaildemo</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.net.Uri</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.os.Bundle</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.Activity</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.content.Intent</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.util.Log</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.Menu</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.View</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.widget.Button</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.widget.Toast</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">MainActivity</span> <span style="color: #008000; font-weight: bold">extends</span> Activity <span style="color: #666666">{</span>
+ 
+   <span style="color: #AA22FF">@Override</span>
+   <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onCreate</span><span style="color: #666666">(</span>Bundle savedInstanceState<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onCreate</span><span style="color: #666666">(</span>savedInstanceState<span style="color: #666666">);</span>
+      setContentView<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">layout</span><span style="color: #666666">.</span><span style="color: #7D9029">activity_main</span><span style="color: #666666">);</span>
+ 
+      Button startBtn <span style="color: #666666">=</span> <span style="color: #666666">(</span>Button<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">sendEmail</span><span style="color: #666666">);</span>
+      startBtn<span style="color: #666666">.</span><span style="color: #7D9029">setOnClickListener</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> View<span style="color: #666666">.</span><span style="color: #7D9029">OnClickListener</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+         <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onClick</span><span style="color: #666666">(</span>View view<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+         sendEmail<span style="color: #666666">();</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">});</span>
+ 
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">sendEmail</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+      Log<span style="color: #666666">.</span><span style="color: #7D9029">i</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Send email&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;&quot;</span><span style="color: #666666">);</span>
+ 
+      String<span style="color: #666666">[]</span> TO <span style="color: #666666">=</span> <span style="color: #666666">{</span><span style="color: #BA2121">&quot;amrood.admin@gmail.com&quot;</span><span style="color: #666666">};</span>
+      String<span style="color: #666666">[]</span> CC <span style="color: #666666">=</span> <span style="color: #666666">{</span><span style="color: #BA2121">&quot;mcmohd@gmail.com&quot;</span><span style="color: #666666">};</span>
+      Intent emailIntent <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Intent<span style="color: #666666">(</span>Intent<span style="color: #666666">.</span><span style="color: #7D9029">ACTION_SEND</span><span style="color: #666666">);</span>
+      emailIntent<span style="color: #666666">.</span><span style="color: #7D9029">setData</span><span style="color: #666666">(</span>Uri<span style="color: #666666">.</span><span style="color: #7D9029">parse</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;mailto:&quot;</span><span style="color: #666666">));</span>
+      emailIntent<span style="color: #666666">.</span><span style="color: #7D9029">setType</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;text/plain&quot;</span><span style="color: #666666">);</span>
+ 
+ 
+      emailIntent<span style="color: #666666">.</span><span style="color: #7D9029">putExtra</span><span style="color: #666666">(</span>Intent<span style="color: #666666">.</span><span style="color: #7D9029">EXTRA_EMAIL</span><span style="color: #666666">,</span> TO<span style="color: #666666">);</span>
+      emailIntent<span style="color: #666666">.</span><span style="color: #7D9029">putExtra</span><span style="color: #666666">(</span>Intent<span style="color: #666666">.</span><span style="color: #7D9029">EXTRA_CC</span><span style="color: #666666">,</span> CC<span style="color: #666666">);</span>
+      emailIntent<span style="color: #666666">.</span><span style="color: #7D9029">putExtra</span><span style="color: #666666">(</span>Intent<span style="color: #666666">.</span><span style="color: #7D9029">EXTRA_SUBJECT</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Your subject&quot;</span><span style="color: #666666">);</span>
+      emailIntent<span style="color: #666666">.</span><span style="color: #7D9029">putExtra</span><span style="color: #666666">(</span>Intent<span style="color: #666666">.</span><span style="color: #7D9029">EXTRA_TEXT</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Email message goes here&quot;</span><span style="color: #666666">);</span>
+ 
+      <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">{</span>
+         startActivity<span style="color: #666666">(</span>Intent<span style="color: #666666">.</span><span style="color: #7D9029">createChooser</span><span style="color: #666666">(</span>emailIntent<span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Send mail...&quot;</span><span style="color: #666666">));</span>
+         finish<span style="color: #666666">();</span>
+         Log<span style="color: #666666">.</span><span style="color: #7D9029">i</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Finished sending email...&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>android<span style="color: #666666">.</span><span style="color: #7D9029">content</span><span style="color: #666666">.</span><span style="color: #7D9029">ActivityNotFoundException</span> ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+         Toast<span style="color: #666666">.</span><span style="color: #7D9029">makeText</span><span style="color: #666666">(</span>MainActivity<span style="color: #666666">.</span><span style="color: #7D9029">this</span><span style="color: #666666">,</span>
+         <span style="color: #BA2121">&quot;There is no email client installed.&quot;</span><span style="color: #666666">,</span> Toast<span style="color: #666666">.</span><span style="color: #7D9029">LENGTH_SHORT</span><span style="color: #666666">).</span><span style="color: #7D9029">show</span><span style="color: #666666">();</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #AA22FF">@Override</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">boolean</span> <span style="color: #0000FF">onCreateOptionsMenu</span><span style="color: #666666">(</span>Menu menu<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+      <span style="color: #408080; font-style: italic">// Inflate the menu; this adds items to the action bar if it is present.</span>
+      getMenuInflater<span style="color: #666666">().</span><span style="color: #7D9029">inflate</span><span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">menu</span><span style="color: #666666">.</span><span style="color: #7D9029">main</span><span style="color: #666666">,</span> menu<span style="color: #666666">);</span>
+      <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following will be the content of <b>res/layout/activity_main.xml</b>
+file:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">&lt;LinearLayout</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:orientation=</span><span style="color: #BA2121">&quot;vertical&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+ 
+   <span style="color: #008000; font-weight: bold">&lt;Button</span> <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/sendEmail&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+   <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;@string/compose_email&quot;</span><span style="color: #008000; font-weight: bold">/&gt;</span>
+   
+<span style="color: #008000; font-weight: bold">&lt;/LinearLayout&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following will be the content of <b>res/values/strings.xml</b>
+to define two new constants:<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;resources&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;app_name&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>SendEmailDemo<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;hello_world&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Hello world!<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;action_settings&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Settings<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;compose_email&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Compose Email<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+ 
+<span style="color: #008000; font-weight: bold">&lt;/resources&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the default content of <b>AndroidManifest.xml</b>:<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;manifest</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span style="color: #7D9029">package=</span><span style="color: #BA2121">&quot;com.example.sendemaildemo&quot;</span>
+    <span style="color: #7D9029">android:versionCode=</span><span style="color: #BA2121">&quot;1&quot;</span>
+    <span style="color: #7D9029">android:versionName=</span><span style="color: #BA2121">&quot;1.0&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;uses-sdk</span>
+        <span style="color: #7D9029">android:minSdkVersion=</span><span style="color: #BA2121">&quot;8&quot;</span>
+        <span style="color: #7D9029">android:targetSdkVersion=</span><span style="color: #BA2121">&quot;17&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;application</span>
+        <span style="color: #7D9029">android:allowBackup=</span><span style="color: #BA2121">&quot;true&quot;</span>
+        <span style="color: #7D9029">android:icon=</span><span style="color: #BA2121">&quot;@drawable/ic_launcher&quot;</span>
+        <span style="color: #7D9029">android:label=</span><span style="color: #BA2121">&quot;@string/app_name&quot;</span>
+        <span style="color: #7D9029">android:theme=</span><span style="color: #BA2121">&quot;@style/AppTheme&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+        <span style="color: #008000; font-weight: bold">&lt;activity</span>
+            <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;com.example.sendemaildemo.MainActivity&quot;</span>
+            <span style="color: #7D9029">android:label=</span><span style="color: #BA2121">&quot;@string/app_name&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+            <span style="color: #008000; font-weight: bold">&lt;intent-filter&gt;</span>
+                <span style="color: #008000; font-weight: bold">&lt;action</span> <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;android.intent.action.MAIN&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+                <span style="color: #008000; font-weight: bold">&lt;category</span> <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;android.intent.category.LAUNCHER&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+            <span style="color: #008000; font-weight: bold">&lt;/intent-filter&gt;</span>
+        <span style="color: #008000; font-weight: bold">&lt;/activity&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;/application&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/manifest&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Let's try to run your <span
+class=SpellE><b>SendEmailDemo</b></span> application. I assume you have
+connected your actual Android Mobile device with your computer. To run the app
+from Eclipse, open one of your project's activity files and click Run icon from
+the toolbar. Before starting your application, Eclipse will display following
+window to select an option where you want to run your Android application.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Select your mobile device as an
+option and then check your mobile device which will display following screen:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now use <b>Compose Email</b> button
+to list down all the installed email clients. From the list, you can choose one
+f email clients to send your email. I'm going to use Gmail client to send my
+email which will have all the provided defaults fields available as shown
+below. Here <b>From:</b> will be default email ID you have registered for your
+Android device.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You can modify either of the given
+default fields and finally use send email button (marked with red rectangle) to
+send your email to the mentioned recipients.<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

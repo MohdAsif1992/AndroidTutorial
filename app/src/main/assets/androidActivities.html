@@ -1,0 +1,599 @@
+<html >
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:14.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";color:#000066';mso-font-kerning:18.0pt'>Android Activities<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>An activity represents a single
+screen with a user interface. For example, an email application might have one
+activity that shows a list of new emails, another activity to compose an email,
+and another activity for reading emails. If an application has more than one
+activity, then one of them should be marked as the activity that is presented
+when the application is launched.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If you have worked with C, C++ or
+Java programming language then you must have seen that your program starts from
+<span class=GramE><b>main(</b></span><b>)</b> function. Very similar way,
+Android system initiates its program with in an <b>Activity</b> starting with a
+call on <span class=SpellE><span class=GramE><i>onCreate</i></span></span><span
+class=GramE><i>(</i></span><i>)</i> callback method. There is a sequence of
+callback methods that start up an activity and a sequence of callback methods
+that tear down an activity as shown in the below Activity lifecycle diagram: (<i>image
+<span class=GramE>courtesy :</span> android.com</i> )<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The Activity lass defines the
+following callbacks i.e. events. You don't need to implement all the callbacks
+methods. However, it's important that you understand each one and implement
+those that ensure your app behaves the way users expect.<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width="20%" style='width:20.0%;border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Callback<o:p></o:p></span></b></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>onCreate</span></span><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>()<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>This is the first callback and
+  called when the activity is first created.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>onStart</span></span><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>()<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>This callback is called when the
+  activity becomes visible to the user.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>onResume</span></span><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>()<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>This is called when the user starts
+  interacting with the application.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>onPause</span></span><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>()<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>The paused activity does not
+  receive user input and cannot execute any code and called when the current
+  activity is being paused and the previous activity is being resumed.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>onStop</span></span><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>()<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>This callback is called when the
+  activity is no longer visible.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>onDestroy</span></span><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>()<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>This callback is called before the
+  activity is destroyed by the system.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;mso-yfti-lastrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>onRestart</span></span><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>()<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>This callback is called when the
+  activity restarts after stopping it.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This example will take you through
+simple steps to show Android application activity life cycle. Follow the
+following steps to modify the Android application we created in <i>Hello World
+Example</i> chapter:<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
+ mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Step<o:p></o:p></span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>You will use Eclipse IDE to create
+  an Android application and name it as <span class=SpellE><i>HelloWorld</i></span>
+  under a package <span class=SpellE><i>com.example.helloworld</i></span> as
+  explained in the <i>Hello World Example</i> chapter.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>2<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify main activity file <i>MainActivity.java</i>
+  as explained below. Keep rest of the files unchanged.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>3<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Run the application to launch
+  Android emulator and verify the result of the changes done in the <span
+  class=SpellE>aplication</span>.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the content of the
+modified main activity file <span class=SpellE><b>src</b></span><b>/<span
+class=SpellE>com.example.helloworld</span>/MainActivity.java</b>. This file
+includes each of the fundamental lifecycle methods. The <span class=SpellE><span
+class=GramE><b>Log.d</b></span></span><span class=GramE><b>(</b></span><b>)</b>
+method has been used to generate log messages:<o:p></o:p></span></p>
+
+<br/>
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">package</span> com<span style="color: #666666">.</span><span style="color: #7D9029">example</span><span style="color: #666666">.</span><span style="color: #7D9029">helloworld</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.os.Bundle</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.Activity</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.util.Log</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">MainActivity</span> <span style="color: #008000; font-weight: bold">extends</span> Activity <span style="color: #666666">{</span>
+   String msg <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Android : &quot;</span><span style="color: #666666">;</span>
+  
+   <span style="color: #408080; font-style: italic">/** Called when the activity is first created. */</span>
+   <span style="color: #AA22FF">@Override</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onCreate</span><span style="color: #666666">(</span>Bundle savedInstanceState<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onCreate</span><span style="color: #666666">(</span>savedInstanceState<span style="color: #666666">);</span>
+      setContentView<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">layout</span><span style="color: #666666">.</span><span style="color: #7D9029">activity_main</span><span style="color: #666666">);</span>
+      Log<span style="color: #666666">.</span><span style="color: #7D9029">d</span><span style="color: #666666">(</span>msg<span style="color: #666666">,</span> <span style="color: #BA2121">&quot;The onCreate() event&quot;</span><span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #408080; font-style: italic">/** Called when the activity is about to become visible. */</span>
+   <span style="color: #AA22FF">@Override</span>
+   <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onStart</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onStart</span><span style="color: #666666">();</span>
+      Log<span style="color: #666666">.</span><span style="color: #7D9029">d</span><span style="color: #666666">(</span>msg<span style="color: #666666">,</span> <span style="color: #BA2121">&quot;The onStart() event&quot;</span><span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #408080; font-style: italic">/** Called when the activity has become visible. */</span>
+   <span style="color: #AA22FF">@Override</span>
+   <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onResume</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onResume</span><span style="color: #666666">();</span>
+      Log<span style="color: #666666">.</span><span style="color: #7D9029">d</span><span style="color: #666666">(</span>msg<span style="color: #666666">,</span> <span style="color: #BA2121">&quot;The onResume() event&quot;</span><span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #408080; font-style: italic">/** Called when another activity is taking focus. */</span>
+   <span style="color: #AA22FF">@Override</span>
+   <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onPause</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onPause</span><span style="color: #666666">();</span>
+      Log<span style="color: #666666">.</span><span style="color: #7D9029">d</span><span style="color: #666666">(</span>msg<span style="color: #666666">,</span> <span style="color: #BA2121">&quot;The onPause() event&quot;</span><span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #408080; font-style: italic">/** Called when the activity is no longer visible. */</span>
+   <span style="color: #AA22FF">@Override</span>
+   <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onStop</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onStop</span><span style="color: #666666">();</span>
+      Log<span style="color: #666666">.</span><span style="color: #7D9029">d</span><span style="color: #666666">(</span>msg<span style="color: #666666">,</span> <span style="color: #BA2121">&quot;The onStop() event&quot;</span><span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #408080; font-style: italic">/** Called just before the activity is destroyed. */</span>
+   <span style="color: #AA22FF">@Override</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onDestroy</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onDestroy</span><span style="color: #666666">();</span>
+      Log<span style="color: #666666">.</span><span style="color: #7D9029">d</span><span style="color: #666666">(</span>msg<span style="color: #666666">,</span> <span style="color: #BA2121">&quot;The onDestroy() event&quot;</span><span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<br/>
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>An activity class loads all the UI
+component using the XML file available in <i>res/layout</i> folder of the
+project. Following statement loads UI components from <i>res/layout/activity_main.xml
+file</i>:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">setContentView<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">layout</span><span style="color: #666666">.</span><span style="color: #7D9029">activity_main</span><span style="color: #666666">);</span>
+</pre></div>
+
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>An application can have one or more
+activities without any restrictions. Every activity you define for your application
+must be declared in your <i>AndroidManifest.xml</i> file and the main activity
+for your app must be declared in the manifest with an &lt;intent-filter&gt;
+that includes the MAIN action and LAUNCHER category as follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">&lt;manifest</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+   <span style="color: #7D9029">package=</span><span style="color: #BA2121">&quot;com.example.helloworld&quot;</span>
+   <span style="color: #7D9029">android:versionCode=</span><span style="color: #BA2121">&quot;1&quot;</span>
+   <span style="color: #7D9029">android:versionName=</span><span style="color: #BA2121">&quot;1.0&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;uses-sdk</span>
+      <span style="color: #7D9029">android:minSdkVersion=</span><span style="color: #BA2121">&quot;8&quot;</span>
+      <span style="color: #7D9029">android:targetSdkVersion=</span><span style="color: #BA2121">&quot;15&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;application</span>
+       <span style="color: #7D9029">android:icon=</span><span style="color: #BA2121">&quot;@drawable/ic_launcher&quot;</span>
+       <span style="color: #7D9029">android:label=</span><span style="color: #BA2121">&quot;@string/app_name&quot;</span>
+       <span style="color: #7D9029">android:theme=</span><span style="color: #BA2121">&quot;@style/AppTheme&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+       <span style="color: #008000; font-weight: bold">&lt;activity</span>
+           <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;.MainActivity&quot;</span>
+           <span style="color: #7D9029">android:label=</span><span style="color: #BA2121">&quot;@string/title_activity_main&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+           <span style="color: #008000; font-weight: bold">&lt;intent-filter&gt;</span>
+               <span style="color: #008000; font-weight: bold">&lt;action</span> <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;android.intent.action.MAIN&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+               <span style="color: #008000; font-weight: bold">&lt;category</span> <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;android.intent.category.LAUNCHER&quot;</span><span style="color: #008000; font-weight: bold">/&gt;</span>
+           <span style="color: #008000; font-weight: bold">&lt;/intent-filter&gt;</span>
+       <span style="color: #008000; font-weight: bold">&lt;/activity&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;/application&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/manifest&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If either the MAIN action or
+LAUNCHER category are not declared for one of your activities, then your app
+icon will not appear in the Home screen's list of apps.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Let's try to run our modified <b>Hello
+World!</b> <span class=GramE>application</span> we just modified. I assume you
+had created your <b>AVD</b> while doing environment setup. To run the app from
+Eclipse, open one of your project's activity files and click Run </span>
+
+</v:shape><span style='mso-element:field-end'></span><![endif]--><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>icon from the toolbar. Eclipse installs the app on your AVD
+and starts it and if everything is fine with your setup and application, it
+will display Emulator window and you should see following log messages in <span
+class=SpellE><b>LogCat</b></span> window in Eclipse IDE:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>07-19
+15:00:43.405: D/Android :<span class=GramE>(866</span>): The <span
+class=SpellE>onCreate</span>() event<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>07-19
+15:00:43.405: D/Android :<span class=GramE>(866</span>): The <span
+class=SpellE>onStart</span>() event<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>07-19
+15:00:43.415: D/Android :<span class=GramE>(866</span>): The <span
+class=SpellE>onResume</span>() event<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Let us try to click Red button </span><!--[if mso & !supportInlineShapes & supportFields]><span
+style='mso-element:field-begin;mso-field-lock:yes'></span><span
+style='mso-spacerun:yes'> </span>SHAPE <span
+style='mso-spacerun:yes'> </span>\* MERGEFORMAT <span style='mso-element:field-separator'></span><![endif]--><!--[if gte vml 1]><v:rect
+ id="Rectangle_x0020_3" o:spid="_x0000_s1028" alt="Android Red Button" style='width:24pt;
+ height:24pt;visibility:visible;mso-wrap-style:square;mso-left-percent:-10001;
+ mso-top-percent:-10001;mso-position-horizontal:absolute;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line;mso-left-percent:-10001;mso-top-percent:-10001;
+ v-text-anchor:top' o:gfxdata="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
+BAAEAPMAAAAlBgAAAAA=
+" filled="f" stroked="f">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <w:wrap type="none"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><!--[if mso & !supportInlineShapes & supportFields]><v:shape
+ id="_x0000_i1027" type="#_x0000_t75" style='width:24pt;height:24pt'>
+ <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+</v:shape><span style='mso-element:field-end'></span><![endif]--><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>on the Android emulator and it will generate following
+events messages in <span class=SpellE><b>LogCat</b></span> window in Eclipse
+IDE:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>07-19
+15:01:10.995: D/Android :<span class=GramE>(866</span>): The <span
+class=SpellE>onPause</span>() event<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>07-19
+15:01:12.705: D/Android :<span class=GramE>(866</span>): The <span
+class=SpellE>onStop</span>() event<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Let us again try to click Menu
+button </span><!--[if mso & !supportInlineShapes & supportFields]><span
+style='mso-element:field-begin;mso-field-lock:yes'></span><span
+style='mso-spacerun:yes'> </span>SHAPE <span
+style='mso-spacerun:yes'> </span>\* MERGEFORMAT <span style='mso-element:field-separator'></span><![endif]--><!--[if gte vml 1]><v:rect
+ id="Rectangle_x0020_2" o:spid="_x0000_s1027" alt="Android Menu Button"
+ style='width:24pt;height:24pt;visibility:visible;mso-wrap-style:square;
+ mso-left-percent:-10001;mso-top-percent:-10001;mso-position-horizontal:absolute;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line;mso-left-percent:-10001;mso-top-percent:-10001;
+ v-text-anchor:top' o:gfxdata="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
+BAAEAPMAAAAlBgAAAAA=
+" filled="f" stroked="f">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <w:wrap type="none"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><!--[if mso & !supportInlineShapes & supportFields]><v:shape
+ id="_x0000_i1026" type="#_x0000_t75" style='width:24pt;height:24pt'>
+ <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+</v:shape><span style='mso-element:field-end'></span><![endif]--><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>on the <span class=GramE>Android</span> emulator and it will
+generate following events messages in <span class=SpellE><b>LogCat</b></span>
+window in Eclipse IDE:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>07-19
+15:01:13.995: D/Android :<span class=GramE>(866</span>): The <span
+class=SpellE>onStart</span>() event<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>07-19
+15:01:14.705: D/Android :<span class=GramE>(866</span>): The <span
+class=SpellE>onResume</span>() event<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Next, let us again try to click Back
+button </span><!--[if mso & !supportInlineShapes & supportFields]><span
+style='mso-element:field-begin;mso-field-lock:yes'></span><span
+style='mso-spacerun:yes'> </span>SHAPE <span
+style='mso-spacerun:yes'> </span>\* MERGEFORMAT <span style='mso-element:field-separator'></span><![endif]--><!--[if gte vml 1]><v:rect
+ id="Rectangle_x0020_1" o:spid="_x0000_s1026" alt="Android Back Button"
+ style='width:24pt;height:24pt;visibility:visible;mso-wrap-style:square;
+ mso-left-percent:-10001;mso-top-percent:-10001;mso-position-horizontal:absolute;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line;mso-left-percent:-10001;mso-top-percent:-10001;
+ v-text-anchor:top' o:gfxdata="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
+AAQA8wAAACQGAAAAAA==
+" filled="f" stroked="f">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <w:wrap type="none"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><!--[if mso & !supportInlineShapes & supportFields]><v:shape
+ id="_x0000_i1025" type="#_x0000_t75" style='width:24pt;height:24pt'>
+ <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+</v:shape><span style='mso-element:field-end'></span><![endif]--><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>on the Android emulator and it will generate following
+events messages in <span class=SpellE><b>LogCat</b></span> window in Eclipse
+IDE and this completes the <span class=SpellE>Acitivity</span> Life Cycle for
+an Android Application.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>07-19
+15:33:15.687: D/Android :<span class=GramE>(992</span>): The <span
+class=SpellE>onPause</span>() event<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>07-19
+15:33:15.525: D/Android :<span class=GramE>(992</span>): The <span
+class=SpellE>onStop</span>() event<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>07-19
+15:33:15.525: D/Android :<span class=GramE>(992</span>): The <span
+class=SpellE>onDestroy</span>() event<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

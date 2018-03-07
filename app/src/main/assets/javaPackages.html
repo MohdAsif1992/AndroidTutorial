@@ -1,0 +1,492 @@
+<html >
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Java Packages<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Packages are used in Java in order
+to prevent naming conflicts, to control access, to make searching/locating and
+usage of classes, interfaces, enumerations and annotations easier, etc.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A Package can be defined as a
+grouping of related <span class=GramE>types(</span>classes, interfaces,
+enumerations and annotations ) providing access protection and name space
+management.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Some of the existing packages in
+Java are<span class=GramE>::</span><o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l4 level1 lfo1;tab-stops:list .5in'><span
+     class=SpellE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>java.lang</span></b></span><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'> - bundles the fundamental classes<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l4 level1 lfo1;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>java.io</span></b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     - classes for input , output functions are bundled in this package<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Programmers can define their own
+packages to bundle group of classes/interfaces, etc. It is a good practice to
+group related classes implemented by you so that a programmer can easily
+determine that the classes, interfaces, enumerations, annotations are related.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Since the package creates a new
+namespace there won't be any name conflicts with names in other packages. Using
+packages, it is easier to provide access control and it is also easier to
+locate the related classes.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Creating a package:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>When creating a package, you should
+choose a name for the package and put a <b>package</b> statement with that name
+at the top of every source file that contains the classes, interfaces,
+enumerations, and annotation types that you want to include in the package.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The <b>package</b> statement should
+be the first line in the source file. There can be only one package statement
+in each source file, and it applies to all types in the file. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If a package statement is not used
+then the class, interfaces, enumerations, and annotation types will be put into
+an unnamed package.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Let us look at an example that
+creates a package called <b>animals</b>. It is common practice to use
+lowercased names of packages to avoid any conflicts with the names of classes,
+interfaces.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Put an interface in the package <i>animals</i>:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">/* File name : Animal.java */</span>
+<span style="color: #008000; font-weight: bold">package</span> animals<span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">interface</span> <span style="color: #0000FF; font-weight: bold">Animal</span> <span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">eat</span><span style="color: #666666">();</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">travel</span><span style="color: #666666">();</span>
+<span style="color: #666666">}</span>
+Now<span style="color: #666666">,</span> put an implementation in the same <span style="color: #008000; font-weight: bold">package</span> <span style="color: #A0A000">animals:</span>
+
+<span style="color: #008000; font-weight: bold">package</span> animals<span style="color: #666666">;</span>
+ 
+<span style="color: #408080; font-style: italic">/* File name : MammalInt.java */</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">MammalInt</span> <span style="color: #008000; font-weight: bold">implements</span> Animal<span style="color: #666666">{</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">eat</span><span style="color: #666666">(){</span>
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Mammal eats&quot;</span><span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">travel</span><span style="color: #666666">(){</span>
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Mammal travels&quot;</span><span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">int</span> <span style="color: #0000FF">noOfLegs</span><span style="color: #666666">(){</span>
+      <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">0;</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[]){</span>
+      MammalInt m <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> MammalInt<span style="color: #666666">();</span>
+      m<span style="color: #666666">.</span><span style="color: #7D9029">eat</span><span style="color: #666666">();</span>
+      m<span style="color: #666666">.</span><span style="color: #7D9029">travel</span><span style="color: #666666">();</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now, you compile these two files and
+put them in a sub-directory called <b>animals</b> and try to run as follows:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>$ <span class=SpellE><span class=GramE>mkdir</span></span> animals<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>$ <span class=SpellE><span class=GramE>cp</span></span> <span
+class=SpellE>Animal.class</span><span style='mso-spacerun:yes'>  </span><span
+class=SpellE>MammalInt.class</span> animals<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>$ <span class=GramE>java</span> animals/<span class=SpellE>MammalInt</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Mammal eats<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Mammal travels<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>The import Keyword:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If a class wants to use another
+class in the same package, the package name does not need to be used. Classes
+in the same package find each other without any special syntax.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here, a class named Boss is added to
+the payroll package that already contains Employee. The Boss can then refer to
+the Employee class without using the payroll prefix, as demonstrated by the
+following Boss class.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">package</span> payroll<span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Boss</span>
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">payEmployee</span><span style="color: #666666">(</span>Employee e<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      e<span style="color: #666666">.</span><span style="color: #7D9029">mailCheck</span><span style="color: #666666">();</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>What happens if Boss is not in the
+payroll package? The Boss class must then use one of the following techniques
+for referring to a class in a different package.<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l2 level1 lfo2;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>The fully qualified name of the class can be used. For
+     example:<o:p></o:p></span></li>
+</ul>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">payroll<span style="color: #666666">.</span><span style="color: #7D9029">Employee</span>
+</pre></div>
+
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>The package can be imported using the import keyword
+     and the wild card (*). For example:<o:p></o:p></span></li>
+</ul>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">payroll.*</span><span style="color: #666666">;</span>
+</pre></div>
+
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l7 level1 lfo4;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>The class itself can be imported using the import
+     keyword. For example:<o:p></o:p></span></li>
+</ul>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">payroll.Employee</span><span style="color: #666666">;</span>
+</pre></div>
+
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Note:</span></b><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'> A class file can contain any number of import statements. The
+import statements must appear after the package statement and before the class
+declaration.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>The Directory Structure of Packages:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Two major results occur when a class
+is placed in a package:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l6 level1 lfo5;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>The name of the package becomes a part of the name of
+     the class, as we just discussed in the previous section.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l6 level1 lfo5;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>The name of the package must match the directory
+     structure where the corresponding <span class=SpellE>bytecode</span>
+     resides.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here is simple way of managing your
+files in Java:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Put the source code for a class,
+interface, enumeration, or annotation type in a text file whose name is the
+simple name of the type and whose extension is <b>.java</b>. For example:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">// File Name :  Car.java</span>
+ 
+<span style="color: #008000; font-weight: bold">package</span> vehicle<span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Car</span> <span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">// Class implementation.  </span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now, put the source file in a directory
+whose name reflects the name of the package to which the class belongs:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">....</span><span style="border: 1px ">\</span>vehicle<span style="border: 1px ">\</span>Car<span style="color: #666666">.</span><span style="color: #7D9029">java</span>
+</pre></div>
+
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now, the qualified class name and
+pathname would be as below:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Class name -&gt; <span class=SpellE>vehicle.Car</span><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Path name -&gt; vehicle\Car.java (in windows)<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>In general, a company uses its
+reversed Internet domain name for its package names. Example: A company's
+Internet domain name is apple.com, then all its package names would start with <span
+class=SpellE>com.apple</span>. Each component of the package name corresponds
+to a subdirectory.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Example: The <span class=GramE>company</span>
+had a <span class=SpellE>com.apple.computers</span> package that contained a
+Dell.java source file, it would be contained in a series of subdirectories like
+this:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">....</span><span style="border: 1px ">\</span>com<span style="border: 1px ">\</span>apple<span style="border: 1px ">\</span>computers<span style="border: 1px ">\</span>Dell<span style="color: #666666">.</span><span style="color: #7D9029">java</span>
+</pre></div>
+
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>At the time of compilation, the
+compiler creates a different output file for each class, interface and
+enumeration defined in it. The base name of the output file is the name of the
+type, and its extension is <b>.class</b><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>For example:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">// File Name: Dell.java</span>
+ 
+<span style="color: #008000; font-weight: bold">package</span> com<span style="color: #666666">.</span><span style="color: #7D9029">apple</span><span style="color: #666666">.</span><span style="color: #7D9029">computers</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Dell</span><span style="color: #666666">{</span>
+     
+<span style="color: #666666">}</span>
+<span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Ups</span><span style="color: #666666">{</span>
+     
+<span style="color: #666666">}</span>
+</pre></div>
+
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now, compile this file as follows
+using -d option:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">$javac <span style="color: #666666">-</span>d <span style="color: #666666">.</span> Dell<span style="color: #666666">.</span><span style="color: #7D9029">java</span>
+</pre></div>
+
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would put compiled files as
+follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">.</span><span style="border: 1px ">\</span>com<span style="border: 1px ">\</span>apple<span style="border: 1px ">\</span>computers<span style="border: 1px ">\</span>Dell<span style="color: #666666">.</span><span style="color: #7D9029">class</span>
+<span style="color: #666666">.</span><span style="border: 1px ">\</span>com<span style="border: 1px ">\</span>apple<span style="border: 1px ">\</span>computers<span style="border: 1px ">\</span>Ups<span style="color: #666666">.</span><span style="color: #7D9029">class</span>
+</pre></div>
+
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You can import all the classes or
+interfaces defined in <i>\com\apple\computers\</i> as follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">com.apple.computers.*</span><span style="color: #666666">;</span>
+</pre></div>
+
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Like the .java source files, the
+compiled .class files should be in a series of directories that reflect the
+package name. However, the path to the .class files does not have to be the
+same as the path to the .java source files. You can arrange your source and
+class directories separately, as: <o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">&lt;</span>path<span style="color: #666666">-</span>one<span style="color: #666666">&gt;</span><span style="border: 1px ">\</span>sources<span style="border: 1px ">\</span>com<span style="border: 1px ">\</span>apple<span style="border: 1px ">\</span>computers<span style="border: 1px ">\</span>Dell<span style="color: #666666">.</span><span style="color: #7D9029">java</span>
+ 
+<span style="color: #666666">&lt;</span>path<span style="color: #666666">-</span>two<span style="color: #666666">&gt;</span><span style="border: 1px ">\</span>classes<span style="border: 1px ">\</span>com<span style="border: 1px ">\</span>apple<span style="border: 1px ">\</span>computers<span style="border: 1px ">\</span>Dell<span style="color: #666666">.</span><span style="color: #7D9029">class</span>
+</pre></div>
+
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>By doing this, it is possible to
+give the <span class=GramE>classes</span> directory to other programmers
+without revealing your sources. You also need to manage source and class files
+in this manner so that the compiler and the Java Virtual Machine (JVM) can find
+all the types your program uses. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The full path to the <span
+class=GramE>classes</span> directory, &lt;path-two&gt;\classes, is called the
+class path, and is set with the CLASSPATH system variable. Both the compiler
+and the JVM construct the path to your .class files by adding the package name
+to the class path.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Say &lt;path-two&gt;\classes is the
+class path, and the package name is <span class=SpellE>com.apple.computers</span>,
+then the compiler and JVM will look for .class files in
+&lt;path-two&gt;\classes\com\apple\<span class=SpellE>compters</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A class path may include several
+paths. Multiple paths should be separated by a semicolon (Windows) or colon (<span
+class=GramE>Unix</span>). By default, the compiler and the JVM search the
+current directory and the JAR file containing the Java platform classes so that
+these directories are automatically in the class path.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Set CLASSPATH System Variable:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To display the current CLASSPATH
+variable, use the following commands in Windows and UNIX (Bourne shell): <o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo7;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>In Windows -&gt; C:\&gt; set CLASSPATH<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo7;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>In UNIX -&gt; % echo $CLASSPATH<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To delete the current contents of
+the CLASSPATH variable, <span class=GramE>use :</span><o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l8 level1 lfo8;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>In Windows -&gt; C:\&gt; set CLASSPATH=<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l8 level1 lfo8;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>In UNIX -&gt; % unset CLASSPATH; export CLASSPATH<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To set the CLASSPATH variable: <o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l5 level1 lfo9;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>In Windows -&gt; set
+     CLASSPATH=C:\users\jack\java\classes<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l5 level1 lfo9;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>In UNIX -&gt; % CLASSPATH=/home/jack/java/classes;
+     export CLASSPATH<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

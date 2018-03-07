@@ -1,0 +1,341 @@
+<html>
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Android Phone Calls<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>As such every Android Device especially
+Mobile phone is meant to provide a functionality to make a phone call but still
+you may need to write an application where you want to give an option to your
+user to make a call using a hard coded phone number.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This chapter lists down all the
+simple steps to create an application which can be used to make a Phone Call.
+You can use Android Intent to make phone call by calling built-in Phone Call
+functionality of the Android. Following section explains different parts of our
+Intent object required to make a call.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Intent Object - Action to make Phone Call<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You will use <b>ACTION_CALL</b>
+action to trigger built-in phone call functionality available in Android
+device. Following is simple syntax to create an intent with ACTION_CALL action<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">Intent phoneIntent <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Intent<span style="color: #666666">(</span>Intent<span style="color: #666666">.</span><span style="color: #7D9029">ACTION_CALL</span><span style="color: #666666">);</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You can use <b>ACTION_DIAL</b>
+action instead of ACTION_CALL, in that case you will have option to modify
+hardcoded phone number before making a call instead of making a direct call.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Intent Object - Data/Type to make Phone Call<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To make a phone call at a given
+number 91-800-001-0101, you need to specify <span class=SpellE><b>tel</b></span><b>:</b>
+as URI using <span class=SpellE><span class=GramE>setData</span></span><span
+class=GramE>(</span>) method as follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">phoneIntent<span style="color: #666666">.</span><span style="color: #7D9029">setData</span><span style="color: #666666">(</span>Uri<span style="color: #666666">.</span><span style="color: #7D9029">parse</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;tel:91-800-001-0101&quot;</span><span style="color: #666666">));</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The interesting point is that, to
+make a phone call, you do not need to specify any extra data or data type.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following example shows you in
+practical how to use Android Intent to make phone call to the given mobile
+number.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>To experiment with this example, you will need actual Mobile
+device equipped with latest Android OS, otherwise you will have to struggle
+with emulator which may not work.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Step<o:p></o:p></span></b></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>You will use Eclipse IDE to create
+  an Android application and name it as <span class=SpellE><i>PhoneCallDemo</i></span>
+  under a package <span class=SpellE><i>com.example.phonecalldemo</i></span>.
+  While creating this project, make sure you <i>Target SDK</i> and <i>Compile
+  With</i> at the latest version of Android SDK to use higher levels of APIs.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>2<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify <span class=SpellE><i>src</i></span><i>/MainActivity.java</i>
+  file and add required code to take care of making a call.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>3<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify layout XML file <i>res/layout/activity_main.xml</i>
+  add any GUI component if required. I'm adding a simple button to Call
+  91-800-001-0101 number<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>4<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify <i>res/values/strings.xml</i>
+  to define required constant values<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>5<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify <i>AndroidManifest.xml</i>
+  as shown below<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>6<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Run the application to launch
+  Android emulator and verify the result of the changes done in the <span
+  class=SpellE>aplication</span>.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the content of the
+modified main activity file <span class=SpellE><b>src</b></span><b>/<span
+class=SpellE>com.example.phonecalldemo</span>/MainActivity.java</b>.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">package</span> com<span style="color: #666666">.</span><span style="color: #7D9029">example</span><span style="color: #666666">.</span><span style="color: #7D9029">phonecalldemo</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.net.Uri</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.os.Bundle</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.Activity</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.content.Intent</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.util.Log</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.Menu</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.View</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.widget.Button</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.widget.Toast</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">MainActivity</span> <span style="color: #008000; font-weight: bold">extends</span> Activity <span style="color: #666666">{</span>
+ 
+   <span style="color: #AA22FF">@Override</span>
+   <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onCreate</span><span style="color: #666666">(</span>Bundle savedInstanceState<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onCreate</span><span style="color: #666666">(</span>savedInstanceState<span style="color: #666666">);</span>
+      setContentView<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">layout</span><span style="color: #666666">.</span><span style="color: #7D9029">activity_main</span><span style="color: #666666">);</span>
+ 
+      Button startBtn <span style="color: #666666">=</span> <span style="color: #666666">(</span>Button<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">makeCall</span><span style="color: #666666">);</span>
+      startBtn<span style="color: #666666">.</span><span style="color: #7D9029">setOnClickListener</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> View<span style="color: #666666">.</span><span style="color: #7D9029">OnClickListener</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+         <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onClick</span><span style="color: #666666">(</span>View view<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+         makeCall<span style="color: #666666">();</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">});</span>
+ 
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">makeCall</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+      Log<span style="color: #666666">.</span><span style="color: #7D9029">i</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Make call&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;&quot;</span><span style="color: #666666">);</span>
+ 
+      Intent phoneIntent <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Intent<span style="color: #666666">(</span>Intent<span style="color: #666666">.</span><span style="color: #7D9029">ACTION_CALL</span><span style="color: #666666">);</span>
+      phoneIntent<span style="color: #666666">.</span><span style="color: #7D9029">setData</span><span style="color: #666666">(</span>Uri<span style="color: #666666">.</span><span style="color: #7D9029">parse</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;tel:91-800-001-0101&quot;</span><span style="color: #666666">));</span>
+ 
+      <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">{</span>
+         startActivity<span style="color: #666666">(</span>phoneIntent<span style="color: #666666">);</span>
+         finish<span style="color: #666666">();</span>
+         Log<span style="color: #666666">.</span><span style="color: #7D9029">i</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Finished making a call...&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>android<span style="color: #666666">.</span><span style="color: #7D9029">content</span><span style="color: #666666">.</span><span style="color: #7D9029">ActivityNotFoundException</span> ex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+         Toast<span style="color: #666666">.</span><span style="color: #7D9029">makeText</span><span style="color: #666666">(</span>MainActivity<span style="color: #666666">.</span><span style="color: #7D9029">this</span><span style="color: #666666">,</span>
+         <span style="color: #BA2121">&quot;Call faild, please try again later.&quot;</span><span style="color: #666666">,</span> Toast<span style="color: #666666">.</span><span style="color: #7D9029">LENGTH_SHORT</span><span style="color: #666666">).</span><span style="color: #7D9029">show</span><span style="color: #666666">();</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #AA22FF">@Override</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">boolean</span> <span style="color: #0000FF">onCreateOptionsMenu</span><span style="color: #666666">(</span>Menu menu<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+      <span style="color: #408080; font-style: italic">// Inflate the menu; this adds items to the action bar if it is present.</span>
+      getMenuInflater<span style="color: #666666">().</span><span style="color: #7D9029">inflate</span><span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">menu</span><span style="color: #666666">.</span><span style="color: #7D9029">main</span><span style="color: #666666">,</span> menu<span style="color: #666666">);</span>
+      <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following will be the content of <b>res/layout/activity_main.xml</b>
+file:<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">&lt;LinearLayout</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:orientation=</span><span style="color: #BA2121">&quot;vertical&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+ 
+   <span style="color: #008000; font-weight: bold">&lt;Button</span> <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/makeCall&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+   <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;@string/make_call&quot;</span><span style="color: #008000; font-weight: bold">/&gt;</span>
+   
+<span style="color: #008000; font-weight: bold">&lt;/LinearLayout&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following will be the content of <b>res/values/strings.xml</b>
+to define two new constants:<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;resources&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;app_name&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>PhoneCallDemo<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;hello_world&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Hello world!<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;action_settings&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Settings<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;make_call&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Call 91-800-001-0101<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+ 
+<span style="color: #008000; font-weight: bold">&lt;/resources&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the default content of <b>AndroidManifest.xml</b>:<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;manifest</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span style="color: #7D9029">package=</span><span style="color: #BA2121">&quot;com.example.phonecalldemo&quot;</span>
+    <span style="color: #7D9029">android:versionCode=</span><span style="color: #BA2121">&quot;1&quot;</span>
+    <span style="color: #7D9029">android:versionName=</span><span style="color: #BA2121">&quot;1.0&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;uses-sdk</span>
+        <span style="color: #7D9029">android:minSdkVersion=</span><span style="color: #BA2121">&quot;8&quot;</span>
+        <span style="color: #7D9029">android:targetSdkVersion=</span><span style="color: #BA2121">&quot;17&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;uses-permission</span> <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;android.permission.CALL_PHONE&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;uses-permission</span> <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;android.permission.READ_PHONE_STATE&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;application</span>
+        <span style="color: #7D9029">android:allowBackup=</span><span style="color: #BA2121">&quot;true&quot;</span>
+        <span style="color: #7D9029">android:icon=</span><span style="color: #BA2121">&quot;@drawable/ic_launcher&quot;</span>
+        <span style="color: #7D9029">android:label=</span><span style="color: #BA2121">&quot;@string/app_name&quot;</span>
+        <span style="color: #7D9029">android:theme=</span><span style="color: #BA2121">&quot;@style/AppTheme&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+        <span style="color: #008000; font-weight: bold">&lt;activity</span>
+            <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;com.example.phonecalldemo.MainActivity&quot;</span>
+            <span style="color: #7D9029">android:label=</span><span style="color: #BA2121">&quot;@string/app_name&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+            <span style="color: #008000; font-weight: bold">&lt;intent-filter&gt;</span>
+                <span style="color: #008000; font-weight: bold">&lt;action</span> <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;android.intent.action.MAIN&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+                <span style="color: #008000; font-weight: bold">&lt;category</span> <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;android.intent.category.LAUNCHER&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+            <span style="color: #008000; font-weight: bold">&lt;/intent-filter&gt;</span>
+        <span style="color: #008000; font-weight: bold">&lt;/activity&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;/application&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/manifest&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;mso-bidi-font-size:14.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Let's
+try to run your <span class=SpellE><b>PhoneCallDemo</b></span> application. I
+assume you have connected your actual Android Mobile device with your computer.
+To run the app from Eclipse, open one of your project's activity files and
+click Run icon from the toolbar. Before starting your application, Eclipse will
+display following window to select an option where you want to run your Android
+application.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span class=SpellE><span style='font-size:12.0pt;
+mso-bidi-font-size:14.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Selct</span></span><span style='font-size:12.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+your mobile device as an option and then check your mobile device which will
+display following screen:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;mso-bidi-font-size:14.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Now
+use <b>Call 91942-347-6192 </b>button to make phone call.<o:p></o:p></span></p>
+</div>
+
+</body>
+
+</html>

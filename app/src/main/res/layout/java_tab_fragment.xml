@@ -1,0 +1,614 @@
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                   android:id="@+id/txt_java_overview"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Overview"
+                   android:textSize="19sp"
+                   android:textColor="@color/textblack"
+                   android:padding="15dp" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_java_environment_setup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Environment Setup"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_history_of_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="History of Java"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_java_what_is_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="What is Java"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+               <TextView
+                    android:id="@+id/txt_features_of_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Features of java"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_java_difference_between_JDK_JRE_JVM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Difference between JDK,JRE and JVM"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_java_JVM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Java JVM (Java Virtual Machine)"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_java_basic_syntax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Basic Syntax"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/txt_java_objects_an_classes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Objects and Classes"
+                android:textSize="19sp"
+                android:textColor="@color/textblack"
+                android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_java_basic_data_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Basic Data Types"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_java_variable_types"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Variable Types"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_java_modifier_types"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="modifier Types"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_java_basic_operators"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Basic Operators"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_java_loops"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Loops"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_java_decision_making"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Decision Making"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_numbers_class_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Numbers Class"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_character_class_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Character Class"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_strings_class_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Strings Class"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_arrays_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Arrays"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_date_and_time_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date and Time"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_regular_expressions_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Regular Expressions"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_java_methods"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Methods"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_streams_files_and_io_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Streams Files and I/O"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_exceptions_handling_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Exceptions Handling"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_inheritance_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Inheritance"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_overriding_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Overriding"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_polymorphism_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Polymorphism"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_abstraction_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Abstraction"
+                    android:textSize="19dp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_encapsulation_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Encapsulation"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_interfaces_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Interfaces"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_packages_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Packages"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_data_structures_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Data Structures"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view33"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_collections_framework_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Collections Framework"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_generics_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" Generics"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                 android:id="@+id/card_view35"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_serialization_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Serialization"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_networking_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Networking"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view37"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_sending_mail_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sending Email"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_multithreading_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Multithreading"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view39"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/txt_applet_basics_in_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Applet Basics"
+                    android:textSize="19sp"
+                    android:textColor="@color/textblack"
+                    android:padding="15dp"/>
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view40"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/txt_documentation_comments"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Documentation Comment"
+                        android:textSize="19sp"
+                        android:textColor="@color/textblack"
+                        android:padding="15dp"/>
+                </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+

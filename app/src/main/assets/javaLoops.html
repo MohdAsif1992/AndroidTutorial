@@ -1,0 +1,705 @@
+<html>
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Java Loops - for, while and
+do...while<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>There may be a situation when we
+need to execute a block of code several number of times, and is often referred
+to as a loop. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Java has very flexible three looping
+mechanisms. You can use one of the following three loops:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>while Loop<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>do...while Loop<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>for Loop<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>As of Java 5, the <i>enhanced for
+loop</i> was introduced. This is mainly used for Arrays.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>The while Loop:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A while loop is a control structure
+that allows you to repeat a task a certain number of times.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Syntax:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The syntax of a while loop is:<o:p></o:p></span></p>
+
+<!--  -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">while</span><span style="color: #666666">(</span>Boolean_expression<span style="color: #666666">)</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Statements</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>When executing, if the <span
+class=SpellE><i>boolean_expression</i></span> result is true, then the actions
+inside the loop will be executed. This will continue as long as the expression
+result is true.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here, key point of the <i>while</i>
+loop is that the loop might not ever run. When the expression is tested and the
+result is false, the loop body will be skipped and the first statement after
+the while loop will be executed.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<!--  -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Test</span> <span style="color: #666666">{</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[])</span> <span style="color: #666666">{</span>
+      <span style="color: #B00040">int</span> x <span style="color: #666666">=</span> <span style="color: #666666">10;</span>
+ 
+      <span style="color: #008000; font-weight: bold">while</span><span style="color: #666666">(</span> x <span style="color: #666666">&lt;</span> <span style="color: #666666">20</span> <span style="color: #666666">)</span> <span style="color: #666666">{</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;value of x : &quot;</span> <span style="color: #666666">+</span> x <span style="color: #666666">);</span>
+         x<span style="color: #666666">++;</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;\n&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 10<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 11<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 12<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 13<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 14<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 15<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 16<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 17<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 18<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 19<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>The do...while Loop:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A do...while loop is similar to a
+while loop, except that a do...while loop is guaranteed to execute at least one
+time.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Syntax:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The syntax of a do...while loop is:<o:p></o:p></span></p>
+
+<!--  -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">do</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Statements</span>
+<span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">while</span><span style="color: #666666">(</span>Boolean_expression<span style="color: #666666">);</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Notice that the Boolean expression
+appears at the end of the loop, so the statements in the loop execute once
+before the Boolean is tested.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If the Boolean expression is true,
+the flow of control jumps back up to do, and the statements in the loop execute
+again. This process repeats until the Boolean expression is false.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<!--  -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Test</span> <span style="color: #666666">{</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[]){</span>
+      <span style="color: #B00040">int</span> x <span style="color: #666666">=</span> <span style="color: #666666">10;</span>
+ 
+      <span style="color: #008000; font-weight: bold">do</span><span style="color: #666666">{</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;value of x : &quot;</span> <span style="color: #666666">+</span> x <span style="color: #666666">);</span>
+         x<span style="color: #666666">++;</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;\n&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">while</span><span style="color: #666666">(</span> x <span style="color: #666666">&lt;</span> <span style="color: #666666">20</span> <span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 10<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 11<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 12<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 13<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 14<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 15<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 16<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 17<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 18<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 19<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><span class=GramE><b><span
+style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The for</span></b></span><b><span
+style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'> Loop:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A for loop is a repetition control
+structure that allows you to efficiently write a loop that needs to execute a
+specific number of times.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A for loop is useful when you know
+how many times a task is to be repeated.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Syntax:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The syntax of <span class=GramE>a
+for</span> loop is:<o:p></o:p></span></p>
+
+<!--  -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">for</span><span style="color: #666666">(</span>initialization<span style="color: #666666">;</span> Boolean_expression<span style="color: #666666">;</span> update<span style="color: #666666">)</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Statements</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here is the flow of control in and for
+loop:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo2;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>The initialization step is executed first, and only
+     once. This step allows you to declare and initialize any loop control
+     variables. You are not required to put a statement here, as long as a
+     semicolon appears.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo2;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Next, the Boolean expression is evaluated. If it is
+     true, the body of the loop is executed. If it is false, the body of the
+     loop does not execute and flow of control jumps to the next statement past
+     <span class=GramE>the for</span> loop.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo2;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>After the body of <span class=GramE>the for</span> loop
+     executes, the flow of control jumps back up to the update statement. This
+     statement allows you to update any loop control variables. This statement
+     can be left blank, as long as a semicolon appears after the Boolean expression.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo2;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>The Boolean expression is now evaluated again. If it is
+     true, the loop executes and the process repeats itself (body of loop, then
+     update step, then Boolean expression). After the Boolean expression is
+     false, <span class=GramE>the for</span> loop terminates.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<!--  -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Test</span> <span style="color: #666666">{</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[])</span> <span style="color: #666666">{</span>
+ 
+      <span style="color: #008000; font-weight: bold">for</span><span style="color: #666666">(</span><span style="color: #B00040">int</span> x <span style="color: #666666">=</span> <span style="color: #666666">10;</span> x <span style="color: #666666">&lt;</span> <span style="color: #666666">20;</span> x <span style="color: #666666">=</span> x<span style="color: #666666">+1)</span> <span style="color: #666666">{</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;value of x : &quot;</span> <span style="color: #666666">+</span> x <span style="color: #666666">);</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;\n&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 10<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 11<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 12<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 13<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 14<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 15<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 16<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 17<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 18<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>value</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+of x : 19<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Enhanced for loop in Java:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>As of Java 5, the enhanced for loop
+was introduced. This is mainly used for Arrays.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Syntax:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The syntax of enhanced for loop is:<o:p></o:p></span></p>
+
+<!--  -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">for</span><span style="color: #666666">(</span>declaration <span style="color: #666666">:</span> expression<span style="color: #666666">)</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Statements</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l2 level1 lfo3;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Declaration:</span></b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     The newly declared block variable, which is of a type compatible with the
+     elements of the array you are accessing. The variable will be available
+     within <span class=GramE>the for</span> block and its value would be the
+     same as the current array element.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l2 level1 lfo3;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Expression:</span></b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     This evaluates to the array you need to loop through. The expression can
+     be an array variable or method call that returns an array.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Test</span> <span style="color: #666666">{</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[]){</span>
+      <span style="color: #B00040">int</span> <span style="color: #666666">[]</span> numbers <span style="color: #666666">=</span> <span style="color: #666666">{10,</span> <span style="color: #666666">20,</span> <span style="color: #666666">30,</span> <span style="color: #666666">40,</span> <span style="color: #666666">50};</span>
+ 
+      <span style="color: #008000; font-weight: bold">for</span><span style="color: #666666">(</span><span style="color: #B00040">int</span> x <span style="color: #666666">:</span> numbers <span style="color: #666666">){</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span> x <span style="color: #666666">);</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;,&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;\n&quot;</span><span style="color: #666666">);</span>
+      String <span style="color: #666666">[]</span> names <span style="color: #666666">={</span><span style="color: #BA2121">&quot;James&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Larry&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Tom&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Lacy&quot;</span><span style="color: #666666">};</span>
+      <span style="color: #008000; font-weight: bold">for</span><span style="color: #666666">(</span> String name <span style="color: #666666">:</span> names <span style="color: #666666">)</span> <span style="color: #666666">{</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span> name <span style="color: #666666">);</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;,&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>10<span class=GramE>,20,30,40,50</span>,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=SpellE><span style='font-size:12.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:red'>James<span class=GramE>,Larry,Tom,Lacy</span></span></span><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>The break Keyword:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The <i>break</i> keyword is used to
+stop the entire loop. The break keyword must be used inside any loop or a
+switch statement.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The break keyword will stop the
+execution of the innermost loop and start executing the next line of code after
+the block.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Syntax:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The syntax of a break is a single
+statement inside any loop:<o:p></o:p></span></p>
+
+<!--  -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Test</span> <span style="color: #666666">{</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[])</span> <span style="color: #666666">{</span>
+      <span style="color: #B00040">int</span> <span style="color: #666666">[]</span> numbers <span style="color: #666666">=</span> <span style="color: #666666">{10,</span> <span style="color: #666666">20,</span> <span style="color: #666666">30,</span> <span style="color: #666666">40,</span> <span style="color: #666666">50};</span>
+ 
+      <span style="color: #008000; font-weight: bold">for</span><span style="color: #666666">(</span><span style="color: #B00040">int</span> x <span style="color: #666666">:</span> numbers <span style="color: #666666">)</span> <span style="color: #666666">{</span>
+         <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span> x <span style="color: #666666">==</span> <span style="color: #666666">30</span> <span style="color: #666666">)</span> <span style="color: #666666">{</span>
+              <span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+         <span style="color: #666666">}</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span> x <span style="color: #666666">);</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;\n&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>10<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>20<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>The continue Keyword:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The <i>continue</i> keyword can be
+used in any of the loop control structures. It causes the loop to immediately
+jump to the next iteration of the loop.<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo4;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>In <span class=GramE>a for</span> loop, the continue
+     keyword causes flow of control to immediately jump to the update
+     statement.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo4;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>In a while loop or do/while loop, flow of control
+     immediately jumps to the Boolean expression.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Syntax:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The syntax of <span class=GramE>a
+continue</span> is a single statement inside any loop:<o:p></o:p></span></p>
+
+<!--  -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">continue</span><span style="color: #666666">;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Test</span> <span style="color: #666666">{</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[])</span> <span style="color: #666666">{</span>
+      <span style="color: #B00040">int</span> <span style="color: #666666">[]</span> numbers <span style="color: #666666">=</span> <span style="color: #666666">{10,</span> <span style="color: #666666">20,</span> <span style="color: #666666">30,</span> <span style="color: #666666">40,</span> <span style="color: #666666">50};</span>
+ 
+      <span style="color: #008000; font-weight: bold">for</span><span style="color: #666666">(</span><span style="color: #B00040">int</span> x <span style="color: #666666">:</span> numbers <span style="color: #666666">)</span> <span style="color: #666666">{</span>
+         <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span> x <span style="color: #666666">==</span> <span style="color: #666666">30</span> <span style="color: #666666">)</span> <span style="color: #666666">{</span>
+              <span style="color: #008000; font-weight: bold">continue</span><span style="color: #666666">;</span>
+         <span style="color: #666666">}</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span> x <span style="color: #666666">);</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;\n&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>10<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>20<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>40<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>50<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

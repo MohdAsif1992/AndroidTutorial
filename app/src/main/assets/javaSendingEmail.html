@@ -1,0 +1,396 @@
+<html >
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Java Sending Email<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To send an e-mail using your Java
+Application is simple enough but to start with you should have <span
+class=SpellE><b>JavaMail</b></span><b> API</b> and <b>Java Activation Framework
+(JAF)</b> installed on your machine.<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>You can download latest version of </span><span
+     style='font-size:12.0pt'><a href="http://java.sun.com/products/javamail/"
+     target="_blank"><span class=SpellE><span style='font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>JavaMail</span></span><span
+     style='font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     (Version 1.2)</span></a></span><span style='font-size:12.0pt;font-family:
+     "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'> from
+     Java's standard website.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>You can download latest version of </span><span
+     style='font-size:12.0pt'><a
+     href="http://java.sun.com/products/javabeans/glasgow/jaf.html"
+     target="_blank"><span style='font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>JAF (Version 1.1.1)</span></a></span><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'> from Java's standard website.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Download and unzip these files, in
+the newly created top level directories you will find a number of jar files for
+both the applications. You need to add <b>mail.jar</b> and <b>activation.jar</b>
+files in your CLASSPATH.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Send a Simple E-mail:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here is an example to send a simple
+e-mail from your machine. Here it is assumed that your <span class=SpellE><b>localhost</b></span><b>
+</b>is connected to the internet and capable enough to send an email.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">// File Name SendEmail.java</span>
+ 
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.util.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">javax.mail.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">javax.mail.internet.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">javax.activation.*</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">SendEmail</span>
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String <span style="color: #666666">[]</span> args<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>   
+      <span style="color: #408080; font-style: italic">// Recipient&#39;s email ID needs to be mentioned.</span>
+      String to <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;abcd@gmail.com&quot;</span><span style="color: #666666">;</span>
+ 
+      <span style="color: #408080; font-style: italic">// Sender&#39;s email ID needs to be mentioned</span>
+      String from <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;web@gmail.com&quot;</span><span style="color: #666666">;</span>
+ 
+      <span style="color: #408080; font-style: italic">// Assuming you are sending email from localhost</span>
+      String host <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;localhost&quot;</span><span style="color: #666666">;</span>
+ 
+      <span style="color: #408080; font-style: italic">// Get system properties</span>
+      Properties properties <span style="color: #666666">=</span> System<span style="color: #666666">.</span><span style="color: #7D9029">getProperties</span><span style="color: #666666">();</span>
+ 
+      <span style="color: #408080; font-style: italic">// Setup mail server</span>
+      properties<span style="color: #666666">.</span><span style="color: #7D9029">setProperty</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;mail.smtp.host&quot;</span><span style="color: #666666">,</span> host<span style="color: #666666">);</span>
+ 
+      <span style="color: #408080; font-style: italic">// Get the default Session object.</span>
+      Session session <span style="color: #666666">=</span> Session<span style="color: #666666">.</span><span style="color: #7D9029">getDefaultInstance</span><span style="color: #666666">(</span>properties<span style="color: #666666">);</span>
+ 
+      <span style="color: #008000; font-weight: bold">try</span><span style="color: #666666">{</span>
+         <span style="color: #408080; font-style: italic">// Create a default MimeMessage object.</span>
+         MimeMessage message <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> MimeMessage<span style="color: #666666">(</span>session<span style="color: #666666">);</span>
+ 
+         <span style="color: #408080; font-style: italic">// Set From: header field of the header.</span>
+         message<span style="color: #666666">.</span><span style="color: #7D9029">setFrom</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> InternetAddress<span style="color: #666666">(</span>from<span style="color: #666666">));</span>
+ 
+         <span style="color: #408080; font-style: italic">// Set To: header field of the header.</span>
+         message<span style="color: #666666">.</span><span style="color: #7D9029">addRecipient</span><span style="color: #666666">(</span>Message<span style="color: #666666">.</span><span style="color: #7D9029">RecipientType</span><span style="color: #666666">.</span><span style="color: #7D9029">TO</span><span style="color: #666666">,</span>
+                                  <span style="color: #008000; font-weight: bold">new</span> <span style="color: #0000FF">InternetAddress</span><span style="color: #666666">(</span>to<span style="color: #666666">));</span>
+ 
+         <span style="color: #408080; font-style: italic">// Set Subject: header field</span>
+         message<span style="color: #666666">.</span><span style="color: #7D9029">setSubject</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;This is the Subject Line!&quot;</span><span style="color: #666666">);</span>
+ 
+         <span style="color: #408080; font-style: italic">// Now set the actual message</span>
+         message<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;This is actual message&quot;</span><span style="color: #666666">);</span>
+ 
+         <span style="color: #408080; font-style: italic">// Send message</span>
+         Transport<span style="color: #666666">.</span><span style="color: #7D9029">send</span><span style="color: #666666">(</span>message<span style="color: #666666">);</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Sent message successfully....&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>MessagingException mex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+         mex<span style="color: #666666">.</span><span style="color: #7D9029">printStackTrace</span><span style="color: #666666">();</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Compile and run this program to send
+a simple e-mail:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>$ <span class=GramE>java</span> <span class=SpellE>SendEmail</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Sent message successfully....<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If you want to send an e-mail to
+multiple recipients then following methods would be used to specify multiple
+e-mail IDs:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #B00040">void</span> <span style="color: #0000FF">addRecipients</span><span style="color: #666666">(</span>Message<span style="color: #666666">.</span><span style="color: #7D9029">RecipientType</span> type<span style="color: #666666">,</span>
+                   Address<span style="color: #666666">[]</span> addresses<span style="color: #666666">)</span>
+<span style="color: #008000; font-weight: bold">throws</span> MessagingException
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here is the description of the
+parameters:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>type</span></b></span><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>:</span></b><span style='font-size:12.0pt;font-family:
+     "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'> This
+     would be set to <span class=SpellE>TO</span>, CC or BCC. Here CC
+     represents Carbon Copy and BCC represents Black Carbon Copy. Example <i>Message.RecipientType.TO</i><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>addresses</span></b></span><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>:</span></b><span style='font-size:12.0pt;font-family:
+     "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'> This
+     is the array of email ID. You would need to use <span class=SpellE>InternetAddress</span>()
+     method while specifying email IDs<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Send an HTML E-mail:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here is an example to send an HTML
+email from your machine. Here it is assumed that your <span class=SpellE><b>localhost</b></span><b>
+</b>is connected to the internet and capable enough to send an email.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This example is very similar to
+previous one, except here we are using <span class=SpellE><span class=GramE>setContent</span></span><span
+class=GramE>(</span>) method to set content whose second argument is
+&quot;text/html&quot; to specify that the HTML content is included in the
+message.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Using this example, you can send as
+big as HTML content you like.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">// File Name SendHTMLEmail.java</span>
+ 
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.util.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">javax.mail.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">javax.mail.internet.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">javax.activation.*</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">SendHTMLEmail</span>
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String <span style="color: #666666">[]</span> args<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+     
+      <span style="color: #408080; font-style: italic">// Recipient&#39;s email ID needs to be mentioned.</span>
+      String to <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;abcd@gmail.com&quot;</span><span style="color: #666666">;</span>
+ 
+      <span style="color: #408080; font-style: italic">// Sender&#39;s email ID needs to be mentioned</span>
+      String from <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;web@gmail.com&quot;</span><span style="color: #666666">;</span>
+ 
+      <span style="color: #408080; font-style: italic">// Assuming you are sending email from localhost</span>
+      String host <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;localhost&quot;</span><span style="color: #666666">;</span>
+ 
+      <span style="color: #408080; font-style: italic">// Get system properties</span>
+      Properties properties <span style="color: #666666">=</span> System<span style="color: #666666">.</span><span style="color: #7D9029">getProperties</span><span style="color: #666666">();</span>
+ 
+      <span style="color: #408080; font-style: italic">// Setup mail server</span>
+      properties<span style="color: #666666">.</span><span style="color: #7D9029">setProperty</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;mail.smtp.host&quot;</span><span style="color: #666666">,</span> host<span style="color: #666666">);</span>
+ 
+      <span style="color: #408080; font-style: italic">// Get the default Session object.</span>
+      Session session <span style="color: #666666">=</span> Session<span style="color: #666666">.</span><span style="color: #7D9029">getDefaultInstance</span><span style="color: #666666">(</span>properties<span style="color: #666666">);</span>
+ 
+      <span style="color: #008000; font-weight: bold">try</span><span style="color: #666666">{</span>
+         <span style="color: #408080; font-style: italic">// Create a default MimeMessage object.</span>
+         MimeMessage message <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> MimeMessage<span style="color: #666666">(</span>session<span style="color: #666666">);</span>
+ 
+         <span style="color: #408080; font-style: italic">// Set From: header field of the header.</span>
+         message<span style="color: #666666">.</span><span style="color: #7D9029">setFrom</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> InternetAddress<span style="color: #666666">(</span>from<span style="color: #666666">));</span>
+ 
+         <span style="color: #408080; font-style: italic">// Set To: header field of the header.</span>
+         message<span style="color: #666666">.</span><span style="color: #7D9029">addRecipient</span><span style="color: #666666">(</span>Message<span style="color: #666666">.</span><span style="color: #7D9029">RecipientType</span><span style="color: #666666">.</span><span style="color: #7D9029">TO</span><span style="color: #666666">,</span>
+                                  <span style="color: #008000; font-weight: bold">new</span> <span style="color: #0000FF">InternetAddress</span><span style="color: #666666">(</span>to<span style="color: #666666">));</span>
+ 
+         <span style="color: #408080; font-style: italic">// Set Subject: header field</span>
+         message<span style="color: #666666">.</span><span style="color: #7D9029">setSubject</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;This is the Subject Line!&quot;</span><span style="color: #666666">);</span>
+ 
+         <span style="color: #408080; font-style: italic">// Send the actual HTML message, as big as you like</span>
+         message<span style="color: #666666">.</span><span style="color: #7D9029">setContent</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;&lt;h1&gt;This is actual message&lt;/h1&gt;&quot;</span><span style="color: #666666">,</span>
+                            <span style="color: #BA2121">&quot;text/html&quot;</span> <span style="color: #666666">);</span>
+ 
+         <span style="color: #408080; font-style: italic">// Send message</span>
+         Transport<span style="color: #666666">.</span><span style="color: #7D9029">send</span><span style="color: #666666">(</span>message<span style="color: #666666">);</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Sent message successfully....&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>MessagingException mex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+         mex<span style="color: #666666">.</span><span style="color: #7D9029">printStackTrace</span><span style="color: #666666">();</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Compile and run this program to send
+an HTML e-mail:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>$ <span class=GramE>java</span> <span class=SpellE>SendHTMLEmail</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Sent message successfully....<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Send Attachment in E-mail:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here is an example to send an email
+with attachment from your machine. Here it is assumed that your <span
+class=SpellE><b>localhost</b></span><b> </b>is connected to the internet and
+capable enough to send an email.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">// File Name SendFileEmail.java</span>
+ 
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.util.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">javax.mail.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">javax.mail.internet.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">javax.activation.*</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">SendFileEmail</span>
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String <span style="color: #666666">[]</span> args<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+     
+      <span style="color: #408080; font-style: italic">// Recipient&#39;s email ID needs to be mentioned.</span>
+      String to <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;abcd@gmail.com&quot;</span><span style="color: #666666">;</span>
+ 
+      <span style="color: #408080; font-style: italic">// Sender&#39;s email ID needs to be mentioned</span>
+      String from <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;web@gmail.com&quot;</span><span style="color: #666666">;</span>
+ 
+      <span style="color: #408080; font-style: italic">// Assuming you are sending email from localhost</span>
+      String host <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;localhost&quot;</span><span style="color: #666666">;</span>
+ 
+      <span style="color: #408080; font-style: italic">// Get system properties</span>
+      Properties properties <span style="color: #666666">=</span> System<span style="color: #666666">.</span><span style="color: #7D9029">getProperties</span><span style="color: #666666">();</span>
+ 
+      <span style="color: #408080; font-style: italic">// Setup mail server</span>
+      properties<span style="color: #666666">.</span><span style="color: #7D9029">setProperty</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;mail.smtp.host&quot;</span><span style="color: #666666">,</span> host<span style="color: #666666">);</span>
+ 
+      <span style="color: #408080; font-style: italic">// Get the default Session object.</span>
+      Session session <span style="color: #666666">=</span> Session<span style="color: #666666">.</span><span style="color: #7D9029">getDefaultInstance</span><span style="color: #666666">(</span>properties<span style="color: #666666">);</span>
+ 
+      <span style="color: #008000; font-weight: bold">try</span><span style="color: #666666">{</span>
+         <span style="color: #408080; font-style: italic">// Create a default MimeMessage object.</span>
+         MimeMessage message <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> MimeMessage<span style="color: #666666">(</span>session<span style="color: #666666">);</span>
+ 
+         <span style="color: #408080; font-style: italic">// Set From: header field of the header.</span>
+         message<span style="color: #666666">.</span><span style="color: #7D9029">setFrom</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> InternetAddress<span style="color: #666666">(</span>from<span style="color: #666666">));</span>
+ 
+         <span style="color: #408080; font-style: italic">// Set To: header field of the header.</span>
+         message<span style="color: #666666">.</span><span style="color: #7D9029">addRecipient</span><span style="color: #666666">(</span>Message<span style="color: #666666">.</span><span style="color: #7D9029">RecipientType</span><span style="color: #666666">.</span><span style="color: #7D9029">TO</span><span style="color: #666666">,</span>
+                                  <span style="color: #008000; font-weight: bold">new</span> <span style="color: #0000FF">InternetAddress</span><span style="color: #666666">(</span>to<span style="color: #666666">));</span>
+ 
+         <span style="color: #408080; font-style: italic">// Set Subject: header field</span>
+         message<span style="color: #666666">.</span><span style="color: #7D9029">setSubject</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;This is the Subject Line!&quot;</span><span style="color: #666666">);</span>
+ 
+         <span style="color: #408080; font-style: italic">// Create the message part</span>
+         BodyPart messageBodyPart <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> MimeBodyPart<span style="color: #666666">();</span>
+ 
+         <span style="color: #408080; font-style: italic">// Fill the message</span>
+         messageBodyPart<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;This is message body&quot;</span><span style="color: #666666">);</span>
+        
+         <span style="color: #408080; font-style: italic">// Create a multipar message</span>
+         Multipart multipart <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> MimeMultipart<span style="color: #666666">();</span>
+ 
+         <span style="color: #408080; font-style: italic">// Set text message part</span>
+         multipart<span style="color: #666666">.</span><span style="color: #7D9029">addBodyPart</span><span style="color: #666666">(</span>messageBodyPart<span style="color: #666666">);</span>
+ 
+         <span style="color: #408080; font-style: italic">// Part two is attachment</span>
+         messageBodyPart <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> MimeBodyPart<span style="color: #666666">();</span>
+         String filename <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;file.txt&quot;</span><span style="color: #666666">;</span>
+         DataSource source <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> FileDataSource<span style="color: #666666">(</span>filename<span style="color: #666666">);</span>
+         messageBodyPart<span style="color: #666666">.</span><span style="color: #7D9029">setDataHandler</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> DataHandler<span style="color: #666666">(</span>source<span style="color: #666666">));</span>
+         messageBodyPart<span style="color: #666666">.</span><span style="color: #7D9029">setFileName</span><span style="color: #666666">(</span>filename<span style="color: #666666">);</span>
+         multipart<span style="color: #666666">.</span><span style="color: #7D9029">addBodyPart</span><span style="color: #666666">(</span>messageBodyPart<span style="color: #666666">);</span>
+ 
+         <span style="color: #408080; font-style: italic">// Send the complete message parts</span>
+         message<span style="color: #666666">.</span><span style="color: #7D9029">setContent</span><span style="color: #666666">(</span>multipart <span style="color: #666666">);</span>
+ 
+         <span style="color: #408080; font-style: italic">// Send message</span>
+         Transport<span style="color: #666666">.</span><span style="color: #7D9029">send</span><span style="color: #666666">(</span>message<span style="color: #666666">);</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Sent message successfully....&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>MessagingException mex<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+         mex<span style="color: #666666">.</span><span style="color: #7D9029">printStackTrace</span><span style="color: #666666">();</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Compile and run this program to send
+an HTML e-mail:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>$ <span class=GramE>java</span> <span class=SpellE>SendFileEmail</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Sent message successfully....<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>User Authentication Part:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If it is required to provide user ID
+and Password to the e-mail server for authentication purpose then you can set
+these properties as follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">props<span style="color: #666666">.</span><span style="color: #7D9029">setProperty</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;mail.user&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;myuser&quot;</span><span style="color: #666666">);</span>
+ props<span style="color: #666666">.</span><span style="color: #7D9029">setProperty</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;mail.password&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;mypwd&quot;</span><span style="color: #666666">);</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Rest of the e-mail sending mechanism
+would remain as explained above.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

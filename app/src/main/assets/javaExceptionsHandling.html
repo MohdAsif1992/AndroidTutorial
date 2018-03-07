@@ -1,0 +1,810 @@
+<html>
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Java Exceptions Handling<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>An exception is a problem that
+arises during the execution of a program. An exception can occur for many
+different reasons, including the following:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A user has entered invalid data.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A file that needs to be opened cannot be found.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A network connection has been lost in the middle of
+     communications or the JVM has run out of memory.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Some of these exceptions are caused
+by user error, others by programmer error, and others by physical resources
+that have failed in some manner.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To understand how exception handling
+works in Java, you need to understand the three categories of exceptions:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo2;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Checked exceptions:</span></b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     A checked exception is an exception that is typically a user error or a
+     problem that cannot be foreseen by the programmer. For example, if a file
+     is to be opened, but the file cannot be found, an exception occurs. These
+     exceptions cannot simply be ignored at the time of compilation.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo2;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Runtime exceptions:</span></b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     A runtime exception is an exception that occurs that probably could have
+     been avoided by the programmer. As opposed to checked exceptions, runtime
+     exceptions are ignored at the time of compilation.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo2;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Errors:</span></b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     These are not exceptions at all, but problems that arise beyond the
+     control of the user or the programmer. Errors are typically ignored in
+     your code because you can rarely do anything about an error. For example,
+     if a stack overflow occurs, an error will arise. They are also ignored at
+     the time of compilation.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Exception Hierarchy:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>All exception classes are subtypes
+of the <span class=SpellE>java.lang.Exception</span> class. The exception class
+is a subclass of the <span class=SpellE>Throwable</span> class. Other than the
+exception class there is another subclass called Error which is derived from
+the <span class=SpellE>Throwable</span> class.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Errors are not normally trapped form
+the Java programs. These conditions normally happen in case of severe failures,
+which are not handled by the java programs. Errors are generated to indicate
+errors generated by the runtime environment. <span class=GramE>Example :</span>
+JVM is out of Memory. Normally programs cannot recover from errors.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The Exception class has two main
+subclasses: <span class=SpellE>IOException</span> class and <span class=SpellE>RuntimeException</span>
+Class.<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:12.0pt;font-family:
+"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";mso-no-proof:
+yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Picture_x0020_1" o:spid="_x0000_i1025" type="#_x0000_t75"
+ alt="Java Exceptions" style='width:335.25pt;height:207pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Java%20Exceptions%20Handling_files/image001.jpg" o:title="Java Exceptions"/>
+</v:shape><![endif]--><![if !vml]><img width=447 height=276
+src="img/Exceptions_handling.jpg" alt="Java Exceptions"
+v:shapes="Picture_x0020_1"><![endif]></span><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here is a list of most common
+checked and unchecked Java’s Built-in exceptions.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Exceptions Methods:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the list of important <span
+class=SpellE>medthods</span> available in the <span class=SpellE>Throwable</span>
+class.<o:p></o:p></span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>SN<o:p></o:p></span></b></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Methods
+  with Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>public</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> String <span class=SpellE>getMessage</span>()</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'><br>
+  Returns a detailed message about the exception that has occurred. This
+  message is initialized in the <span class=SpellE>Throwable</span> constructor.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>2<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>public</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>Throwable</span> <span class=SpellE>getCause</span>()</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'><br>
+  Returns the cause of the exception as represented by a <span class=SpellE>Throwable</span>
+  object.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>3<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>public String <span class=SpellE>toString</span>()</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'><br>
+  Returns the name of the class concatenated with the result of <span
+  class=SpellE>getMessage</span>()<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>4<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>public</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> void <span class=SpellE>printStackTrace</span>()</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'><br>
+  Prints the result of <span class=SpellE>toString</span>() along with the
+  stack trace to <span class=SpellE>System.err</span>, the error output stream.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>5<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>public</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>StackTraceElement</span> [] <span
+  class=SpellE>getStackTrace</span>()</span></b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'><br>
+  Returns an array containing each element on the stack trace. The element at
+  index 0 represents the top of the call stack, and the last element in the
+  array represents the method at the bottom of the call stack.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>6<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>public</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> <span class=SpellE>Throwable</span> <span class=SpellE>fillInStackTrace</span>()</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'><br>
+  Fills the stack trace of this <span class=SpellE>Throwable</span> object with
+  the current stack trace, adding to any previous information in the stack
+  trace.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Catching Exceptions:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A method catches an exception using
+a combination of the <b>try</b> and <b>catch</b> keywords. A try/catch block is
+placed around the code that might generate an exception. Code within a
+try/catch block is referred to as protected code, and the syntax for using
+try/catch looks like the following:<o:p></o:p></span></p>
+<!--  -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">try</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Protected code</span>
+<span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #666666">(</span>ExceptionName e1<span style="color: #666666">)</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Catch block</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A catch statement involves declaring
+the type of exception you are trying to catch. If an exception occurs in protected
+code, the catch block (or blocks) that follows the try is checked. If the type
+of exception that occurred is listed in a catch block, the exception is passed
+to the catch block much as an argument is passed into a method parameter.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The following is an array is
+declared with 2 elements. Then the code tries to access the 3rd element of the
+array which throws an exception.<o:p></o:p></span></p>
+
+<!--  -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">// File Name : ExcepTest.java</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.io.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">ExcepTest</span><span style="color: #666666">{</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[]){</span>
+      <span style="color: #008000; font-weight: bold">try</span><span style="color: #666666">{</span>
+         <span style="color: #B00040">int</span> a<span style="color: #666666">[]</span> <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #B00040">int</span><span style="color: #666666">[2];</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Access element three :&quot;</span> <span style="color: #666666">+</span> a<span style="color: #666666">[3]);</span>
+      <span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #666666">(</span>ArrayIndexOutOfBoundsException e<span style="color: #666666">){</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Exception thrown  :&quot;</span> <span style="color: #666666">+</span> e<span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Out of the block&quot;</span><span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Exception <span class=GramE>thrown<span style='mso-spacerun:yes'> 
+</span>:<span class=SpellE>java.lang.ArrayIndexOutOfBoundsException</span></span>:
+3<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Out of the block<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Multiple catch Blocks:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A try block can be followed by
+multiple catch blocks. The syntax for multiple catch blocks looks like the
+following:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">try</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Protected code</span>
+<span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #666666">(</span>ExceptionType1 e1<span style="color: #666666">)</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Catch block</span>
+<span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #666666">(</span>ExceptionType2 e2<span style="color: #666666">)</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Catch block</span>
+<span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #666666">(</span>ExceptionType3 e3<span style="color: #666666">)</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Catch block</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The previous statements demonstrate
+three catch blocks, but you can have any number of them after a single try. If
+an exception occurs in the protected code, the exception is thrown to the first
+catch block in the list. If the data type of the exception thrown matches
+ExceptionType1, it gets caught there. If not, the exception passes down to the
+second catch statement. This continues until the exception either is caught or
+falls through all catches, in which case the current method stops execution and
+the exception is thrown down to the previous method on the call stack.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here is code segment showing how to
+use multiple try/catch statements.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">try</span>
+<span style="color: #666666">{</span>
+   file <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> FileInputStream<span style="color: #666666">(</span>fileName<span style="color: #666666">);</span>
+   x <span style="color: #666666">=</span> <span style="color: #666666">(</span><span style="color: #B00040">byte</span><span style="color: #666666">)</span> file<span style="color: #666666">.</span><span style="color: #7D9029">read</span><span style="color: #666666">();</span>
+<span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #666666">(</span>IOException i<span style="color: #666666">)</span>
+<span style="color: #666666">{</span>
+   i<span style="color: #666666">.</span><span style="color: #7D9029">printStackTrace</span><span style="color: #666666">();</span>
+   <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">-1;</span>
+<span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #666666">(</span>FileNotFoundException f<span style="color: #666666">)</span> <span style="color: #408080; font-style: italic">//Not valid!</span>
+<span style="color: #666666">{</span>
+   f<span style="color: #666666">.</span><span style="color: #7D9029">printStackTrace</span><span style="color: #666666">();</span>
+   <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">-1;</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>The throws/throw Keywords:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If a method does not handle a
+checked exception, the method must declare it using the <b>throws </b>keyword.
+The throws keyword appears at the end of a method's signature.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You can throw an exception, either a
+newly instantiated one or an exception that you just caught, by using the <b>throw</b>
+keyword. Try to understand the different in throws and throw keywords.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The following method declares that
+it throws a <span class=SpellE>RemoteException</span>:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.io.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">className</span>
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">deposit</span><span style="color: #666666">(</span><span style="color: #B00040">double</span> amount<span style="color: #666666">)</span> <span style="color: #008000; font-weight: bold">throws</span> RemoteException
+   <span style="color: #666666">{</span>
+      <span style="color: #408080; font-style: italic">// Method implementation</span>
+      <span style="color: #008000; font-weight: bold">throw</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #0000FF">RemoteException</span><span style="color: #666666">();</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #408080; font-style: italic">//Remainder of class definition</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A method can declare that it throws
+more than one exception, in which case the exceptions are declared in a list
+separated by commas. For example, the following method declares that it throws
+a <span class=SpellE>RemoteException</span> and an <span class=SpellE>InsufficientFundsException</span>:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.io.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">className</span>
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">withdraw</span><span style="color: #666666">(</span><span style="color: #B00040">double</span> amount<span style="color: #666666">)</span> <span style="color: #008000; font-weight: bold">throws</span> RemoteException<span style="color: #666666">,</span>
+                              InsufficientFundsException
+   <span style="color: #666666">{</span>
+       <span style="color: #408080; font-style: italic">// Method implementation</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #408080; font-style: italic">//Remainder of class definition</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>The finally Keyword<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The finally keyword is used to
+create a block of code that follows a try block. A finally block of code always
+executes, whether or not an exception has occurred.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Using a finally block allows you to
+run any cleanup-type statements that you want to execute, no matter what
+happens in the protected code.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A finally block appears at the end
+of the catch blocks and has the following syntax:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">try</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Protected code</span>
+<span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #666666">(</span>ExceptionType1 e1<span style="color: #666666">)</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Catch block</span>
+<span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #666666">(</span>ExceptionType2 e2<span style="color: #666666">)</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Catch block</span>
+<span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #666666">(</span>ExceptionType3 e3<span style="color: #666666">)</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Catch block</span>
+<span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">finally</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//The finally block always executes.</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">ExcepTest</span><span style="color: #666666">{</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[]){</span>
+      <span style="color: #B00040">int</span> a<span style="color: #666666">[]</span> <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #B00040">int</span><span style="color: #666666">[2];</span>
+      <span style="color: #008000; font-weight: bold">try</span><span style="color: #666666">{</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Access element three :&quot;</span> <span style="color: #666666">+</span> a<span style="color: #666666">[3]);</span>
+      <span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #666666">(</span>ArrayIndexOutOfBoundsException e<span style="color: #666666">){</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Exception thrown  :&quot;</span> <span style="color: #666666">+</span> e<span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+      <span style="color: #008000; font-weight: bold">finally</span><span style="color: #666666">{</span>
+         a<span style="color: #666666">[0]</span> <span style="color: #666666">=</span> <span style="color: #666666">6;</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;First element value: &quot;</span> <span style="color: #666666">+</span>a<span style="color: #666666">[0]);</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;The finally statement is executed&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Exception <span class=GramE>thrown<span style='mso-spacerun:yes'> 
+</span>:<span class=SpellE>java.lang.ArrayIndexOutOfBoundsException</span></span>:
+3<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>First element value: 6<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>The finally statement is executed<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Note the following:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l2 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A catch clause cannot exist without a try statement. <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l2 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>It is not compulsory to have finally clauses <span
+     class=SpellE>when ever</span> a try/catch block is present. <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l2 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>The try block cannot be present without either catch
+     clause or finally clause.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l2 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Any code cannot be present in between the try, catch,
+     finally blocks. <o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Declaring you own Exception:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You can create your own exceptions
+in Java. Keep the following points in mind when writing your own exception
+classes:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>All exceptions must be a child of <span class=SpellE>Throwable</span>.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>If you want to write a checked exception that is
+     automatically enforced by the Handle or Declare Rule, you need to extend
+     the Exception class.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>If you want to write a runtime exception, you need to
+     extend the <span class=SpellE>RuntimeException</span> class.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>We can define our own Exception
+class as below:<o:p></o:p></span></p>
+
+<!--  -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">MyException</span> <span style="color: #008000; font-weight: bold">extends</span> Exception<span style="color: #666666">{</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You just need to extend the
+Exception class to create your own Exception class. These are considered to be
+checked exceptions. The following <span class=SpellE>InsufficientFundsException</span>
+class is a user-defined exception that extends the Exception class, making it a
+checked exception. An exception class is like any other class, containing
+useful fields and methods.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<!--  -->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">// File Name InsufficientFundsException.java</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.io.*</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">InsufficientFundsException</span> <span style="color: #008000; font-weight: bold">extends</span> Exception
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">double</span> amount<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #0000FF">InsufficientFundsException</span><span style="color: #666666">(</span><span style="color: #B00040">double</span> amount<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">amount</span> <span style="color: #666666">=</span> amount<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">double</span> <span style="color: #0000FF">getAmount</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">return</span> amount<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To demonstrate using our
+user-defined exception, the following <span class=SpellE>CheckingAccount</span>
+class contains a <span class=GramE>withdraw(</span>) method that throws an <span
+class=SpellE>InsufficientFundsException</span>.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">// File Name CheckingAccount.java</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.io.*</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">CheckingAccount</span>
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">double</span> balance<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">int</span> number<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #0000FF">CheckingAccount</span><span style="color: #666666">(</span><span style="color: #B00040">int</span> number<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">number</span> <span style="color: #666666">=</span> number<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">deposit</span><span style="color: #666666">(</span><span style="color: #B00040">double</span> amount<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      balance <span style="color: #666666">+=</span> amount<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">withdraw</span><span style="color: #666666">(</span><span style="color: #B00040">double</span> amount<span style="color: #666666">)</span> <span style="color: #008000; font-weight: bold">throws</span>
+                              InsufficientFundsException
+   <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span>amount <span style="color: #666666">&lt;=</span> balance<span style="color: #666666">)</span>
+      <span style="color: #666666">{</span>
+         balance <span style="color: #666666">-=</span> amount<span style="color: #666666">;</span>
+      <span style="color: #666666">}</span>
+      <span style="color: #008000; font-weight: bold">else</span>
+      <span style="color: #666666">{</span>
+         <span style="color: #B00040">double</span> needs <span style="color: #666666">=</span> amount <span style="color: #666666">-</span> balance<span style="color: #666666">;</span>
+         <span style="color: #008000; font-weight: bold">throw</span> <span style="color: #008000; font-weight: bold">new</span> <span style="color: #0000FF">InsufficientFundsException</span><span style="color: #666666">(</span>needs<span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">double</span> <span style="color: #0000FF">getBalance</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">return</span> balance<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">int</span> <span style="color: #0000FF">getNumber</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">return</span> number<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The following <span class=SpellE>BankDemo</span>
+program demonstrates invoking the <span class=GramE>deposit(</span>) and
+withdraw() methods of <span class=SpellE>CheckingAccount</span>.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">// File Name BankDemo.java</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">BankDemo</span>
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String <span style="color: #666666">[]</span> args<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      CheckingAccount c <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> CheckingAccount<span style="color: #666666">(101);</span>
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Depositing $500...&quot;</span><span style="color: #666666">);</span>
+      c<span style="color: #666666">.</span><span style="color: #7D9029">deposit</span><span style="color: #666666">(500.00);</span>
+      <span style="color: #008000; font-weight: bold">try</span>
+      <span style="color: #666666">{</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;\nWithdrawing $100...&quot;</span><span style="color: #666666">);</span>
+         c<span style="color: #666666">.</span><span style="color: #7D9029">withdraw</span><span style="color: #666666">(100.00);</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;\nWithdrawing $600...&quot;</span><span style="color: #666666">);</span>
+         c<span style="color: #666666">.</span><span style="color: #7D9029">withdraw</span><span style="color: #666666">(600.00);</span>
+      <span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #666666">(</span>InsufficientFundsException e<span style="color: #666666">)</span>
+      <span style="color: #666666">{</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Sorry, but you are short $&quot;</span>
+                                  <span style="color: #666666">+</span> e<span style="color: #666666">.</span><span style="color: #7D9029">getAmount</span><span style="color: #666666">());</span>
+         e<span style="color: #666666">.</span><span style="color: #7D9029">printStackTrace</span><span style="color: #666666">();</span>
+      <span style="color: #666666">}</span>
+    <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Compile all the above three files
+and run <span class=SpellE>BankDemo</span>, this would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Depositing $500...<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Withdrawing $100...<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Withdrawing $600...<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Sorry, but you are short $200.0<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=SpellE><span style='font-size:12.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:red'>InsufficientFundsException</span></span><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'><span style='mso-spacerun:yes'>        </span><span class=GramE>at</span>
+<span class=SpellE>CheckingAccount.withdraw</span>(CheckingAccount.java:25)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'><span style='mso-spacerun:yes'>        </span><span class=GramE>at</span>
+<span class=SpellE>BankDemo.main</span>(BankDemo.java:13)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Common Exceptions:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>In Java, it is possible to define
+two <span class=SpellE>catergories</span> of Exceptions and Errors.<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l4 level1 lfo5;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>JVM Exceptions:</span></b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     - These are exceptions/errors that are exclusively or logically thrown by
+     the JVM. Examples : <span class=SpellE>NullPointerException</span>, <span
+     class=SpellE>ArrayIndexOutOfBoundsException</span>, <span class=SpellE>ClassCastException</span>,<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l4 level1 lfo5;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Programmatic exceptions:</span></b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'> - These exceptions are thrown explicitly by the
+     application or the API programmers Examples: <span class=SpellE>IllegalArgumentException</span>,
+     <span class=SpellE>IllegalStateException</span>.<o:p></o:p></span></li>
+</ul>
+
+</div>
+
+</body>
+
+</html>

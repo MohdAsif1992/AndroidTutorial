@@ -1,0 +1,966 @@
+<html>
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Android Fragments<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A Fragment is a piece of an
+application's user interface or behavior that can be placed in an Activity
+which enable more modular activity design. It will not be wrong if we say, a
+fragment is a kind of <b>sub-<span class=SpellE>acitivity</span></b>. Following
+are important points about fragment:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l4 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A fragment has its own layout and its own behavior with
+     its own lifecycle callbacks.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l4 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>You can add or remove fragments in an activity while
+     the activity is running.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l4 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>You can combine multiple fragments in a single activity
+     to build a multi-pane UI.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l4 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A fragment can be used in multiple activities.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l4 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Fragment life cycle is closely related to the lifecycle
+     of its host activity which means when the activity is paused, all the
+     fragments available in the <span class=SpellE>acivity</span> will also be
+     stopped.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l4 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A fragment can implement a behavior that has no user
+     interface component.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l4 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Fragments were added to the Android API in Honeycomb
+     version of Android which API version 11.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You create fragments by extending <b>Fragment</b>
+class and <span class=GramE>You</span> can insert a fragment into your activity
+layout by declaring the fragment in the activity's layout file, as a <b>&lt;fragment&gt;</b>
+element. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Prior to fragment introduction, we
+had a limitation because we can show only a single activity on the screen at
+one given point in time. So we were not able to divide device screen and
+control different parts separately. But with the introduction of fragment we
+got more flexibility and removed the limitation of having a single activity on
+the screen at a time. Now we can have a single <span class=SpellE>acitivity</span>
+but each <span class=SpellE>acitivity</span> can comprise of multiple fragments
+which will have their own layout, events and complete lifecycle.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is a typical example of
+how two UI modules defined by fragments can be combined into one activity for a
+tablet design, but separated for a handset design.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The application can embed two
+fragments in <span class=SpellE>Acivity</span> A, when running on a
+tablet-sized device. However, on a handset-sized screen, there's not enough
+room for both fragments, so Activity A includes only the fragment for the list
+of articles, and when the user selects an article, it starts Activity B, which
+includes the second fragment to read the article.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Fragment Life Cycle<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Android fragments have their own
+life cycle very similar to an android activity. This section briefs different
+stages of its life cycle.<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width="50%" valign=top style='width:50.0%;border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+  line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Phase I: </span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>When a fragment gets created, it goes through the
+  following states:<o:p></o:p></span></p>
+  <ul type=disc>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l5 level1 lfo2;tab-stops:list .5in'><span
+       class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>onAttach</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>()<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l5 level1 lfo2;tab-stops:list .5in'><span
+       class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>onCreate</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>()<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l5 level1 lfo2;tab-stops:list .5in'><span
+       class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>onCreateView</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>()<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l5 level1 lfo2;tab-stops:list .5in'><span
+       class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>onActivityCreated</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>()<o:p></o:p></span></li>
+  </ul>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+  line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Phase II:</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> When the fragment becomes visible, it goes through these
+  states:<o:p></o:p></span></p>
+  <ul type=disc>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l0 level1 lfo3;tab-stops:list .5in'><span
+       class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>onStart</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>()<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l0 level1 lfo3;tab-stops:list .5in'><span
+       class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>onResume</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>()<o:p></o:p></span></li>
+  </ul>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+  line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Phase III:</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> When the fragment goes into the background mode, it goes
+  through these states:<o:p></o:p></span></p>
+  <ul type=disc>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l6 level1 lfo4;tab-stops:list .5in'><span
+       class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>onPaused</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>()<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l6 level1 lfo4;tab-stops:list .5in'><span
+       class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>onStop</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>()<o:p></o:p></span></li>
+  </ul>
+  <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+  line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Phase IV:</span></b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'> When the fragment is destroyed, it goes through the
+  following states:<o:p></o:p></span></p>
+  <ul type=disc>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l2 level1 lfo5;tab-stops:list .5in'><span
+       class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>onPaused</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>()<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l2 level1 lfo5;tab-stops:list .5in'><span
+       class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>onStop</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>()<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l2 level1 lfo5;tab-stops:list .5in'><span
+       class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>onDestroyView</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>()<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l2 level1 lfo5;tab-stops:list .5in'><span
+       class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>onDestroy</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>()<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l2 level1 lfo5;tab-stops:list .5in'><span
+       class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>onDetach</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>()<o:p></o:p></span></li>
+  </ul>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><!--[if mso & !supportInlineShapes & supportFields]><span
+  style='mso-element:field-begin;mso-field-lock:yes'></span><span
+  style='mso-spacerun:yes'> </span>SHAPE <span
+  style='mso-spacerun:yes'> </span>\* MERGEFORMAT <span style='mso-element:
+  field-separator'></span><![endif]--><!--[if gte vml 1]><v:rect id="Rectangle_x0020_4"
+   o:spid="_x0000_s1027" alt="Activity Fragment Lifecyle" style='width:24pt;
+   height:24pt;visibility:visible;mso-wrap-style:square;mso-left-percent:-10001;
+   mso-top-percent:-10001;mso-position-horizontal:absolute;
+   mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+   mso-position-vertical-relative:line;mso-left-percent:-10001;
+   mso-top-percent:-10001;v-text-anchor:top' o:gfxdata="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
+BgAAAAAEAAQA8wAAACoGAAAAAA==
+" filled="f" stroked="f">
+   <o:lock v:ext="edit" aspectratio="t"/>
+   <w:wrap type="none"/>
+   <w:anchorlock/>
+  </v:rect><![endif]--><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+   coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+   filled="f" stroked="f">
+   <v:stroke joinstyle="miter"/>
+   <v:formulas>
+    <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+    <v:f eqn="sum @0 1 0"/>
+    <v:f eqn="sum 0 0 @1"/>
+    <v:f eqn="prod @2 1 2"/>
+    <v:f eqn="prod @3 21600 pixelWidth"/>
+    <v:f eqn="prod @3 21600 pixelHeight"/>
+    <v:f eqn="sum @0 0 1"/>
+    <v:f eqn="prod @6 1 2"/>
+    <v:f eqn="prod @7 21600 pixelWidth"/>
+    <v:f eqn="sum @8 21600 0"/>
+    <v:f eqn="prod @7 21600 pixelHeight"/>
+    <v:f eqn="sum @10 21600 0"/>
+   </v:formulas>
+   <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" aspectratio="t"/>
+  </v:shapetype><![endif]--><!--[if mso & !supportInlineShapes & supportFields]><v:shape
+   id="_x0000_i1026" type="#_x0000_t75" style='width:24pt;height:24pt'>
+   <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+  </v:shape><span style='mso-element:field-end'></span><![endif]--><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>How to use Fragments?<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This involves number of simple steps
+to create Fragments.<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>First of all decide how many fragments you want to use
+     in an activity. <span class=SpellE>Fors</span> example let's we want to
+     use two fragments to handle landscape and portrait modes of the device.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Next based on number of fragments, create classes which
+     will extend the <i>Fragment</i> class. The Fragment class has above
+     mentioned callback functions. You can override any of the functions based
+     on your requirements.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Corresponding to each fragment, you will need to create
+     layout files in XML file. These files will have layout for the defined
+     fragments.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Finally modify activity file to define the actual logic
+     of replacing fragments based on your requirement.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here is the list of important
+methods which you can to override in your fragment class:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l7 level1 lfo7;tab-stops:list .5in'><span
+     class=SpellE><span class=GramE><b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>onCreate</span></b></span></span><span
+     class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>(</span></b></span><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>)</span></b><span style='font-size:12.0pt;font-family:
+     "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'> The
+     system calls this when creating the fragment. You should initialize
+     essential components of the fragment that you want to retain when the
+     fragment is paused or stopped, then resumed.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l7 level1 lfo7;tab-stops:list .5in'><span
+     class=SpellE><span class=GramE><b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>onCreateView</span></b></span></span><span
+     class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>(</span></b></span><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>)</span></b><span style='font-size:12.0pt;font-family:
+     "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'> The
+     system calls this callback when it's time for the fragment to draw its
+     user interface for the first time. To draw a UI for your fragment, you
+     must return a <b>View</b> component from this method that is the root of
+     your fragment's layout. You can return null if the fragment does not
+     provide a UI.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l7 level1 lfo7;tab-stops:list .5in'><span
+     class=SpellE><span class=GramE><b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>onPause</span></b></span></span><span
+     class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>(</span></b></span><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>)</span></b><span style='font-size:12.0pt;font-family:
+     "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'> The
+     system calls this method as the first indication that the user is leaving
+     the fragment. This is usually where you should commit any changes that
+     should be persisted beyond the current user session.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This example will explain you how to
+create your own <i>Fragments</i>. Here we will create two fragments and one of
+them will be used when device is in landscape mode and another fragment will be
+used in case of portrait mode. So let's follow the following steps to similar
+to what we followed while creating <i>Hello World Example</i>:<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Step<o:p></o:p></span></b></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>You will use Eclipse IDE to create
+  an Android application and name it as <span class=SpellE><i>MyFragments</i></span>
+  under a package <span class=SpellE><i>com.example.myfragments</i></span>,
+  with blank Activity.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>2<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify main activity file <i>MainActivity.java</i>
+  as shown below in the code. Here we will check orientation of the device and
+  accordingly we will switch between different fragments.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>3<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Create a two java files <i>PM_Fragment.java</i>
+  and <i>LM_Fragement.java</i> under the package <span class=SpellE><i>com.example.myfragments</i></span>
+  to define your fragments and associated methods.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>4<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Create layouts files <i>res/layout/lm_fragment.xml</i>
+  and <i>res/layout/pm_fragment.xml</i> and define your layouts for both the
+  fragments<span class=GramE>.&lt;</span><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>5<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify the <span class=SpellE>detault</span>
+  content of <i>res/layout/activity_main.xml</i> file to include both the fragments.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>6<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Define required constants in <i>res/values/strings.xml</i>
+  file<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;mso-yfti-lastrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>7<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Run the application to launch
+  Android emulator and verify the result of the changes done in the <span
+  class=SpellE>aplication</span>.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the content of the
+modified main activity file <span class=SpellE><b>src</b></span><b>/<span
+class=SpellE>com.example.mycontentprovider</span>/MainActivity.java</b>:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">package</span> com<span style="color: #666666">.</span><span style="color: #7D9029">example</span><span style="color: #666666">.</span><span style="color: #7D9029">myfragments</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.os.Bundle</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.Activity</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.FragmentManager</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.FragmentTransaction</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.content.res.Configuration</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.WindowManager</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">MainActivity</span> <span style="color: #008000; font-weight: bold">extends</span> Activity <span style="color: #666666">{</span>
+ 
+   <span style="color: #AA22FF">@Override</span>
+   <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onCreate</span><span style="color: #666666">(</span>Bundle savedInstanceState<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onCreate</span><span style="color: #666666">(</span>savedInstanceState<span style="color: #666666">);</span>
+ 
+      Configuration config <span style="color: #666666">=</span> getResources<span style="color: #666666">().</span><span style="color: #7D9029">getConfiguration</span><span style="color: #666666">();</span>
+ 
+      FragmentManager fragmentManager <span style="color: #666666">=</span> getFragmentManager<span style="color: #666666">();</span>
+      FragmentTransaction fragmentTransaction <span style="color: #666666">=</span>
+      fragmentManager<span style="color: #666666">.</span><span style="color: #7D9029">beginTransaction</span><span style="color: #666666">();</span>
+ 
+      <span style="color: #408080; font-style: italic">/**</span>
+<span style="color: #408080; font-style: italic">      * Check the device orientation and act accordingly</span>
+<span style="color: #408080; font-style: italic">      */</span>
+      <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>config<span style="color: #666666">.</span><span style="color: #7D9029">orientation</span> <span style="color: #666666">==</span> Configuration<span style="color: #666666">.</span><span style="color: #7D9029">ORIENTATION_LANDSCAPE</span><span style="color: #666666">)</span> <span style="color: #666666">{</span>
+         <span style="color: #408080; font-style: italic">/**</span>
+<span style="color: #408080; font-style: italic">         * Landscape mode of the device</span>
+<span style="color: #408080; font-style: italic">         */</span>
+         LM_Fragment ls_fragment <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> LM_Fragment<span style="color: #666666">();</span>
+         fragmentTransaction<span style="color: #666666">.</span><span style="color: #7D9029">replace</span><span style="color: #666666">(</span>android<span style="color: #666666">.</span><span style="color: #7D9029">R</span><span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">content</span><span style="color: #666666">,</span> ls_fragment<span style="color: #666666">);</span>
+      <span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">else</span><span style="color: #666666">{</span>
+         <span style="color: #408080; font-style: italic">/**</span>
+<span style="color: #408080; font-style: italic">         * Portrait mode of the device</span>
+<span style="color: #408080; font-style: italic">         */</span>
+         PM_Fragment pm_fragment <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> PM_Fragment<span style="color: #666666">();</span>
+         fragmentTransaction<span style="color: #666666">.</span><span style="color: #7D9029">replace</span><span style="color: #666666">(</span>android<span style="color: #666666">.</span><span style="color: #7D9029">R</span><span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">content</span><span style="color: #666666">,</span> pm_fragment<span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+      fragmentTransaction<span style="color: #666666">.</span><span style="color: #7D9029">commit</span><span style="color: #666666">();</span>
+   <span style="color: #666666">}</span>
+   
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Create two fragment files <b>LM_Fragement.java</b>
+and <b>PM_Fragment.java</b> under <span class=SpellE><i>com.example.mycontentprovider</i></span>
+package.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the content of <b>LM_Fragement.java</b>
+file:<o:p></o:p></span></p>
+	
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">package</span> com<span style="color: #666666">.</span><span style="color: #7D9029">example</span><span style="color: #666666">.</span><span style="color: #7D9029">myfragments</span><span style="color: #666666">;</span>      
+ 
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.Fragment</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.os.Bundle</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.LayoutInflater</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.View</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.ViewGroup</span><span style="color: #666666">;</span>
+ 
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">LM_Fragment</span> <span style="color: #008000; font-weight: bold">extends</span> Fragment<span style="color: #666666">{</span>
+   <span style="color: #AA22FF">@Override</span>
+   <span style="color: #008000; font-weight: bold">public</span> View <span style="color: #0000FF">onCreateView</span><span style="color: #666666">(</span>LayoutInflater inflater<span style="color: #666666">,</span>
+      ViewGroup container<span style="color: #666666">,</span> Bundle savedInstanceState<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+      <span style="color: #408080; font-style: italic">/**</span>
+<span style="color: #408080; font-style: italic">       * Inflate the layout for this fragment</span>
+<span style="color: #408080; font-style: italic">       */</span>
+      <span style="color: #008000; font-weight: bold">return</span> inflater<span style="color: #666666">.</span><span style="color: #7D9029">inflate</span><span style="color: #666666">(</span>
+      R<span style="color: #666666">.</span><span style="color: #7D9029">layout</span><span style="color: #666666">.</span><span style="color: #7D9029">lm_fragment</span><span style="color: #666666">,</span> container<span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">false</span><span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the content of <b>PM_Fragement.java</b>
+file:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">package</span> com<span style="color: #666666">.</span><span style="color: #7D9029">example</span><span style="color: #666666">.</span><span style="color: #7D9029">myfragments</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.Fragment</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.os.Bundle</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.LayoutInflater</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.View</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.ViewGroup</span><span style="color: #666666">;</span>
+ 
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">PM_Fragment</span> <span style="color: #008000; font-weight: bold">extends</span> Fragment<span style="color: #666666">{</span>
+   <span style="color: #AA22FF">@Override</span>
+   <span style="color: #008000; font-weight: bold">public</span> View <span style="color: #0000FF">onCreateView</span><span style="color: #666666">(</span>LayoutInflater inflater<span style="color: #666666">,</span>
+      ViewGroup container<span style="color: #666666">,</span> Bundle savedInstanceState<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+      <span style="color: #408080; font-style: italic">/**</span>
+<span style="color: #408080; font-style: italic">       * Inflate the layout for this fragment</span>
+<span style="color: #408080; font-style: italic">       */</span>
+      <span style="color: #008000; font-weight: bold">return</span> inflater<span style="color: #666666">.</span><span style="color: #7D9029">inflate</span><span style="color: #666666">(</span>
+      R<span style="color: #666666">.</span><span style="color: #7D9029">layout</span><span style="color: #666666">.</span><span style="color: #7D9029">pm_fragment</span><span style="color: #666666">,</span> container<span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">false</span><span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Create two layout files <b>lm_fragement.xml</b>
+and <b>pm_fragment.xml</b> under <i>res/layout</i> directory.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the content of <b>lm_fragement.xml</b>
+file:<o:p></o:p></span></p>
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;LinearLayout</span>
+   <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+   <span style="color: #7D9029">android:orientation=</span><span style="color: #BA2121">&quot;vertical&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:background=</span><span style="color: #BA2121">&quot;#7bae16&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+  
+   <span style="color: #008000; font-weight: bold">&lt;TextView</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+   <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;@string/landscape_message&quot;</span>
+   <span style="color: #7D9029">android:textColor=</span><span style="color: #BA2121">&quot;#000000&quot;</span>
+   <span style="color: #7D9029">android:textSize=</span><span style="color: #BA2121">&quot;20px&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+<span style="color: #408080; font-style: italic">&lt;!-- More GUI components go here  --&gt;</span>
+ 
+<span style="color: #008000; font-weight: bold">&lt;/LinearLayout&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the content of <b>pm_fragment.xml</b>
+file:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;LinearLayout</span>
+   <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+   <span style="color: #7D9029">android:orientation=</span><span style="color: #BA2121">&quot;horizontal&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:background=</span><span style="color: #BA2121">&quot;#666666&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+  
+   <span style="color: #008000; font-weight: bold">&lt;TextView</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+   <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;@string/portrait_message&quot;</span>
+   <span style="color: #7D9029">android:textColor=</span><span style="color: #BA2121">&quot;#000000&quot;</span>
+   <span style="color: #7D9029">android:textSize=</span><span style="color: #BA2121">&quot;20px&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+<span style="color: #408080; font-style: italic">&lt;!-- More GUI components go here  --&gt;</span>
+ 
+<span style="color: #008000; font-weight: bold">&lt;/LinearLayout&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following will be the content of <b>res/layout/activity_main.xml</b>
+file which includes your fragments:<o:p></o:p></span></p>
+<!--  --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #007700">&lt;LinearLayout</span> <span style="color: #0000CC">xmlns:android=</span><span style="background-color: #fff0f0">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span style="color: #0000CC">xmlns:tools=</span><span style="background-color: #fff0f0">&quot;http://schemas.android.com/tools&quot;</span>
+    <span style="color: #0000CC">android:layout_width=</span><span style="background-color: #fff0f0">&quot;fill_parent&quot;</span>
+    <span style="color: #0000CC">android:layout_height=</span><span style="background-color: #fff0f0">&quot;fill_parent&quot;</span>
+    <span style="color: #0000CC">android:orientation=</span><span style="background-color: #fff0f0">&quot;horizontal&quot;</span><span style="color: #007700">&gt;</span>
+ 
+   <span style="color: #007700">&lt;fragment</span>
+   <span style="color: #0000CC">android:name=</span><span style="background-color: #fff0f0">&quot;com.example.fragments&quot;</span>
+   <span style="color: #0000CC">android:id=</span><span style="background-color: #fff0f0">&quot;@+id/lm_fragment&quot;</span>
+   <span style="color: #0000CC">android:layout_weight=</span><span style="background-color: #fff0f0">&quot;1&quot;</span>
+   <span style="color: #0000CC">android:layout_width=</span><span style="background-color: #fff0f0">&quot;0dp&quot;</span>
+   <span style="color: #0000CC">android:layout_height=</span><span style="background-color: #fff0f0">&quot;match_parent&quot;</span> <span style="color: #007700">/&gt;</span>
+  
+   <span style="color: #007700">&lt;fragment</span>
+   <span style="color: #0000CC">android:name=</span><span style="background-color: #fff0f0">&quot;com.example.fragments&quot;</span>
+   <span style="color: #0000CC">android:id=</span><span style="background-color: #fff0f0">&quot;@+id/pm_fragment&quot;</span>
+   <span style="color: #0000CC">android:layout_weight=</span><span style="background-color: #fff0f0">&quot;2&quot;</span>
+   <span style="color: #0000CC">android:layout_width=</span><span style="background-color: #fff0f0">&quot;0dp&quot;</span>
+   <span style="color: #0000CC">android:layout_height=</span><span style="background-color: #fff0f0">&quot;match_parent&quot;</span> <span style="color: #007700">/&gt;</span>
+ 
+<span style="color: #007700">&lt;/LinearLayout&gt;</span>
+</pre></div>
+
+<!-- 
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#5B9BD5;mso-themecolor:accent1'>&lt;?xml</span></span><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'> version=&quot;1.0&quot;
+encoding=&quot;utf-8&quot;?&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'>&lt;<span class=SpellE>LinearLayout</span>
+<span class=SpellE>xmlns:android</span>=&quot;http://schemas.android.com/<span
+class=SpellE>apk</span>/res/android&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>   
+</span><span class=SpellE>xmlns:tools</span>=&quot;http://schemas.android.com/tools&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>   
+</span><span class=SpellE><span class=GramE>android:</span>layout_width</span>=&quot;<span
+class=SpellE>fill_parent</span>&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>   
+</span><span class=SpellE><span class=GramE>android:</span>layout_height</span>=&quot;<span
+class=SpellE>fill_parent</span>&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>   
+</span><span class=SpellE><span class=GramE>android:</span>orientation</span>=&quot;horizontal&quot;&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>  
+</span>&lt;fragment<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>   </span><span
+class=SpellE><span class=GramE>android:</span>name</span>=&quot;<span
+class=SpellE>com.example.fragments</span>&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>   </span><span
+class=SpellE>android:id</span>=&quot;@+id/<span class=SpellE>lm_fragment</span>&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>   </span><span
+class=SpellE><span class=GramE>android:</span>layout_weight</span>=&quot;1&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>   </span><span
+class=SpellE><span class=GramE>android:</span>layout_width</span>=&quot;0dp&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>   </span><span
+class=SpellE><span class=GramE>android:</span>layout_height</span>=&quot;<span
+class=SpellE>match_parent</span>&quot; /&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>   </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>  
+</span>&lt;fragment<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>   </span><span
+class=SpellE><span class=GramE>android:</span>name</span>=&quot;<span
+class=SpellE>com.example.fragments</span>&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>   </span><span
+class=SpellE>android:id</span>=&quot;@+id/<span class=SpellE>pm_fragment</span>&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>   </span><span
+class=SpellE><span class=GramE>android:</span>layout_weight</span>=&quot;2&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>   </span><span
+class=SpellE><span class=GramE>android:</span>layout_width</span>=&quot;0dp&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><span style='mso-spacerun:yes'>   </span><span
+class=SpellE><span class=GramE>android:</span>layout_height</span>=&quot;<span
+class=SpellE>match_parent</span>&quot; /&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#5B9BD5;mso-themecolor:accent1'>&lt;/<span class=SpellE>LinearLayout</span>&gt;<o:p></o:p></span></p> -->
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Make sure you have following content
+of <b>res/values/strings.xml</b> file:<o:p></o:p></span></p>
+<!--  --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #007700">&lt;resources&gt;</span>
+ 
+    <span style="color: #007700">&lt;string</span> <span style="color: #0000CC">name=</span><span style="background-color: #fff0f0">&quot;app_name&quot;</span><span style="color: #007700">&gt;</span>MyFragments<span style="color: #007700">&lt;/string&gt;</span>
+    <span style="color: #007700">&lt;string</span> <span style="color: #0000CC">name=</span><span style="background-color: #fff0f0">&quot;action_settings&quot;</span><span style="color: #007700">&gt;</span>Settings<span style="color: #007700">&lt;/string&gt;</span>
+    <span style="color: #007700">&lt;string</span> <span style="color: #0000CC">name=</span><span style="background-color: #fff0f0">&quot;hello_world&quot;</span><span style="color: #007700">&gt;</span>Hello world!<span style="color: #007700">&lt;/string&gt;</span>
+    <span style="color: #007700">&lt;string</span> <span style="color: #0000CC">name=</span><span style="background-color: #fff0f0">&quot;landscape_message&quot;</span><span style="color: #007700">&gt;</span>This is Landscape mode fragment
+    <span style="color: #007700">&lt;/string&gt;</span>
+    <span style="color: #007700">&lt;string</span> <span style="color: #0000CC">name=</span><span style="background-color: #fff0f0">&quot;portrait_message&quot;</span><span style="color: #007700">&gt;</span>This is Portrait mode fragment
+    <span style="color: #007700">&lt;/string&gt;</span>
+ 
+<span style="color: #007700">&lt;/resources&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Let's try to run our modified <span
+class=SpellE><b>MyFragments</b></span> application we just created. I assume
+you had created your <b>AVD</b> while doing environment setup. To run the app
+from Eclipse, open one of your project's activity files and click Run </span><!--[if mso & !supportInlineShapes & supportFields]><span
+style='mso-element:field-begin;mso-field-lock:yes'></span><span
+style='mso-spacerun:yes'> </span>SHAPE <span
+style='mso-spacerun:yes'> </span>\* MERGEFORMAT <span style='mso-element:field-separator'></span><![endif]--><!--[if gte vml 1]><v:rect
+ id="Rectangle_x0020_3" o:spid="_x0000_s1026" alt="Eclipse Run Icon" style='width:24pt;
+ height:24pt;visibility:visible;mso-wrap-style:square;mso-left-percent:-10001;
+ mso-top-percent:-10001;mso-position-horizontal:absolute;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line;mso-left-percent:-10001;mso-top-percent:-10001;
+ v-text-anchor:top' o:gfxdata="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
+AAQA8wAAACQGAAAAAA==
+" filled="f" stroked="f">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <w:wrap type="none"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><!--[if mso & !supportInlineShapes & supportFields]><v:shape
+ id="_x0000_i1025" type="#_x0000_t75" style='width:24pt;height:24pt'>
+ <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+</v:shape><span style='mso-element:field-end'></span><![endif]--><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>icon from the toolbar. Eclipse installs the app on your AVD
+and starts it and if everything is fine with your setup and application, it
+will display Emulator window where you will click on Menu button to see the
+following window. Be patience because it may take <span class=SpellE>sometime</span>
+based on your computer speed:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To change the mode of the emulator
+screen, let's do the following<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo8;tab-stops:list .5in'><span
+     class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>fn+</span></b></span><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>control+F11</span></b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     on Mac to change the landscape to portrait and vice versa.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo8;tab-stops:list .5in'><span
+     class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>ctrl+</span></b></span><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>F11</span></b><span style='font-size:12.0pt;font-family:
+     "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'> on
+     Windows.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo8;tab-stops:list .5in'><span
+     class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>ctrl+</span></b></span><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>F11</span></b><span style='font-size:12.0pt;font-family:
+     "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'> on
+     Linux.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Once you changed the mode, you will
+be able to see the GUI which you have implemented for landscape mode as below:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This way you can use same activity
+but different GUIs through different fragments. You can use different type of
+GUI components for different GUIs based on your requirements.<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

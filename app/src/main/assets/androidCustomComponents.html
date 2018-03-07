@@ -1,0 +1,319 @@
+<html>
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Android Custom Components<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Android offers a great list of
+pre-built widgets like Button, <span class=SpellE>TextView</span>, <span
+class=SpellE>EditText</span>, <span class=SpellE>ListView</span>, <span
+class=SpellE>CheckBox</span>, <span class=SpellE>RadioButton</span>, Gallery,
+Spinner, <span class=SpellE>AutoCompleteTextView</span> etc. which you can use directly
+in your Android application development, but there may be a situation when you
+are not satisfied with existing functionality of any of the available widgets.
+Android provides you with means of creating your own custom components which
+you can customized to suit your needs.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If you only need to make small
+adjustments to an existing widget or layout, you can simply subclass the widget
+or layout and override its methods which will give you precise control over the
+appearance and function of a screen element.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This tutorial explains you how to
+create custom Views and use them in your application using simple and easy
+steps.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Creating a Simple Custom Component<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The simplest way to create your
+custom component is to extend an existing widget class or subclass with your
+own class if you want to extend the functionality of existing widget like
+Button, <span class=SpellE>TextView</span>, <span class=SpellE>EditText</span>,
+<span class=SpellE>ListView</span>, <span class=SpellE>CheckBox</span> etc.
+otherwise you can do everything yourself by starting with the <span
+class=SpellE><i>android.view.View</i></span> class.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>At its simplest form you will have
+to write your constructors corresponding to all the constructors of the base
+class. For example if you are going to extend <span class=SpellE><b>TextView</b></span>
+to create a <span class=SpellE><b>DateView</b></span> then following three
+constructors will be created for <span class=SpellE>DateView</span> class:<o:p></o:p></span></p>
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">DateView</span> <span style="color: #008000; font-weight: bold">extends</span> TextView <span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #0000FF">DateView</span><span style="color: #666666">(</span>Context context<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">(</span>context<span style="color: #666666">);</span>
+      <span style="color: #408080; font-style: italic">//--- Additional custom code --</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #0000FF">DateView</span><span style="color: #666666">(</span>Context context<span style="color: #666666">,</span> AttributeSet attrs<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">(</span>context<span style="color: #666666">,</span> attrs<span style="color: #666666">);</span>
+      <span style="color: #408080; font-style: italic">//--- Additional custom code --</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #0000FF">DateView</span><span style="color: #666666">(</span>Context context<span style="color: #666666">,</span> AttributeSet attrs<span style="color: #666666">,</span> <span style="color: #B00040">int</span> defStyle<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">(</span>context<span style="color: #666666">,</span> attrs<span style="color: #666666">,</span> defStyle<span style="color: #666666">);</span>
+      <span style="color: #408080; font-style: italic">//--- Additional custom code --</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Because you have created <span
+class=SpellE>DateView</span> as child of <span class=SpellE>TextView</span> so it
+will have access on all the attributes, methods and events related to <span
+class=SpellE>TextView</span> and you will be able to use them without any
+further implementation. You will implement additional custom functionality
+inside your own code as explained in the given examples below.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If you have requirement for
+implementing custom drawing/sizing for your custom widgets then you need to
+override <span class=SpellE><b>onMeasure</b></span><b>(<span class=SpellE>int</span>
+<span class=SpellE>widthMeasureSpec</span>, <span class=SpellE>int</span> <span
+class=SpellE>heightMeasureSpec</span>)</b> and <span class=SpellE><b>onDraw</b></span><b>(Canvas
+canvas)</b> methods. If you are not going to resize or change the shape of your
+built-in component then you do not need either of these methods in your custom
+component.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The <span class=SpellE><i>onMeasure</i></span><i>()</i>
+method coordinate with the layout manager to report the widget's width and
+height, and you need to call <span class=SpellE><i>setMeasuredDimension</i></span><i>(<span
+class=SpellE>int</span> width, <span class=SpellE>int</span> height)</i> from
+inside this method to report the dimensions.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You can then execute your custom
+drawing inside the <span class=SpellE><i>onDraw</i></span><i>(Canvas canvas)</i>
+method, where <span class=SpellE>android.graphis.Canvas</span> is pretty
+similar to its counterpart in Swing, and has methods such as <span
+class=SpellE>drawRect</span>(), <span class=SpellE>drawLine</span>(), <span
+class=SpellE>drawString</span>(), <span class=SpellE>drawBitmap</span>() etc.
+which you can use to draw your component.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Once you are done with the
+implementation of a custom component by extending existing widget, you will be
+able to instantiate these custom components in two ways in your application
+development:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Instantiate using code inside activity class<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>It is very similar way of
+instantiating custom component the way you instantiate built-in widget in your
+activity class. For example you can use following code to instantiate above
+defined custom component:<o:p></o:p></span></p>
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #AA22FF">@Override</span>
+ <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onCreate</span><span style="color: #666666">(</span>Bundle savedInstanceState<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+     <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onCreate</span><span style="color: #666666">(</span>savedInstanceState<span style="color: #666666">);</span>
+     setContentView<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">layout</span><span style="color: #666666">.</span><span style="color: #7D9029">activity_main</span><span style="color: #666666">);</span>
+     DateView dateView <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> DateView<span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">);</span>
+     setContentView<span style="color: #666666">(</span>dateView<span style="color: #666666">);</span>
+ <span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Check this example to understand how
+to Instantiate a Basic Android Custom Component using code inside an activity.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Instantiate using Layout XML file<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Traditionally you use Layout XML
+file to instantiate your built-in widgets, same concept will apply on your
+custom widgets as well so you will be able to instantiate your custom component
+using Layout XML file as explained below. Here <span class=SpellE><b>com.example.dateviewdemo</b></span>
+is the package where you have put all the code related to <span class=SpellE><b>DateView</b></span>
+class and <span class=SpellE><b>DateView</b></span> is Java class name where
+you have put complete logic of your custom component.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">&lt;RelativeLayout</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span style="color: #7D9029">xmlns:tools=</span><span style="color: #BA2121">&quot;http://schemas.android.com/tools&quot;</span>
+    <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;match_parent&quot;</span>
+    <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;match_parent&quot;</span>
+    <span style="color: #7D9029">android:paddingBottom=</span><span style="color: #BA2121">&quot;@dimen/activity_vertical_margin&quot;</span>
+    <span style="color: #7D9029">android:paddingLeft=</span><span style="color: #BA2121">&quot;@dimen/activity_horizontal_margin&quot;</span>
+    <span style="color: #7D9029">android:paddingRight=</span><span style="color: #BA2121">&quot;@dimen/activity_horizontal_margin&quot;</span>
+    <span style="color: #7D9029">android:paddingTop=</span><span style="color: #BA2121">&quot;@dimen/activity_vertical_margin&quot;</span>
+    <span style="color: #7D9029">tools:context=</span><span style="color: #BA2121">&quot;.MainActivity&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+   
+    <span style="color: #008000; font-weight: bold">&lt;com.example.dateviewdemo.DateView</span>
+     <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;match_parent&quot;</span>
+     <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+     <span style="color: #7D9029">android:textColor=</span><span style="color: #BA2121">&quot;#fff&quot;</span>
+     <span style="color: #7D9029">android:textSize=</span><span style="color: #BA2121">&quot;40sp&quot;</span>
+     <span style="color: #7D9029">android:background=</span><span style="color: #BA2121">&quot;#000&quot;</span>
+     <span style="color: #008000; font-weight: bold">/&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/RelativeLayout&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>It is important to note here that we
+are using all <span class=SpellE>TextView</span> attributes along with custom
+component without any change. Similar way you will be able to use all the
+events, and methods along with <span class=SpellE>DateView</span> component.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Check this example to understand how
+to Instantiate a Basic Android Custom Component using Layout XML file.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Custom Component with Custom Attributes<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>We have seen how we can extend
+functionality of built-in widgets but in both the examples given above we saw
+that extended component can make use of all the default attributes of its
+parent class. But consider a situation when you want to create your own
+attribute from scratch. Below is a simple procedure to create and use new
+attributes for Android Custom components. Consider we want to introduce three
+attributes and will use them as shown below:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">&lt;com.example.dateviewdemo.DateView</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;match_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+   <span style="color: #7D9029">android:textColor=</span><span style="color: #BA2121">&quot;#fff&quot;</span>
+   <span style="color: #7D9029">android:textSize=</span><span style="color: #BA2121">&quot;40sp&quot;</span>
+   <span style="color: #7D9029">custom:delimiter=</span><span style="color: #BA2121">&quot;-&quot;</span>
+   <span style="color: #7D9029">custom:fancyText=</span><span style="color: #BA2121">&quot;true&quot;</span>
+<span style="color: #008000; font-weight: bold">/&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Step 1<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The first step to enable us to use
+our custom attributes is to define them in a new xml file under <i>res/values/</i>
+and call it <b>attrs.xml</b>. Let's have a look on an example attrs.xml file:<o:p></o:p></span></p>
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;resources&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;declare-styleable</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;DateView&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;attr</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;delimiter&quot;</span> <span style="color: #7D9029">format=</span><span style="color: #BA2121">&quot;string&quot;</span><span style="color: #008000; font-weight: bold">/&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;attr</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;fancyText&quot;</span> <span style="color: #7D9029">format=</span><span style="color: #BA2121">&quot;boolean&quot;</span><span style="color: #008000; font-weight: bold">/&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;/declare-styleable&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/resources&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here the <b>name=value</b> is what we
+want to use in our Layout XML file as attribute, and the <b>format=type</b> is
+the type of attribute.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Step 2<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Your second step will be to read
+these attributes from Layout XML file and set them for the component. This
+logic will go in the constructors that get passed an <span class=SpellE><i>AttributeSet</i></span>,
+since that is what contains the XML attributes. To read the values in the XML,
+you need to first create a <span class=SpellE><i>TypedArray</i></span> from the
+<span class=SpellE><i>AttributeSet</i></span>, then use that to read and set
+the values as shown in the below example code:<o:p></o:p></span></p>
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">TypedArray a <span style="color: #666666">=</span> context<span style="color: #666666">.</span><span style="color: #7D9029">obtainStyledAttributes</span><span style="color: #666666">(</span>attrs<span style="color: #666666">,</span> R<span style="color: #666666">.</span><span style="color: #7D9029">styleable</span><span style="color: #666666">.</span><span style="color: #7D9029">DateView</span><span style="color: #666666">);</span>
+ 
+<span style="color: #008000; font-weight: bold">final</span> <span style="color: #B00040">int</span> N <span style="color: #666666">=</span> a<span style="color: #666666">.</span><span style="color: #7D9029">getIndexCount</span><span style="color: #666666">();</span>
+<span style="color: #008000; font-weight: bold">for</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span> i <span style="color: #666666">=</span> <span style="color: #666666">0;</span> i <span style="color: #666666">&lt;</span> N<span style="color: #666666">;</span> <span style="color: #666666">++</span>i<span style="color: #666666">)</span>
+<span style="color: #666666">{</span>
+   <span style="color: #B00040">int</span> attr <span style="color: #666666">=</span> a<span style="color: #666666">.</span><span style="color: #7D9029">getIndex</span><span style="color: #666666">(</span>i<span style="color: #666666">);</span>
+   <span style="color: #008000; font-weight: bold">switch</span> <span style="color: #666666">(</span>attr<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">case</span> R<span style="color: #666666">.</span><span style="color: #7D9029">styleable</span><span style="color: #666666">.</span><span style="color: #7D9029">DateView_delimiter</span><span style="color: #666666">:</span>
+         String delimiter <span style="color: #666666">=</span> a<span style="color: #666666">.</span><span style="color: #7D9029">getString</span><span style="color: #666666">(</span>attr<span style="color: #666666">);</span>
+         <span style="color: #408080; font-style: italic">//...do something with delimiter...</span>
+         <span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+      <span style="color: #008000; font-weight: bold">case</span> R<span style="color: #666666">.</span><span style="color: #7D9029">styleable</span><span style="color: #666666">.</span><span style="color: #7D9029">DateView_fancyText</span><span style="color: #666666">:</span>
+         <span style="color: #B00040">boolean</span> fancyText <span style="color: #666666">=</span> a<span style="color: #666666">.</span><span style="color: #7D9029">getBoolean</span><span style="color: #666666">(</span>attr<span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">false</span><span style="color: #666666">);</span>
+         <span style="color: #408080; font-style: italic">//...do something with fancyText...</span>
+         <span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+a<span style="color: #666666">.</span><span style="color: #7D9029">recycle</span><span style="color: #666666">();</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Step 3<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Finally you can use your defined
+attributes in your Layout XML file as follows:<o:p></o:p></span></p>
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">&lt;RelativeLayout</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span style="color: #7D9029">xmlns:tools=</span><span style="color: #BA2121">&quot;http://schemas.android.com/tools&quot;</span>
+    <span style="color: #7D9029">xmlns:custom=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/com.example.dateviewdemo&quot;</span>
+    <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;match_parent&quot;</span>
+    <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;match_parent&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+   
+    <span style="color: #008000; font-weight: bold">&lt;com.example.dateviewdemo.DateView</span>
+		<span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;match_parent&quot;</span>
+		<span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+		<span style="color: #7D9029">android:textColor=</span><span style="color: #BA2121">&quot;#fff&quot;</span>
+		<span style="color: #7D9029">android:textSize=</span><span style="color: #BA2121">&quot;40sp&quot;</span>
+		<span style="color: #7D9029">custom:delimiter=</span><span style="color: #BA2121">&quot;-&quot;</span>
+		<span style="color: #7D9029">custom:fancyText=</span><span style="color: #BA2121">&quot;true&quot;</span>
+    <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+<span style="color: #008000; font-weight: bold">&lt;/RelativeLayout&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The important part is <i>xmlns<span
+class=GramE>:custom</span>=&quot;http://schemas.android.com/apk/res/com.example.dateviewdemo&quot;</i>.
+Note that <i>http://schemas.android.com/apk/res/</i> will remain as is, but
+last part will be set to your package name and also that you can use anything
+after <span class=SpellE>xmlns</span><span class=GramE>:,</span> in this
+example I used <b>custom</b>, but you could use any name you like.<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

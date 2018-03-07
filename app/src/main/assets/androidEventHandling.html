@@ -1,0 +1,1015 @@
+<html>
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Android Event Handling<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Events are a useful way to collect
+data about a user's interaction with interactive components of your app, like
+button presses or screen touch etc. The Android framework maintains an event
+queue into which events are placed as they occur and then each event is removed
+from the queue on a first-in, first-out (FIFO) basis. You can capture these
+events in your program and take appropriate action as per requirements.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>There are following three concepts
+related to Android Event Management:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo1;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Event Listeners:</span></b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     The <b>View</b> class is mainly involved in building up <span
+     class=SpellE><span class=GramE>a</span></span> Android GUI, same View
+     class provides a number of Event Listeners. The Event Listener is the
+     object that receives notification when an event <span class=SpellE>happes</span>.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo1;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Event Listeners Registration:</span></b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'> Event Registration is the process by which an Event
+     Handler gets registered with an Event Listener so that the handler is
+     called when the Event Listener fires the event.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo1;tab-stops:list .5in'><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Event Handlers:</span></b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     When an event happens and we have registered and event listener <span
+     class=SpellE><span class=GramE>fo</span></span> the event, the event
+     listener calls the Event Handlers, which is the method that actually
+     handles the event.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Event Listeners &amp; Event Handlers<o:p></o:p></span></b></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width="20%" valign=top style='width:20.0%;border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Event
+  Handler<o:p></o:p></span></b></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Event
+  Listener &amp; Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>onClick</span></span><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>()<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span class=GramE><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>OnClickListener</span></b></span></span><span
+  class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>(</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>)</span></b><span style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'><br>
+  This is called when the user either clicks or touches or focuses upon any
+  widget like button, text, image etc. You will use <span class=SpellE><span
+  class=GramE>onClick</span></span><span class=GramE>(</span>) event handler to
+  handle such event.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>onLongClick</span></span><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>()<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span class=GramE><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>OnLongClickListener</span></b></span></span><span
+  class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>(</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>)</span></b><span style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'><br>
+  This is called when the user either clicks or touches or focuses upon any
+  widget like button, text, image etc. for one or more seconds. You will use <span
+  class=SpellE><span class=GramE>onLongClick</span></span><span class=GramE>(</span>)
+  event handler to handle such event.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>onFocusChange</span></span><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>()<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span class=GramE><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>OnFocusChangeListener</span></b></span></span><span
+  class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>(</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>)</span></b><span style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'><br>
+  This is called when the widget <span class=SpellE>looses</span> its focus <span
+  class=SpellE>ie</span>. <span class=GramE>user</span> goes away from the view
+  item. You will use <span class=SpellE><span class=GramE>onFocusChange</span></span><span
+  class=GramE>(</span>) event handler to handle such event.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>onKey</span></span><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>()<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span class=GramE><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>OnFocusChangeListener</span></b></span></span><span
+  class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>(</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>)</span></b><span style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'><br>
+  This is called when the user is focused on the item and presses or releases a
+  hardware key on the device. You will use <span class=SpellE><span
+  class=GramE>onKey</span></span><span class=GramE>(</span>) event handler to
+  handle such event.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>onTouch</span></span><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>()<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span class=GramE><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>OnTouchListener</span></b></span></span><span
+  class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>(</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>)</span></b><span style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'><br>
+  This is called when the user presses the key, releases the key, or any
+  movement gesture on the screen. You will use <span class=SpellE><span
+  class=GramE>onTouch</span></span><span class=GramE>(</span>) event handler to
+  handle such event.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>onMenuItemClick</span></span><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>()<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span class=GramE><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>OnMenuItemClickListener</span></b></span></span><span
+  class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>(</span></b></span><b><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>)</span></b><span style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'><br>
+  This is called when the user selects a menu item. You will use <span
+  class=SpellE><span class=GramE>onMenuItemClick</span></span><span
+  class=GramE>(</span>) event handler to handle such event.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>There are many more event listeners
+available as a part of <b>View</b> class like <span class=SpellE>OnHoverListener</span>,
+<span class=SpellE>OnDragListener</span> <span class=SpellE>etc</span> which
+may be needed for your application. So I recommend to refer official
+documentation for Android application development in case you are going to
+develop a sophisticated apps.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Event Listeners Registration:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Event Registration is the process by
+which an Event Handler gets registered with an Event Listener so that the
+handler is called when the Event Listener fires the event. Though there are
+several tricky ways to register your event listener for any event, but I'm
+going to list down only top 3 ways, out of which you can use any of them based
+on the situation.<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Using an Anonymous Inner Class<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Activity class implements the Listener interface.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Using Layout file activity_main.xml to specify event
+     handler directly.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Below section will provide you
+detailed examples on all the three scenarios:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Event Handling Examples<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='mso-bidi-font-size:
+10.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Event
+Listeners Registration Using an Anonymous Inner Class<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here you will create an anonymous
+implementation of the listener and will be useful if each class is applied to a
+single control only and you have advantage to pass arguments to event handler.
+In this approach event handler methods can access private data of Activity. No
+reference is needed to call to Activity.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>But if you applied the handler to
+more than one control, you would have to cut and paste the code for the handler
+and if the code for the handler is long, it makes the code harder to maintain.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following are the simple steps to
+show how we will make use of separate Listener class to register and capture
+click event. Similar way you can implement your listener for any other required
+event type.<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Step<o:p></o:p></span></b></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>You will use Eclipse IDE to create
+  an Android application and name it as <span class=SpellE><i>EventDemo</i></span>
+  under a package <span class=SpellE><i>com.example.eventdemo</i></span> as
+  explained in the <i>Hello World Example</i> chapter.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>2<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify <span class=SpellE><i>src</i></span><i>/MainActivity.java</i>
+  file to add click event listeners and handlers for the two buttons defined.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>3<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify the <span class=SpellE>detault</span>
+  content of <i>res/layout/activity_main.xml</i> file to include Android UI
+  controls.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>4<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Define required constants in <i>res/values/strings.xml</i>
+  file<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;mso-yfti-lastrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>5<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Run the application to launch
+  Android emulator and verify the result of the changes done in the <span
+  class=SpellE>aplication</span>.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the content of the
+modified main activity file <span class=SpellE><b>src</b></span><b>/<span
+class=SpellE>com.example.eventdemo</span>/MainActivity.java</b>. This file can
+include each of the fundamental lifecycle methods.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">package</span> com<span style="color: #666666">.</span><span style="color: #7D9029">example</span><span style="color: #666666">.</span><span style="color: #7D9029">eventdemo</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.os.Bundle</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.Activity</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.Menu</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.View</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.widget.Button</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.widget.TextView</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">MainActivity</span> <span style="color: #008000; font-weight: bold">extends</span> Activity <span style="color: #666666">{</span>
+ 
+    <span style="color: #AA22FF">@Override</span>
+    <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onCreate</span><span style="color: #666666">(</span>Bundle savedInstanceState<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+        <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onCreate</span><span style="color: #666666">(</span>savedInstanceState<span style="color: #666666">);</span>
+        setContentView<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">layout</span><span style="color: #666666">.</span><span style="color: #7D9029">activity_main</span><span style="color: #666666">);</span>
+       
+        <span style="color: #408080; font-style: italic">//--- find both the buttons---</span>
+        Button sButton <span style="color: #666666">=</span> <span style="color: #666666">(</span>Button<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">button_s</span><span style="color: #666666">);</span>
+        Button lButton <span style="color: #666666">=</span> <span style="color: #666666">(</span>Button<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">button_l</span><span style="color: #666666">);</span>
+       
+        <span style="color: #408080; font-style: italic">// -- register click event with first button ---</span>
+        sButton<span style="color: #666666">.</span><span style="color: #7D9029">setOnClickListener</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> View<span style="color: #666666">.</span><span style="color: #7D9029">OnClickListener</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+           <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onClick</span><span style="color: #666666">(</span>View v<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+               <span style="color: #408080; font-style: italic">// --- find the text view --</span>
+               TextView txtView <span style="color: #666666">=</span> <span style="color: #666666">(</span>TextView<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">text_id</span><span style="color: #666666">);</span>
+               <span style="color: #408080; font-style: italic">// -- change text size --</span>
+               txtView<span style="color: #666666">.</span><span style="color: #7D9029">setTextSize</span><span style="color: #666666">(14);</span>
+           <span style="color: #666666">}</span>
+        <span style="color: #666666">});</span>
+       
+        <span style="color: #408080; font-style: italic">// -- register click event with second button ---</span>
+        lButton<span style="color: #666666">.</span><span style="color: #7D9029">setOnClickListener</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> View<span style="color: #666666">.</span><span style="color: #7D9029">OnClickListener</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+           <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onClick</span><span style="color: #666666">(</span>View v<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+               <span style="color: #408080; font-style: italic">// --- find the text view --</span>
+               TextView txtView <span style="color: #666666">=</span> <span style="color: #666666">(</span>TextView<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">text_id</span><span style="color: #666666">);</span>
+               <span style="color: #408080; font-style: italic">// -- change text size --</span>
+               txtView<span style="color: #666666">.</span><span style="color: #7D9029">setTextSize</span><span style="color: #666666">(24);</span>
+           <span style="color: #666666">}</span>
+        <span style="color: #666666">});</span>
+    <span style="color: #666666">}</span>
+ 
+    <span style="color: #AA22FF">@Override</span>
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">boolean</span> <span style="color: #0000FF">onCreateOptionsMenu</span><span style="color: #666666">(</span>Menu menu<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+        getMenuInflater<span style="color: #666666">().</span><span style="color: #7D9029">inflate</span><span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">menu</span><span style="color: #666666">.</span><span style="color: #7D9029">main</span><span style="color: #666666">,</span> menu<span style="color: #666666">);</span>
+        <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">;</span>
+    <span style="color: #666666">}</span>
+   
+<span style="color: #666666">}</span>
+</pre></div>
+
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following will be the content of <b>res/layout/activity_main.xml</b>
+file:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;LinearLayout</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:orientation=</span><span style="color: #BA2121">&quot;vertical&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;Button</span>
+    <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/button_s&quot;</span>
+    <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+    <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;match_parent&quot;</span>
+    <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;@string/button_small&quot;</span><span style="color: #008000; font-weight: bold">/&gt;</span>
+   
+    <span style="color: #008000; font-weight: bold">&lt;Button</span>
+    <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/button_l&quot;</span>
+    <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+    <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;match_parent&quot;</span>
+    <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;@string/button_large&quot;</span><span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;TextView</span>
+    <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/text_id&quot;</span>
+    <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+    <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+    <span style="color: #7D9029">android:capitalize=</span><span style="color: #BA2121">&quot;characters&quot;</span>
+    <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;@string/hello_world&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+<span style="color: #008000; font-weight: bold">&lt;/LinearLayout&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following will be the content of <b>res/values/strings.xml</b>
+to define two new constants:<o:p></o:p></span></p>
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;resources&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;app_name&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>EventDemo<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;action_settings&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Settings<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;hello_world&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Hello world!<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;button_small&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Small Font<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;button_large&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Large Font<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/resources&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the default content of <b>AndroidManifest.xml</b>:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;manifest</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span style="color: #7D9029">package=</span><span style="color: #BA2121">&quot;com.example.guidemo&quot;</span>
+    <span style="color: #7D9029">android:versionCode=</span><span style="color: #BA2121">&quot;1&quot;</span>
+    <span style="color: #7D9029">android:versionName=</span><span style="color: #BA2121">&quot;1.0&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;uses-sdk</span>
+        <span style="color: #7D9029">android:minSdkVersion=</span><span style="color: #BA2121">&quot;8&quot;</span>
+        <span style="color: #7D9029">android:targetSdkVersion=</span><span style="color: #BA2121">&quot;17&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;application</span>
+        <span style="color: #7D9029">android:allowBackup=</span><span style="color: #BA2121">&quot;true&quot;</span>
+        <span style="color: #7D9029">android:icon=</span><span style="color: #BA2121">&quot;@drawable/ic_launcher&quot;</span>
+        <span style="color: #7D9029">android:label=</span><span style="color: #BA2121">&quot;@string/app_name&quot;</span>
+        <span style="color: #7D9029">android:theme=</span><span style="color: #BA2121">&quot;@style/AppTheme&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+        <span style="color: #008000; font-weight: bold">&lt;activity</span>
+            <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;com.example.guidemo.MainActivity&quot;</span>
+            <span style="color: #7D9029">android:label=</span><span style="color: #BA2121">&quot;@string/app_name&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+            <span style="color: #008000; font-weight: bold">&lt;intent-filter&gt;</span>
+                <span style="color: #008000; font-weight: bold">&lt;action</span> <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;android.intent.action.MAIN&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+                <span style="color: #008000; font-weight: bold">&lt;category</span> <span style="color: #7D9029">android:name=</span><span style="color: #BA2121">&quot;android.intent.category.LAUNCHER&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+            <span style="color: #008000; font-weight: bold">&lt;/intent-filter&gt;</span>
+        <span style="color: #008000; font-weight: bold">&lt;/activity&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;/application&gt;</span>
+ 
+<span style="color: #008000; font-weight: bold">&lt;/manifest&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Let's try to run your <span
+class=SpellE><b>EventDemo</b></span> application. I assume you had created your
+<b>AVD</b> while doing environment setup. To run the app from Eclipse, open one
+of your project's activity files and click Run icon from the toolbar. Eclipse
+installs the app on your AVD and starts it and if everything is fine with your
+setup and application, it will display following Emulator window:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now you try to click on two buttons
+one by one and you will see that font of the <b>Hello World</b> text will
+change, which happens because registered click event handler method is being
+called against each click event.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Registration Using the Activity Implements Listener
+Interface<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here your Activity class implements
+the Listener interface and you put the handler method in the main Activity and
+then you call <span class=SpellE><span class=GramE>setOnClickListener</span></span><span
+class=GramE>(</span>this).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This approach is fine if your
+application has only a single control of that Listener type otherwise you will
+have to do further programming to check which control has generated event.
+Second you cannot pass arguments to the Listener so, again, works poorly for
+multiple controls.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following are the simple steps to
+show how we will implement Listener class to register and capture click event.
+Similar way you can implement your listener for any other required event type.<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Step<o:p></o:p></span></b></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>We do not need to create this
+  application from scratch, so let's make use of above created Android
+  application <span class=SpellE><i>EventDemo</i></span>.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>2<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify <span class=SpellE><i>src</i></span><i>/MainActivity.java</i>
+  file to add click event listeners and handlers for the two buttons defined.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>3<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>We are not making any change in <i>res/layout/activity_main.xml</i>,
+  it will remain as shown above.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>4<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>We are also not making any change
+  in <i>res/values/strings.xml</i> file, it will also remain as shown above.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;mso-yfti-lastrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>5<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Run the application to launch
+  Android emulator and verify the result of the changes done in the <span
+  class=SpellE>aplication</span>.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the content of the
+modified main activity file <span class=SpellE><b>src</b></span><b>/<span
+class=SpellE>com.example.eventdemo</span>/MainActivity.java</b>. This file can
+include each of the fundamental lifecycle methods.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">package</span> com<span style="color: #666666">.</span><span style="color: #7D9029">example</span><span style="color: #666666">.</span><span style="color: #7D9029">eventdemo</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.os.Bundle</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.Activity</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.Menu</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.View</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.View.OnClickListener</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.widget.Button</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.widget.TextView</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">MainActivity</span> <span style="color: #008000; font-weight: bold">extends</span> Activity <span style="color: #008000; font-weight: bold">implements</span> OnClickListener <span style="color: #666666">{</span>
+ 
+    <span style="color: #AA22FF">@Override</span>
+    <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onCreate</span><span style="color: #666666">(</span>Bundle savedInstanceState<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+        <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onCreate</span><span style="color: #666666">(</span>savedInstanceState<span style="color: #666666">);</span>
+        setContentView<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">layout</span><span style="color: #666666">.</span><span style="color: #7D9029">activity_main</span><span style="color: #666666">);</span>
+       
+        <span style="color: #408080; font-style: italic">//--- find both the buttons---</span>
+        Button sButton <span style="color: #666666">=</span> <span style="color: #666666">(</span>Button<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">button_s</span><span style="color: #666666">);</span>
+        Button lButton <span style="color: #666666">=</span> <span style="color: #666666">(</span>Button<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">button_l</span><span style="color: #666666">);</span>
+       
+       
+        <span style="color: #408080; font-style: italic">// -- register click event with first button ---</span>
+        sButton<span style="color: #666666">.</span><span style="color: #7D9029">setOnClickListener</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">);</span>
+        <span style="color: #408080; font-style: italic">// -- register click event with second button ---</span>
+        lButton<span style="color: #666666">.</span><span style="color: #7D9029">setOnClickListener</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">);</span>
+    <span style="color: #666666">}</span>
+       
+    <span style="color: #408080; font-style: italic">//--- Implement the OnClickListener callback</span>
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onClick</span><span style="color: #666666">(</span>View v<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+       <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span>v<span style="color: #666666">.</span><span style="color: #7D9029">getId</span><span style="color: #666666">()</span> <span style="color: #666666">==</span> R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">button_s</span><span style="color: #666666">)</span>
+       <span style="color: #666666">{</span>
+            <span style="color: #408080; font-style: italic">// --- find the text view --</span>
+            TextView txtView <span style="color: #666666">=</span> <span style="color: #666666">(</span>TextView<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">text_id</span><span style="color: #666666">);</span>
+            <span style="color: #408080; font-style: italic">// -- change text size --</span>
+            txtView<span style="color: #666666">.</span><span style="color: #7D9029">setTextSize</span><span style="color: #666666">(14);</span>
+            <span style="color: #008000; font-weight: bold">return</span><span style="color: #666666">;</span>
+       <span style="color: #666666">}</span>
+       <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span>v<span style="color: #666666">.</span><span style="color: #7D9029">getId</span><span style="color: #666666">()</span> <span style="color: #666666">==</span> R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">button_l</span><span style="color: #666666">)</span>
+       <span style="color: #666666">{</span>
+            <span style="color: #408080; font-style: italic">// --- find the text view --</span>
+            TextView txtView <span style="color: #666666">=</span> <span style="color: #666666">(</span>TextView<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">text_id</span><span style="color: #666666">);</span>
+            <span style="color: #408080; font-style: italic">// -- change text size --</span>
+            txtView<span style="color: #666666">.</span><span style="color: #7D9029">setTextSize</span><span style="color: #666666">(24);</span>
+            <span style="color: #008000; font-weight: bold">return</span><span style="color: #666666">;</span>
+       <span style="color: #666666">}</span>
+    <span style="color: #666666">}</span>
+ 
+    <span style="color: #AA22FF">@Override</span>
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">boolean</span> <span style="color: #0000FF">onCreateOptionsMenu</span><span style="color: #666666">(</span>Menu menu<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+        getMenuInflater<span style="color: #666666">().</span><span style="color: #7D9029">inflate</span><span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">menu</span><span style="color: #666666">.</span><span style="color: #7D9029">main</span><span style="color: #666666">,</span> menu<span style="color: #666666">);</span>
+        <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">;</span>
+    <span style="color: #666666">}</span>
+   
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now again let's try to run your <span
+class=SpellE><b>EventDemo</b></span> application. I assume you had created your
+<b>AVD</b> while doing environment setup. To run the app from Eclipse, open one
+of your project's activity files and click Run </span><!--[if mso & !supportInlineShapes & supportFields]><span
+style='mso-element:field-begin;mso-field-lock:yes'></span><span
+style='mso-spacerun:yes'> </span>SHAPE <span
+style='mso-spacerun:yes'> </span>\* MERGEFORMAT <span style='mso-element:field-separator'></span><![endif]--><!--[if gte vml 1]><v:rect
+ id="Rectangle_x0020_4" o:spid="_x0000_s1026" alt="Eclipse Run Icon" style='width:24pt;
+ height:24pt;visibility:visible;mso-wrap-style:square;mso-left-percent:-10001;
+ mso-top-percent:-10001;mso-position-horizontal:absolute;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line;mso-left-percent:-10001;mso-top-percent:-10001;
+ v-text-anchor:top' o:gfxdata="UEsDBBQABgAIAAAAIQC2gziS/gAAAOEBAAATAAAAW0NvbnRlbnRfVHlwZXNdLnhtbJSRQU7DMBBF
+90jcwfIWJU67QAgl6YK0S0CoHGBkTxKLZGx5TGhvj5O2G0SRWNoz/78nu9wcxkFMGNg6quQqL6RA
+0s5Y6ir5vt9lD1JwBDIwOMJKHpHlpr69KfdHjyxSmriSfYz+USnWPY7AufNIadK6MEJMx9ApD/oD
+OlTrorhX2lFEilmcO2RdNtjC5xDF9pCuTyYBB5bi6bQ4syoJ3g9WQ0ymaiLzg5KdCXlKLjvcW893
+SUOqXwnz5DrgnHtJTxOsQfEKIT7DmDSUCaxw7Rqn8787ZsmRM9e2VmPeBN4uqYvTtW7jvijg9N/y
+JsXecLq0q+WD6m8AAAD//wMAUEsDBBQABgAIAAAAIQA4/SH/1gAAAJQBAAALAAAAX3JlbHMvLnJl
+bHOkkMFqwzAMhu+DvYPRfXGawxijTi+j0GvpHsDYimMaW0Yy2fr2M4PBMnrbUb/Q94l/f/hMi1qR
+JVI2sOt6UJgd+ZiDgffL8ekFlFSbvV0oo4EbChzGx4f9GRdb25HMsYhqlCwG5lrLq9biZkxWOiqY
+22YiTra2kYMu1l1tQD30/bPm3wwYN0x18gb45AdQl1tp5j/sFB2T0FQ7R0nTNEV3j6o9feQzro1i
+OWA14Fm+Q8a1a8+Bvu/d/dMb2JY5uiPbhG/ktn4cqGU/er3pcvwCAAD//wMAUEsDBBQABgAIAAAA
+IQC5Ik2pxQIAANAFAAAOAAAAZHJzL2Uyb0RvYy54bWysVNtu2zAMfR+wfxD07tpOlYuNOkUbx0OB
+biva7QMUWY6F2ZInKXG6Yf8+Sk7SpH0ZtvnBkEjpkIc84tX1rm3QlmsjlMxwfBFhxCVTpZDrDH/9
+UgQzjIylsqSNkjzDz9zg6/n7d1d9l/KRqlVTco0ARJq07zJcW9ulYWhYzVtqLlTHJTgrpVtqYavX
+YalpD+htE46iaBL2SpedVowbA9Z8cOK5x68qzuznqjLcoibDkJv1f+3/K/cP51c0XWva1YLt06B/
+kUVLhYSgR6icWoo2WryBagXTyqjKXjDVhqqqBOOeA7CJo1dsnmracc8FimO6Y5nM/4Nln7YPGoky
+wwQjSVto0SMUjcp1wxGYSm4YlGvJGtEZjh43Et0xJV3d+s6kcP2pe9COuenuFftmkFSLGq7zG9MB
+EGgCcA8mrVVfc1oCgdhBhGcYbmMADa36j6qETOjGKl/VXaVbFwPqhXa+ec/H5vGdRQyMlxGZRdBi
+Bq792kWg6eFyp439wFWL3CLDGrLz4HR7b+xw9HDExZKqEE0Ddpo28swAmIMFQsNV53NJ+Hb/TKJk
+OVvOSEBGk2VAojwPbooFCSZFPB3nl/likce/XNyYpLUoSy5dmIP0YvJnrd0/gkE0R/EZ1YjSwbmU
+jF6vFo1GWwrSL/znSw6el2PheRq+XsDlFaV4RKLbURIUk9k0IAUZB8k0mgVRnNwmk4gkJC/OKd0L
+yf+dEuoznIxHY9+lk6RfcYv895YbTVthYbg0os0wSAM+d4imToFLWfq1paIZ1ielcOm/lALafWi0
+16uT6KD+lSqfQa5agZxAeTAGYVEr/QOjHkZKhs33DdUco+ZOguSTmBA3g/yGjKcj2OhTz+rUQyUD
+qAxbjIblwg5za9Npsa4hUuwLI9UNPJNKeAm7JzRktX9cMDY8k/2Ic3PpdO9PvQzi+W8AAAD//wMA
+UEsDBBQABgAIAAAAIQBMoOks2AAAAAMBAAAPAAAAZHJzL2Rvd25yZXYueG1sTI9BS8NAEIXvgv9h
+GcGL2I0iUmI2RQpiEaGYas/T7JgEs7NpdpvEf9+pHvQyw+MNb76XLSbXqoH60Hg2cDNLQBGX3jZc
+GXjfPF3PQYWIbLH1TAa+KcAiPz/LMLV+5DcailgpCeGQooE6xi7VOpQ1OQwz3xGL9+l7h1FkX2nb
+4yjhrtW3SXKvHTYsH2rsaFlT+VUcnIGxXA/bzeuzXl9tV573q/2y+Hgx5vJienwAFWmKf8dwwhd0
+yIVp5w9sg2oNSJH4M8W7m4va/W6dZ/o/e34EAAD//wMAUEsBAi0AFAAGAAgAAAAhALaDOJL+AAAA
+4QEAABMAAAAAAAAAAAAAAAAAAAAAAFtDb250ZW50X1R5cGVzXS54bWxQSwECLQAUAAYACAAAACEA
+OP0h/9YAAACUAQAACwAAAAAAAAAAAAAAAAAvAQAAX3JlbHMvLnJlbHNQSwECLQAUAAYACAAAACEA
+uSJNqcUCAADQBQAADgAAAAAAAAAAAAAAAAAuAgAAZHJzL2Uyb0RvYy54bWxQSwECLQAUAAYACAAA
+ACEATKDpLNgAAAADAQAADwAAAAAAAAAAAAAAAAAfBQAAZHJzL2Rvd25yZXYueG1sUEsFBgAAAAAE
+AAQA8wAAACQGAAAAAA==
+" filled="f" stroked="f">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <w:wrap type="none"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><![endif]--><!--[if mso & !supportInlineShapes & supportFields]><v:shape
+ id="_x0000_i1025" type="#_x0000_t75" style='width:24pt;height:24pt'>
+ <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+</v:shape><span style='mso-element:field-end'></span><![endif]--><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>icon from the toolbar. Eclipse installs the app on your AVD
+and starts it and if everything is fine with your setup and application, it
+will display following Emulator window:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now you try to click on two buttons
+one by one and <span class=SpellE>yu</span> will see that font of the <b>Hello
+World</b> text will change, which happens because registered click event
+handler method is being called against each click event.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='mso-bidi-font-size:
+10.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Registration
+Using Layout file activity_main.xml<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here you put your event handlers in
+Activity class without implementing a Listener interface or call to any
+listener method. Rather you will use the layout file (activity_main.xml) to
+specify the handler method via the <span class=SpellE><b>android<span
+class=GramE>:onClick</span></b></span> attribute for click event. You can
+control click events differently for different control by passing different
+event handler methods. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The event handler method must have a
+void return type and take a View as an argument. However, the method name is
+arbitrary, and the main class need not implement any particular interface.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This approach does not allow you to
+pass arguments to Listener and for the Android developers it will be difficult
+to know which method is the handler for which control until they look into
+activity_main.xml file. Second, you <span class=SpellE>can not</span> handle
+any other event except click event using this approach.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following are the simple steps to
+show how we can make use of layout file Main.xml to register and capture click
+event.<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Step<o:p></o:p></span></b></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>1<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>We do not need to create this
+  application from scratch, so let's make use of above created Android
+  application <span class=SpellE><i>EventDemo</i></span>.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>2<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify <span class=SpellE><i>src</i></span><i>/MainActivity.java</i>
+  file to add click event listeners and handlers for the two buttons defined.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>3<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Modify layout file <i>res/layout/activity_main.xml</i>,
+  to specify event handlers for the two buttons.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>4<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>We are also not making any change
+  in <i>res/values/strings.xml</i> file, it will also remain as shown above.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;mso-yfti-lastrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>5<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Run the application to launch
+  Android emulator and verify the result of the changes done in the <span
+  class=SpellE>aplication</span>.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the content of the
+modified main activity file <span class=SpellE><b>src</b></span><b>/<span
+class=SpellE>com.example.eventdemo</span>/MainActivity.java</b>. This file can
+include each of the fundamental lifecycle methods.<o:p></o:p></span></p>
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">package</span> com<span style="color: #666666">.</span><span style="color: #7D9029">example</span><span style="color: #666666">.</span><span style="color: #7D9029">eventdemo</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.os.Bundle</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.app.Activity</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.Menu</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.view.View</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.widget.Button</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">android.widget.TextView</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">MainActivity</span> <span style="color: #008000; font-weight: bold">extends</span> Activity<span style="color: #666666">{</span>
+ 
+    <span style="color: #AA22FF">@Override</span>
+    <span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onCreate</span><span style="color: #666666">(</span>Bundle savedInstanceState<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+        <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onCreate</span><span style="color: #666666">(</span>savedInstanceState<span style="color: #666666">);</span>
+        setContentView<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">layout</span><span style="color: #666666">.</span><span style="color: #7D9029">activity_main</span><span style="color: #666666">);</span>
+    <span style="color: #666666">}</span>
+       
+    <span style="color: #408080; font-style: italic">//--- Implement the event handler for the first button.</span>
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">doSmall</span><span style="color: #666666">(</span>View v<span style="color: #666666">)</span>  <span style="color: #666666">{</span>
+       <span style="color: #408080; font-style: italic">// --- find the text view --</span>
+       TextView txtView <span style="color: #666666">=</span> <span style="color: #666666">(</span>TextView<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">text_id</span><span style="color: #666666">);</span>
+       <span style="color: #408080; font-style: italic">// -- change text size --</span>
+       txtView<span style="color: #666666">.</span><span style="color: #7D9029">setTextSize</span><span style="color: #666666">(14);</span>
+       <span style="color: #008000; font-weight: bold">return</span><span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #408080; font-style: italic">//--- Implement the event handler for the second button.</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">doLarge</span><span style="color: #666666">(</span>View v<span style="color: #666666">)</span>  <span style="color: #666666">{</span>
+       <span style="color: #408080; font-style: italic">// --- find the text view --</span>
+       TextView txtView <span style="color: #666666">=</span> <span style="color: #666666">(</span>TextView<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">text_id</span><span style="color: #666666">);</span>
+       <span style="color: #408080; font-style: italic">// -- change text size --</span>
+       txtView<span style="color: #666666">.</span><span style="color: #7D9029">setTextSize</span><span style="color: #666666">(24);</span>
+       <span style="color: #008000; font-weight: bold">return</span><span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+ 
+    <span style="color: #AA22FF">@Override</span>
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">boolean</span> <span style="color: #0000FF">onCreateOptionsMenu</span><span style="color: #666666">(</span>Menu menu<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+        getMenuInflater<span style="color: #666666">().</span><span style="color: #7D9029">inflate</span><span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">menu</span><span style="color: #666666">.</span><span style="color: #7D9029">main</span><span style="color: #666666">,</span> menu<span style="color: #666666">);</span>
+        <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">;</span>
+    <span style="color: #666666">}</span> 
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following will be the content of <b>res/layout/activity_main.xml</b>
+file. Here we have to add <span class=SpellE><b>android<span class=GramE>:onClick</span></b></span><b>=&quot;<span
+class=SpellE>methodName</span>&quot;</b> for both the buttons, which will
+register given method names as click event handlers.<o:p></o:p></span></p>
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;LinearLayout</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:orientation=</span><span style="color: #BA2121">&quot;vertical&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;Button</span>
+    <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/button_s&quot;</span>
+    <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+    <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;match_parent&quot;</span>
+    <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;@string/button_small&quot;</span>
+    <span style="color: #7D9029">android:onClick=</span><span style="color: #BA2121">&quot;doSmall&quot;</span><span style="color: #008000; font-weight: bold">/&gt;</span>
+   
+    <span style="color: #008000; font-weight: bold">&lt;Button</span>
+    <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/button_l&quot;</span>
+    <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+    <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;match_parent&quot;</span>
+    <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;@string/button_large&quot;</span>
+    <span style="color: #7D9029">android:onClick=</span><span style="color: #BA2121">&quot;doLarge&quot;</span><span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+    <span style="color: #008000; font-weight: bold">&lt;TextView</span>
+    <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/text_id&quot;</span>
+    <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+    <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+    <span style="color: #7D9029">android:capitalize=</span><span style="color: #BA2121">&quot;characters&quot;</span>
+    <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;@string/hello_world&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+<span style="color: #008000; font-weight: bold">&lt;/LinearLayout&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Again let's try to run your <span
+class=SpellE><b>EventDemo</b></span> application. I assume you had created your
+<b>AVD</b> while doing environment setup. To run the app from Eclipse, open one
+of your project's activity files and click Run icon from the toolbar. Eclipse
+installs the app on your AVD and starts it and if everything is fine with your
+setup and application, it will display following Emulator window:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now you try to click on two buttons
+one by one and you will see that font of the <b>Hello World</b> text will
+change, which happens because registered click event handler method is being
+called against each click event.<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

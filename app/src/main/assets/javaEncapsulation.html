@@ -1,0 +1,151 @@
+<html>
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Java Encapsulation<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Encapsulation is one of the four
+fundamental OOP concepts. The other three are inheritance, polymorphism, and
+abstraction.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Encapsulation is the technique of
+making the fields in a class private and providing access to the fields via
+public methods. If a field is declared private, it cannot be accessed by anyone
+outside the class, thereby hiding the fields within the class. For this reason,
+encapsulation is also referred to as data hiding.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Encapsulation can be described as a
+protective barrier that prevents the code and data being randomly accessed by
+other code defined outside the class. Access to the data and code is tightly controlled
+by an interface.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The main benefit of encapsulation is
+the ability to modify our implemented code without breaking the code of others
+who use our code. With this feature Encapsulation gives maintainability,
+flexibility and extensibility to our code.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Let us look at an example that
+depicts encapsulation:<o:p></o:p></span></p>
+<!--Raees Ahmad-->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">/* File name : EncapTest.java */</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">EncapTest</span><span style="color: #666666">{</span>
+ 
+   <span style="color: #008000; font-weight: bold">private</span> String name<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">private</span> String idNum<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">int</span> age<span style="color: #666666">;</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">int</span> <span style="color: #0000FF">getAge</span><span style="color: #666666">(){</span>
+      <span style="color: #008000; font-weight: bold">return</span> age<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> String <span style="color: #0000FF">getName</span><span style="color: #666666">(){</span>
+      <span style="color: #008000; font-weight: bold">return</span> name<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> String <span style="color: #0000FF">getIdNum</span><span style="color: #666666">(){</span>
+      <span style="color: #008000; font-weight: bold">return</span> idNum<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">setAge</span><span style="color: #666666">(</span> <span style="color: #B00040">int</span> newAge<span style="color: #666666">){</span>
+      age <span style="color: #666666">=</span> newAge<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">setName</span><span style="color: #666666">(</span>String newName<span style="color: #666666">){</span>
+      name <span style="color: #666666">=</span> newName<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">setIdNum</span><span style="color: #666666">(</span> String newId<span style="color: #666666">){</span>
+      idNum <span style="color: #666666">=</span> newId<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<!--Raees Ahmad-->
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The public methods are the access
+points to this class' fields from the outside java world. Normally, these
+methods are referred as getters and setters. Therefore any class that wants to
+access the variables should access them through these getters and setters.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The variables of the <span
+class=SpellE>EncapTest</span> class can be access as below<span class=GramE>::</span><o:p></o:p></span></p>
+<!--Raees Ahmad-->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">/* File name : RunEncap.java */</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">RunEncap</span><span style="color: #666666">{</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[]){</span>
+      EncapTest encap <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> EncapTest<span style="color: #666666">();</span>
+      encap<span style="color: #666666">.</span><span style="color: #7D9029">setName</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;James&quot;</span><span style="color: #666666">);</span>
+      encap<span style="color: #666666">.</span><span style="color: #7D9029">setAge</span><span style="color: #666666">(20);</span>
+      encap<span style="color: #666666">.</span><span style="color: #7D9029">setIdNum</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;12343ms&quot;</span><span style="color: #666666">);</span>
+ 
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Name : &quot;</span> <span style="color: #666666">+</span> encap<span style="color: #666666">.</span><span style="color: #7D9029">getName</span><span style="color: #666666">()+</span>
+                             <span style="color: #BA2121">&quot; Age : &quot;</span><span style="color: #666666">+</span> encap<span style="color: #666666">.</span><span style="color: #7D9029">getAge</span><span style="color: #666666">());</span>
+    <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<!--Raees Ahmad-->
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:red'>Name :</span></span><span style='font-size:12.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:red'>
+James Age : 20<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Benefits of Encapsulation:<o:p></o:p></span></b></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>The fields of a class can be made read-only or
+     write-only.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A class can have total control over what is stored in
+     its fields.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>The users of a class do not know how the class stores
+     its data. A class can change the data type of a field and users of the
+     class do not need to change any of their code.<o:p></o:p></span></li>
+</ul>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+<html>
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Android Styles and Themes<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If you already know about Cascading
+Style Sheet (CSS) in web design then to understand Android Style also works
+very similar way. There are number of attributes associated with each Android widget
+which you can set to change your application look and feel. A style can specify
+properties such as height, padding, font color, font size, background color,
+and much more.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You can specify these attributes in
+Layout file as follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;LinearLayout</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:orientation=</span><span style="color: #BA2121">&quot;vertical&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+ 
+   <span style="color: #008000; font-weight: bold">&lt;TextView</span>
+   <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/text_id&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+   <span style="color: #7D9029">android:capitalize=</span><span style="color: #BA2121">&quot;characters&quot;</span>
+   <span style="color: #7D9029">android:textColor=</span><span style="color: #BA2121">&quot;#00FF00&quot;</span>
+   <span style="color: #7D9029">android:typeface=</span><span style="color: #BA2121">&quot;monospace&quot;</span>
+   <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;@string/hello_world&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+<span style="color: #008000; font-weight: bold">&lt;/LinearLayout&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>But this way we need to define style
+attributes for every attribute separately which is not good for source code
+maintenance point of view. So we work with styles by defining them in separate
+file as explained below.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Defining Styles<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A style is defined in an XML resource
+that is separate from the XML that specifies the layout. This XML file resides
+under <b>res/values/</b> directory of your project and will have <b>&lt;resources&gt;</b>
+as the root node which is mandatory for the style file. The name of the XML
+file is arbitrary, but it must use the .xml extension.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You can define multiple styles per
+file using <b>&lt;style&gt;</b> tag but each style will have its name that
+uniquely identifies the style. Android style attributes are set using <b>&lt;item&gt;</b>
+tag as shown below:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;resources&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;style</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;CustomFontStyle&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+      <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:layout_width&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>fill_parent<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>
+      <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:layout_height&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>wrap_content<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>
+      <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:capitalize&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>characters<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>
+      <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:typeface&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>monospace<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>
+      <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:textSize&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>12pt<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>
+      <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:textColor&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>#00FF00<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>/&gt;
+   <span style="color: #008000; font-weight: bold">&lt;/style&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/resources&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>The value for the &lt;item&gt; can be a keyword string, a
+hex color, a reference to another resource type, or other value depending on
+the style property.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Using Styles<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Once your style is defined, you can
+use it in your XML Layout file using <b>style</b> attribute as follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;LinearLayout</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:orientation=</span><span style="color: #BA2121">&quot;vertical&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+ 
+   <span style="color: #008000; font-weight: bold">&lt;TextView</span>
+   <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/text_id&quot;</span>
+   <span style="color: #7D9029">style=</span><span style="color: #BA2121">&quot;@style/CustomFontStyle&quot;</span>
+   <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;@string/hello_world&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+ 
+<span style="color: #008000; font-weight: bold">&lt;/LinearLayout&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To understand the concept related to
+Android Style, you can check Style Demo Example.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Style Inheritance<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Android supports style Inheritance
+in very much similar way as cascading style sheet in web design. You can use
+this to inherit properties from an existing style and then define only the
+properties that you want to change or add.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span class=SpellE><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Its</span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'> simple, to create a new style <span class=SpellE><b>LargeFont</b></span>
+that inherits the <span class=SpellE><b>CustomFontStyle</b></span> style
+defined above, but make the font size big, you can author the new style like
+this:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;resources&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;style</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;CustomFontStyle.LargeFont&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+      <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:textSize&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>20ps<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;/style&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/resources&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You can reference this new style as <b>@style/<span
+class=SpellE>CustomFontStyle.LargeFont</span></b> in your XML Layout file. You
+can continue inheriting like this as many times as you'd like, by chaining
+names with periods. For example, you can extend <span class=SpellE>FontStyle.LargeFont</span>
+to be Red, with:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;resources&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;style</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;CustomFontStyle.LargeFont.Red&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+      <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:textColor&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>#FF0000<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>/&gt;
+   <span style="color: #008000; font-weight: bold">&lt;/style&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/resources&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This technique for inheritance by
+chaining together names only works for styles defined by your own resources.
+You can't inherit Android built-in styles this way. To reference an Android
+built-in style, such as <span class=SpellE><b>TextAppearance</b></span>, you
+must use the <b>parent</b> attribute as shown below:<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;resources&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;style</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;CustomFontStyle&quot;</span> <span style="color: #7D9029">parent=</span><span style="color: #BA2121">&quot;@android:style/TextAppearance&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+      <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:layout_width&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>fill_parent<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>
+      <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:layout_height&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>wrap_content<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>
+      <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:capitalize&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>characters<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>
+      <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:typeface&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>monospace<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>
+      <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:textSize&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>12pt<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>
+      <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:textColor&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>#00FF00<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>/&gt;
+   <span style="color: #008000; font-weight: bold">&lt;/style&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/resources&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Hope you understood the concept of
+Style, so now let's try to understand what <span class=GramE>is a <b>Theme</b></span>.
+A theme is nothing but an Android style applied to an entire Activity or
+application, rather than an individual View.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Thus, when a style is applied as a
+theme, every <b>View</b> in the Activity or application will apply each style
+property that it supports. For example, you can apply the same <span
+class=SpellE><b>CustomFontStyle</b></span> style as a theme for an Activity and
+then all text inside that <b>Activity</b> will have green <span class=SpellE>monospace</span>
+font.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To set a theme for all the
+activities of your application, open the <b>AndroidManifest.xml</b> file and
+edit the <b>&lt;application&gt;</b> tag to include the <span class=SpellE><b>android<span
+class=GramE>:theme</span></b></span> attribute with the style name. For
+example:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">&lt;</span>application <span style="color: #A0A000">android:</span>theme<span style="color: #666666">=</span><span style="color: #BA2121">&quot;@style/CustomFontStyle&quot;</span><span style="color: #666666">&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>But if you want a theme applied to
+just one Activity in your application, then add the <span class=SpellE>android<span
+class=GramE>:theme</span></span> attribute to the &lt;activity&gt; tag only.
+For example:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">&lt;</span>activity <span style="color: #A0A000">android:</span>theme<span style="color: #666666">=</span><span style="color: #BA2121">&quot;@style/CustomFontStyle&quot;</span><span style="color: #666666">&gt;</span>
+</pre></div>
+
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>There are number of default themes
+defined by Android which you can use directly or inherit them using <b>parent</b>
+attribute as follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">&lt;</span>style name<span style="color: #666666">=</span><span style="color: #BA2121">&quot;CustomTheme&quot;</span> parent<span style="color: #666666">=</span><span style="color: #BA2121">&quot;android:Theme.Light&quot;</span><span style="color: #666666">&gt;</span>
+    <span style="color: #666666">...</span>
+<span style="color: #666666">&lt;/</span>style<span style="color: #666666">&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To understand the concept related to
+Android Theme, you can check Theme Demo Example.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Default Styles &amp; Themes<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The Android platform provides a
+large collection of styles and themes that you can use in your applications.
+You can find a reference of all available styles in the <span class=SpellE><b>R.style</b></span>
+class. To use the styles listed here, replace all underscores in the style name
+with a period. For example, you can apply the <span class=SpellE>Theme_NoTitleBar</span>
+theme with &quot;@<span class=SpellE>android<span class=GramE>:style</span></span>/<span
+class=SpellE>Theme.NoTitleBar</span>&quot;. You can see the following source
+code for Android styles and themes:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Android Styles (styles.xml)<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Android Themes (themes.xml)<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:106%;color:#5B9BD5;
+mso-themecolor:accent1'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

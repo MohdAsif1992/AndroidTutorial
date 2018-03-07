@@ -1,0 +1,310 @@
+<html >
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Java Polymorphism<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Polymorphism is the ability of an
+object to take on many forms. The most common use of polymorphism in OOP occurs
+when a parent class reference is used to refer to a child class object.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Any Java object that can pass more
+than one IS-A test is considered to be polymorphic. In Java, all Java objects
+are polymorphic since any object will pass the IS-A test for their own type and
+for the class Object.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>It is important to know that the
+only possible way to access an object is through a reference variable. A
+reference variable can be of only one type. Once declared, the type of a
+reference variable cannot be changed.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The reference variable can be
+reassigned to other objects provided that it is not declared final. The type of
+the reference variable would determine the methods that it can invoke on the
+object.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A reference variable can refer to
+any object of its declared type or any subtype of its declared type. A
+reference variable can be declared as a class or interface type.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Let us look at an example.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">interface</span> <span style="color: #0000FF; font-weight: bold">Vegetarian</span><span style="color: #666666">{}</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Animal</span><span style="color: #666666">{}</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Deer</span> <span style="color: #008000; font-weight: bold">extends</span> Animal <span style="color: #008000; font-weight: bold">implements</span> Vegetarian<span style="color: #666666">{}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now, the Deer class is considered to
+be polymorphic since this has multiple inheritance. Following are true for the
+above example:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A Deer IS-A Animal<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A Deer IS-A Vegetarian<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A Deer IS-A Deer <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A Deer IS-A Object<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>When we apply the reference variable
+facts to a Deer object reference, the following declarations are legal:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">Deer d <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Deer<span style="color: #666666">();</span>
+Animal a <span style="color: #666666">=</span> d<span style="color: #666666">;</span>
+Vegetarian v <span style="color: #666666">=</span> d<span style="color: #666666">;</span>
+Object o <span style="color: #666666">=</span> d<span style="color: #666666">;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>All the reference variables <span
+class=SpellE>d<span class=GramE>,a,v,o</span></span> refer to the same Deer
+object in the heap.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Virtual Methods:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>In this section, I will show you how
+the behavior of overridden methods in Java allows you to take advantage of
+polymorphism when designing your classes.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>We already have discussed method
+overriding, where a child class can override a method in its parent. An
+overridden method is essentially hidden in the parent class, and is not invoked
+unless the child class uses the super keyword within the overriding method.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">/* File name : Employee.java */</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Employee</span>
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">private</span> String name<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">private</span> String address<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">int</span> number<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #0000FF">Employee</span><span style="color: #666666">(</span>String name<span style="color: #666666">,</span> String address<span style="color: #666666">,</span> <span style="color: #B00040">int</span> number<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Constructing an Employee&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">name</span> <span style="color: #666666">=</span> name<span style="color: #666666">;</span>
+      <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">address</span> <span style="color: #666666">=</span> address<span style="color: #666666">;</span>
+      <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">number</span> <span style="color: #666666">=</span> number<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">mailCheck</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Mailing a check to &quot;</span> <span style="color: #666666">+</span> <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">name</span>
+       <span style="color: #666666">+</span> <span style="color: #BA2121">&quot; &quot;</span> <span style="color: #666666">+</span> <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">address</span><span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> String <span style="color: #0000FF">toString</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">return</span> name <span style="color: #666666">+</span> <span style="color: #BA2121">&quot; &quot;</span> <span style="color: #666666">+</span> address <span style="color: #666666">+</span> <span style="color: #BA2121">&quot; &quot;</span> <span style="color: #666666">+</span> number<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> String <span style="color: #0000FF">getName</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">return</span> name<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> String <span style="color: #0000FF">getAddress</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">return</span> address<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">setAddress</span><span style="color: #666666">(</span>String newAddress<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      address <span style="color: #666666">=</span> newAddress<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">int</span> <span style="color: #0000FF">getNumber</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+     <span style="color: #008000; font-weight: bold">return</span> number<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now suppose we extend Employee class
+as follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">/* File name : Salary.java */</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Salary</span> <span style="color: #008000; font-weight: bold">extends</span> Employee
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">double</span> salary<span style="color: #666666">;</span> <span style="color: #408080; font-style: italic">//Annual salary</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #0000FF">Salary</span><span style="color: #666666">(</span>String name<span style="color: #666666">,</span> String address<span style="color: #666666">,</span> <span style="color: #B00040">int</span> number<span style="color: #666666">,</span> <span style="color: #B00040">double</span>
+      salary<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+       <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">(</span>name<span style="color: #666666">,</span> address<span style="color: #666666">,</span> number<span style="color: #666666">);</span>
+       setSalary<span style="color: #666666">(</span>salary<span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">mailCheck</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+       System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Within mailCheck of Salary class &quot;</span><span style="color: #666666">);</span>
+       System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Mailing check to &quot;</span> <span style="color: #666666">+</span> getName<span style="color: #666666">()</span>
+       <span style="color: #666666">+</span> <span style="color: #BA2121">&quot; with salary &quot;</span> <span style="color: #666666">+</span> salary<span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">double</span> <span style="color: #0000FF">getSalary</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+       <span style="color: #008000; font-weight: bold">return</span> salary<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">setSalary</span><span style="color: #666666">(</span><span style="color: #B00040">double</span> newSalary<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+       <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span>newSalary <span style="color: #666666">&gt;=</span> <span style="color: #666666">0.0)</span>
+       <span style="color: #666666">{</span>
+          salary <span style="color: #666666">=</span> newSalary<span style="color: #666666">;</span>
+       <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">double</span> <span style="color: #0000FF">computePay</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Computing salary pay for &quot;</span> <span style="color: #666666">+</span> getName<span style="color: #666666">());</span>
+      <span style="color: #008000; font-weight: bold">return</span> salary<span style="color: #666666">/52;</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now, you study the following program
+carefully and try to determine its output:<o:p></o:p></span></p>
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">/* File name : VirtualDemo.java */</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">VirtualDemo</span>
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String <span style="color: #666666">[]</span> args<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      Salary s <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Salary<span style="color: #666666">(</span><span style="color: #BA2121">&quot;Mohd Mohtashim&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Ambehta, UP&quot;</span><span style="color: #666666">,</span> <span style="color: #666666">3,</span> <span style="color: #666666">3600.00);</span>
+      Employee e <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Salary<span style="color: #666666">(</span><span style="color: #BA2121">&quot;John Adams&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Boston, MA&quot;</span><span style="color: #666666">,</span> <span style="color: #666666">2,</span> <span style="color: #666666">2400.00);</span>
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Call mailCheck using Salary reference --&quot;</span><span style="color: #666666">);</span>
+      s<span style="color: #666666">.</span><span style="color: #7D9029">mailCheck</span><span style="color: #666666">();</span>
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;\n Call mailCheck using Employee reference--&quot;</span><span style="color: #666666">);</span>
+      e<span style="color: #666666">.</span><span style="color: #7D9029">mailCheck</span><span style="color: #666666">();</span>
+    <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Constructing an Employee<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Constructing an Employee<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Call <span class=SpellE>mailCheck</span> using Salary reference --<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Within <span class=SpellE>mailCheck</span> of Salary class<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Mailing check to <span class=SpellE>Mohd</span> <span class=SpellE>Mohtashim</span>
+with salary 3600.0<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Call <span class=SpellE>mailCheck</span> using Employee reference--<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Within <span class=SpellE>mailCheck</span> of Salary class<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Mailing check to John Adams with salary 2400.0<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here, we instantiate two Salary <span
+class=GramE>objects .</span> <span class=GramE>one</span> using a Salary
+reference s, and the other using an Employee reference e.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>While invoking <span class=SpellE><span
+class=GramE><i>s.mailCheck</i></span></span><span class=GramE><i>(</i></span><i>)</i>
+the compiler sees <span class=SpellE>mailCheck</span>() in the Salary class at
+compile time, and the JVM invokes <span class=SpellE>mailCheck</span>() in the
+Salary class at run time.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Invoking <span class=SpellE><span
+class=GramE>mailCheck</span></span><span class=GramE>(</span>) <span
+class=SpellE>on e</span> is quite different because <span class=SpellE>e</span>
+is an Employee reference. When the compiler sees <span class=SpellE><span
+class=GramE><i>e.mailCheck</i></span></span><span class=GramE><i>(</i></span><i>)</i>,
+the compiler sees the <span class=SpellE>mailCheck</span>() method in the
+Employee class.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here, at compile time, the compiler
+used <span class=SpellE><span class=GramE>mailCheck</span></span><span
+class=GramE>(</span>) in Employee to validate this statement. At run time,
+however, the JVM invokes <span class=SpellE><span class=GramE>mailCheck</span></span><span
+class=GramE>(</span>) in the Salary class.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This behavior is referred to as
+virtual method invocation, and the methods are referred to as virtual methods.
+All methods in Java behave in this manner, whereby an overridden method is
+invoked at run time, no matter what data type the reference is that was used in
+the source code at compile time.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

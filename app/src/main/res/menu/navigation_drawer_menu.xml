@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Home"
+        android:id="@+id/nav_item_home"
+        android:icon="@mipmap/home"/>
+    <item android:title="Educavillage"
+        android:id="@+id/nav_item_web"
+        android:icon="@mipmap/web"/>
+    <item android:title="New Page"
+        android:id="@+id/nav_item_newp"
+        android:icon="@mipmap/newp"/>
+    <item android:title="Others">
+        <menu>
+            <item
+                android:title="Backups"
+                android:icon="@mipmap/backup"/>
+            <item
+                android:title="Store"
+                android:icon="@mipmap/store"/>
+        </menu>
+    </item>
+    <group android:id="@+id/group_settings_id">
+        <item android:title="Notifications"
+            android:icon="@mipmap/message"/>
+        <item android:title="Help"
+            android:icon="@mipmap/help"/>
+    </group>
+</menu>

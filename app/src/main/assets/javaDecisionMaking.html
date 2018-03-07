@@ -1,0 +1,457 @@
+<html>
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Java Decision Making<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>There are two types of decision
+making statements in Java. They are:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>if statements<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>switch statements<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><span class=GramE><b><span
+style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The if</span></b></span><b><span
+style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'> Statement:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span class=GramE><span style='font-size:12.0pt;font-family:
+"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>An if</span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'> statement consists of a Boolean expression followed by one
+or more statements.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Syntax:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The syntax of <span class=GramE>an
+if</span> statement is:<o:p></o:p></span></p>
+<!--Raees Ahmad1-->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span>Boolean_expression<span style="color: #666666">)</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Statements will execute if the Boolean expression is true</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<!--Raees Ahmad1-->
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If the Boolean expression evaluates
+to true then the block of code inside <span class=GramE>the if</span> statement
+will be executed. If not the first set of code after the end of <span
+class=GramE>the if</span> statement (after the closing curly brace) will be
+executed.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+<!--Raees Ahmad2-->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Test</span> <span style="color: #666666">{</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[]){</span>
+      <span style="color: #B00040">int</span> x <span style="color: #666666">=</span> <span style="color: #666666">10;</span>
+ 
+      <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span> x <span style="color: #666666">&lt;</span> <span style="color: #666666">20</span> <span style="color: #666666">){</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;This is if statement&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<!--Raees Ahmad2-->
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>This is if statement<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><span class=GramE><b><span
+style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The if</span></b></span><b><span
+style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>...else Statement:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span class=GramE><span style='font-size:12.0pt;font-family:
+"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>An if</span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'> statement can be followed by an optional <i>else</i>
+statement, which executes when the Boolean expression is false.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Syntax:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The syntax of <span class=GramE>an
+if</span>...else is:<o:p></o:p></span></p>
+<!--Raees Ahmad4-->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span>Boolean_expression<span style="color: #666666">){</span>
+   <span style="color: #408080; font-style: italic">//Executes when the Boolean expression is true</span>
+<span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">else</span><span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Executes when the Boolean expression is false</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+<!--Raees Ahmad5-->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Test</span> <span style="color: #666666">{</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[]){</span>
+      <span style="color: #B00040">int</span> x <span style="color: #666666">=</span> <span style="color: #666666">30;</span>
+ 
+      <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span> x <span style="color: #666666">&lt;</span> <span style="color: #666666">20</span> <span style="color: #666666">){</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;This is if statement&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">else</span><span style="color: #666666">{</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;This is else statement&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>This is else statement<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><span class=GramE><b><span
+style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The if</span></b></span><b><span
+style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>...else if...else Statement:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span class=GramE><span style='font-size:12.0pt;font-family:
+"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>An if</span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'> statement can be followed by an optional <i>else if...else</i>
+statement, which is very useful to test various conditions using single
+if...else if statement.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>When using <span class=GramE>if ,</span>
+else if , else statements there are few points to keep in mind.<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l2 level1 lfo2;tab-stops:list .5in'><span
+     class=GramE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>An if</span></span><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'> can have zero or one else's and it must come after any
+     else if's.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l2 level1 lfo2;tab-stops:list .5in'><span
+     class=GramE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>An if</span></span><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'> can have zero to many else if's and they must come
+     before the else.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l2 level1 lfo2;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Once an else if succeeds, none of the remaining else
+     if's or else's will be tested.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Syntax:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The syntax of <span class=GramE>an
+if</span>...else is:<o:p></o:p></span></p>
+<!--Raees Ahmad-->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span>Boolean_expression <span style="color: #666666">1){</span>
+   <span style="color: #408080; font-style: italic">//Executes when the Boolean expression 1 is true</span>
+<span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span>Boolean_expression <span style="color: #666666">2){</span>
+   <span style="color: #408080; font-style: italic">//Executes when the Boolean expression 2 is true</span>
+<span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span>Boolean_expression <span style="color: #666666">3){</span>
+   <span style="color: #408080; font-style: italic">//Executes when the Boolean expression 3 is true</span>
+<span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">else</span> <span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">//Executes when the none of the above condition is true.</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+<!--Raees Ahmad-->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Test</span> <span style="color: #666666">{</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[]){</span>
+      <span style="color: #B00040">int</span> x <span style="color: #666666">=</span> <span style="color: #666666">30;</span>
+ 
+      <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span> x <span style="color: #666666">==</span> <span style="color: #666666">10</span> <span style="color: #666666">){</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Value of X is 10&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span> x <span style="color: #666666">==</span> <span style="color: #666666">20</span> <span style="color: #666666">){</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Value of X is 20&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span> x <span style="color: #666666">==</span> <span style="color: #666666">30</span> <span style="color: #666666">){</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Value of X is 30&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">else</span><span style="color: #666666">{</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;This is else statement&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Value of X is 30<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Nested if...else Statement:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>It is always legal to nest if-else
+statements which means you can use one if or else if statement inside another
+if or else if statement.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Syntax:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The syntax for a nested if...else is
+as follows:<o:p></o:p></span></p>
+<!--Raees Ahmad-->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span>Boolean_expression <span style="color: #666666">1){</span>
+   <span style="color: #408080; font-style: italic">//Executes when the Boolean expression 1 is true</span>
+   <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span>Boolean_expression <span style="color: #666666">2){</span>
+      <span style="color: #408080; font-style: italic">//Executes when the Boolean expression 2 is true</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You can nest <i>else if...else</i>
+in the similar way as we have nested <i>if</i> statement.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+<!--Raees Ahmad-->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Test</span> <span style="color: #666666">{</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[]){</span>
+      <span style="color: #B00040">int</span> x <span style="color: #666666">=</span> <span style="color: #666666">30;</span>
+      <span style="color: #B00040">int</span> y <span style="color: #666666">=</span> <span style="color: #666666">10;</span>
+ 
+      <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span> x <span style="color: #666666">==</span> <span style="color: #666666">30</span> <span style="color: #666666">){</span>
+         <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span> y <span style="color: #666666">==</span> <span style="color: #666666">10</span> <span style="color: #666666">){</span>
+             System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">print</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;X = 30 and Y = 10&quot;</span><span style="color: #666666">);</span>
+          <span style="color: #666666">}</span>
+       <span style="color: #666666">}</span>
+    <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>X = 30 and Y = 10<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>The switch Statement:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A <i>switch</i> statement allows a
+variable to be tested for equality against a list of values. Each value is
+called a case, and the variable being switched on is checked for each case.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Syntax:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The syntax of enhanced for loop is:<o:p></o:p></span></p>
+<!--Raees Ahmad-->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">switch</span><span style="color: #666666">(</span>expression<span style="color: #666666">){</span>
+    <span style="color: #008000; font-weight: bold">case</span> value <span style="color: #666666">:</span>
+       <span style="color: #408080; font-style: italic">//Statements</span>
+       <span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span> <span style="color: #408080; font-style: italic">//optional</span>
+    <span style="color: #008000; font-weight: bold">case</span> value <span style="color: #666666">:</span>
+       <span style="color: #408080; font-style: italic">//Statements</span>
+       <span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span> <span style="color: #408080; font-style: italic">//optional</span>
+    <span style="color: #408080; font-style: italic">//You can have any number of case statements.</span>
+    <span style="color: #008000; font-weight: bold">default</span> <span style="color: #666666">:</span> <span style="color: #408080; font-style: italic">//Optional</span>
+       <span style="color: #408080; font-style: italic">//Statements</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The following rules apply to a
+switch statement:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>The variable used in a switch statement can only be a
+     byte, short, <span class=SpellE>int</span>, or char.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>You can have any number of case statements within a
+     switch. Each case is followed by the value to be compared to and a colon.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>The value for a case must be the same data type as the
+     variable in the switch and it must be a constant or a literal.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>When the variable being switched on is equal to a case,
+     the statements following that case will execute until a <i>break</i>
+     statement is reached.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>When a <i>break</i> statement is reached, the switch
+     terminates, and the flow of control jumps to the next line following the
+     switch statement.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Not every case needs to contain a break. If no break
+     appears, the flow of control will <i>fall through </i>to subsequent cases
+     until a break is reached.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo3;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A <i>switch</i> statement can have an optional default
+     case, which must appear at the end of the switch. The default case can be
+     used for performing a task when none of the cases is true. No break is
+     needed in the default case.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+<!--Raees Ahmad-->
+<div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Test</span> <span style="color: #666666">{</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String args<span style="color: #666666">[]){</span>
+      <span style="color: #408080; font-style: italic">//char grade = args[0].charAt(0);</span>
+      <span style="color: #B00040">char</span> grade <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;C&#39;</span><span style="color: #666666">;</span>
+ 
+      <span style="color: #008000; font-weight: bold">switch</span><span style="color: #666666">(</span>grade<span style="color: #666666">)</span>
+      <span style="color: #666666">{</span>
+         <span style="color: #008000; font-weight: bold">case</span> <span style="color: #BA2121">&#39;A&#39;</span> <span style="color: #666666">:</span>
+            System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Excellent!&quot;</span><span style="color: #666666">);</span>
+            <span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+         <span style="color: #008000; font-weight: bold">case</span> <span style="color: #BA2121">&#39;B&#39;</span> <span style="color: #666666">:</span>
+         <span style="color: #008000; font-weight: bold">case</span> <span style="color: #BA2121">&#39;C&#39;</span> <span style="color: #666666">:</span>
+            System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Well done&quot;</span><span style="color: #666666">);</span>
+            <span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+         <span style="color: #008000; font-weight: bold">case</span> <span style="color: #BA2121">&#39;D&#39;</span> <span style="color: #666666">:</span>
+            System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;You passed&quot;</span><span style="color: #666666">);</span>
+         <span style="color: #008000; font-weight: bold">case</span> <span style="color: #BA2121">&#39;F&#39;</span> <span style="color: #666666">:</span>
+            System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Better try again&quot;</span><span style="color: #666666">);</span>
+            <span style="color: #008000; font-weight: bold">break</span><span style="color: #666666">;</span>
+         <span style="color: #008000; font-weight: bold">default</span> <span style="color: #666666">:</span>
+            System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Invalid grade&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Your grade is &quot;</span> <span style="color: #666666">+</span> grade<span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Compile and run above program using
+various command line arguments. This would produce the following result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>$ <span class=GramE>java</span> Test<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Well done<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Your grade is a C<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>$</span><span style='font-size:12.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

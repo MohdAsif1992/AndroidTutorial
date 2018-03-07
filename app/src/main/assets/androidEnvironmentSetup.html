@@ -1,0 +1,278 @@
+<html>
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif",color:"#000066"'>Android
+Environment Setup</span></b><span style='font-size:14.0pt;mso-bidi-font-size:
+10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>You will be glad to know that you can
+start your Android application development on either of the following operating
+systems:</span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='line-height:normal;mso-list:l2 level1 lfo3;
+     tab-stops:list .5in'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>Microsoft Windows XP or later
+     version.</span><span style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></li>
+ <li class=MsoNormal style='line-height:normal;mso-list:l2 level1 lfo3;
+     tab-stops:list .5in'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>Mac OS X 10.5.8 or later
+     version with Intel chip.</span><span style='font-size:12.0pt;mso-fareast-font-family:
+     "Times New Roman"'><o:p></o:p></span></li>
+ <li class=MsoNormal style='line-height:normal;mso-list:l2 level1 lfo3;
+     tab-stops:list .5in'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>Linux including GNU C Library
+     2.7 or later.</span><span style='font-size:12.0pt;mso-fareast-font-family:
+     "Times New Roman"'><o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>Second point is that all the required
+tools to develop Android applications are freely available and can be
+downloaded from the Web. Following is the list of software's you will need
+before you start your Android application programming.</span><span
+style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='line-height:normal;mso-list:l1 level1 lfo6;
+     tab-stops:list .5in'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>Java JDK5 or JDK6</span><span
+     style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></li>
+ <li class=MsoNormal style='line-height:normal;mso-list:l1 level1 lfo6;
+     tab-stops:list .5in'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>Android SDK</span><span
+     style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></li>
+ <li class=MsoNormal style='line-height:normal;mso-list:l1 level1 lfo6;
+     tab-stops:list .5in'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>Eclipse IDE for Java Developers
+     (optional)</span><span style='font-size:12.0pt;mso-fareast-font-family:
+     "Times New Roman"'><o:p></o:p></span></li>
+ <li class=MsoNormal style='line-height:normal;mso-list:l1 level1 lfo6;
+     tab-stops:list .5in'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>Android Development Tools (ADT)
+     Eclipse Plugin (optional)</span><span style='font-size:12.0pt;mso-fareast-font-family:
+     "Times New Roman"'><o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>Here last two components are optional
+and if you are working on Windows machine then these components make your life
+easy while doing Java based application development. So let us have a look how
+to proceed to set required environment.</span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif"'>Step 1 - Setup
+Java Development Kit (JDK)</span></b><span style='font-size:14.0pt;mso-bidi-font-size:
+10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>You can download the latest version of
+Java JDK from Oracle's Java site: <a
+href="http://www.oracle.com/technetwork/java/javase/downloads/index.html"
+target="_blank">Java SE Downloads</a>. You will find instructions for
+installing JDK in downloaded files, follow the given instructions to install
+and configure the setup. Finally set PATH and JAVA_HOME environment variables
+to refer to the directory that contains <b>java</b> and <span class=SpellE><b>javac</b></span>,
+typically <span class=SpellE>java_install_dir</span>/bin and <span
+class=SpellE>java_install_dir</span> respectively.</span><span
+style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>If you are running Windows and installed
+the JDK in C:\jdk1.6.0_15, you would have to put the following line in your
+C:\autoexec.bat file.</span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span class=GramE><span style='font-size:12.0pt;font-family:"Courier New"'>set</span></span><span
+style='font-size:12.0pt;font-family:"Courier New"'>
+PATH=C:\jdk1.6.0_15\bin;%PATH%</span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span class=GramE><span style='font-size:12.0pt;font-family:"Courier New"'>set</span></span><span
+style='font-size:12.0pt;font-family:"Courier New"'> JAVA_HOME=C:\jdk1.6.0_15</span><span
+style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>Alternatively, you could also
+right-click on <i>My Computer</i>, select <i>Properties</i>, then <i>Advanced</i>,
+then <i>Environment Variables</i>. Then, you would update the PATH value and
+press the OK button.</span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>On Linux, if the SDK is installed in /<span
+class=SpellE>usr</span>/local/jdk1.6.0_15 and you use the C shell, you would
+put the following code into your <b>.<span class=SpellE>cshrc</span></b> file.</span><span
+style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span class=SpellE><span class=GramE><span style='font-size:12.0pt;
+font-family:"Courier New"'>setenv</span></span></span><span style='font-size:
+10.0pt;font-family:"Courier New"'> PATH /<span class=SpellE>usr</span>/local/jdk1.6.0_15/bin:$PATH</span><span
+style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span class=SpellE><span class=GramE><span style='font-size:12.0pt;
+font-family:"Courier New"'>setenv</span></span></span><span style='font-size:
+10.0pt;font-family:"Courier New"'> JAVA_HOME /<span class=SpellE>usr</span>/local/jdk1.6.0_15</span><span
+style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>Alternatively, if you use an Integrated
+Development Environment (IDE) Eclipse, then it will know automatically where
+you have installed your Java.</span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif"'>Step 2 - Setup
+Android SDK</span></b><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>You can download the latest version of
+Android SDK from Android official website: <a
+href="http://developer.android.com/sdk/index.html" target="_blank">Android SDK
+Downloads</a>. If you are installing SDK on Windows machine, then you will find
+an <i>installer_rXX-windows.exe</i>, so just download and run this exe which
+will launch <i>Android SDK Tool Setup</i> wizard to guide you through out of
+the installation, so just follow the instructions carefully. Finally you will
+have <i>Android SDK Tools</i> installed on your machine.</span><span
+style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>If you are installing SDK either on Mac
+OS or Linux, check the instructions provided along with the downloaded <i>android-sdk_rXX-macosx.zip</i>
+file for Mac OS and <i>android-sdk_rXX-linux.tgz</i> file for Linux. This
+tutorial will consider that you are going to setup your environment on Windows
+machine having Windows 7 operating system.</span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>So let's launch <i>Android SDK Manager</i>
+using the option <b>All Programs &gt; Android SDK Tools &gt; SDK Manager</b>,
+this will give you following window:</span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>Once you launched SDK manager, it’s time
+to install other required packages. By default it will list down total 7
+packages to be installed, but I will suggest to de-select <i>Documentation for
+Android SDK</i> and <i>Samples for SDK</i> packages to reduce installation
+time. Next click <b>Install 7 Packages</b> button to proceed, which will
+display following dialogue box:</span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>If you agree to install all the packages,
+select <b>Accept All</b> radio button and proceed by clicking <b>Install</b>
+button. Now let SDK manager do its work and you go, pick up a cup of coffee and
+wait until all the packages are installed. It may take some time depending on
+your internet connection. Once all the packages are installed, you can close
+SDK manager using top-right cross button.</span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif"'>Step 3 - Setup
+Eclipse IDE</span></b><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>All the examples in this tutorial have
+been written using Eclipse IDE. So I would suggest you should have latest
+version of Eclipse installed on your machine.</span><span style='font-size:
+10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>To install Eclipse IDE, download the
+latest Eclipse binaries from <a href="http://www.eclipse.org/downloads/"
+target="_blank">http://www.eclipse.org/downloads/</a>. Once you downloaded the
+installation, unpack the binary distribution into a convenient location. For
+example in C:\eclipse on windows, or /<span class=SpellE>usr</span>/local/eclipse
+on Linux and finally set PATH variable appropriately.</span><span
+style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>Eclipse can be started by executing the
+following commands on windows machine, or you can simply double click on eclipse.exe</span><span
+style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Courier New"'>&nbsp;%C:\eclipse\eclipse.exe</span><span
+style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>Eclipse can be started by executing the
+following commands on Linux machine:</span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Courier New"'>$/<span
+class=SpellE>usr</span>/local/eclipse/eclipse</span><span style='font-size:
+10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>After a successful startup, if
+everything is fine then it should display following result:</span><span
+style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-no-proof:yes'><img border=0 width=560 height=450 id="_x0000_i1025"
+src="img/image002.jpg" alt="Eclipse Home page"></span><span style='font-size:
+10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif"'>Step 4 - Setup
+Android Development Tools (ADT) Plugin</span></b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>This step will help you in setting
+Android Development Tool plugin for Eclipse. Let's start with launching Eclipse
+and then, choose <b>Help &gt; Software Updates &gt; Install New Software</b>.
+This will display the following dialogue box.</span><span style='font-size:
+10.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>Now use <b>Add</b> button to add <i>ADT
+Plugin</i> as name and <i>https://dl-ssl.google.com/android/eclipse/</i> as the
+location. Then click OK to add this location, as soon as you will click OK button
+to add this location, Eclipse starts searching for the plug-in available the
+given location and finally lists down the found plugins.</span><span
+style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>Now select all the listed plug-ins using
+<b>Select All</b> button and click <b>Next</b> button which will guide you
+ahead to install Android Development Tools and other required plugins.</span><span
+style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif"'>Step 5 -
+Create Android Virtual Device</span></b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>To test your Android applications you
+will need a virtual Android device. So before we start writing our code, let us
+create an Android virtual device. Launch Android AVD Manager using Eclipse menu
+options <b>Window &gt; AVD Manager&gt;</b> which will launch Android AVD
+Manager. Use <span class=GramE><b>New</b></span> button to create a new Android
+Virtual Device and enter the following information, before clicking <b>Create
+AVD</b> button.</span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>If your AVD is created successfully it
+means your environment is ready for Android application development. If you
+like, you can close this window using top-right cross button. Better you
+re-start your machine and once you are done with this last step, you are ready
+to proceed for your first Android example but before that we will see few more
+important concepts related to Android Application Development.</span><span
+style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:105%'>&nbsp;<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

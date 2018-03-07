@@ -1,0 +1,846 @@
+<html>
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Java Applet Basics<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>An applet is a Java program that
+runs in a Web browser. An applet can be a fully functional Java application
+because it has the entire Java API at its disposal.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>There are some important differences
+between an applet and a standalone Java application, including the following:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l5 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>An applet is a Java class that extends the <span
+     class=SpellE>java.applet.Applet</span> class.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l5 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A <span class=GramE>main(</span>) method is not invoked
+     on an applet, and an applet class will not define main().<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l5 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Applets are designed to be embedded within an HTML
+     page.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l5 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>When a user views an HTML page that contains an applet,
+     the code for the applet is downloaded to the user's machine.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l5 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A JVM is required to view an applet. The JVM can be
+     either a plug-in of the Web browser or a separate runtime environment.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l5 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>The JVM on the user's machine creates an instance of
+     the applet class and invokes various methods during the applet's lifetime.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l5 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Applets have strict security rules that are enforced by
+     the Web browser. The security of an applet is often referred to as sandbox
+     security, comparing the applet to a child playing in a sandbox with
+     various rules that must be followed.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l5 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Other classes that the applet needs can be downloaded
+     in a single Java Archive (JAR) file.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Life Cycle of an Applet:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Four methods in the Applet class
+give you the framework on which you build any serious applet:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     class=SpellE><span class=GramE><b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>init</span></b></span></span><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>:</span></b><span style='font-size:12.0pt;font-family:
+     "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'> This
+     method is intended for whatever initialization is needed for your applet.
+     It is called after the <span class=SpellE>param</span> tags inside the
+     applet tag have been processed.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>start</span></b></span><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>:</span></b><span style='font-size:12.0pt;font-family:
+     "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'> This
+     method is automatically called after the browser calls the <span
+     class=SpellE>init</span> method. It is also called whenever the user
+     returns to the page containing the applet after having gone off to other
+     pages.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>stop</span></b></span><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>:</span></b><span style='font-size:12.0pt;font-family:
+     "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'> This
+     method is automatically called when the user moves off the page on which
+     the applet sits. It can, therefore, be called repeatedly in the same applet.
+     <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>destroy</span></b></span><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>:</span></b><span style='font-size:12.0pt;font-family:
+     "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'> This
+     method is only called when the browser shuts down normally. Because
+     applets are meant to live on an HTML page, you should not normally leave
+     resources behind after a user leaves the page that contains the applet.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>paint</span></b></span><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>:</span></b><span style='font-size:12.0pt;font-family:
+     "Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     Invoked immediately after the start() method, and also any time the applet
+     needs to repaint itself in the browser. The <span class=GramE>paint(</span>)
+     method is actually inherited from the <span class=SpellE>java.awt</span>.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>A &quot;Hello, World&quot; Applet:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The following is a simple applet
+named HelloWorldApplet.java:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.applet.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.awt.*</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">HelloWorldApplet</span> <span style="color: #008000; font-weight: bold">extends</span> Applet
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">paint</span> <span style="color: #666666">(</span>Graphics g<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      g<span style="color: #666666">.</span><span style="color: #7D9029">drawString</span> <span style="color: #666666">(</span><span style="color: #BA2121">&quot;Hello World&quot;</span><span style="color: #666666">,</span> <span style="color: #666666">25,</span> <span style="color: #666666">50);</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>These import statements bring the
+classes into the scope of our applet class:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l2 level1 lfo3;tab-stops:list .5in'><span
+     class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>java.applet.Applet</span></span><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l2 level1 lfo3;tab-stops:list .5in'><span
+     class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>java.awt.Graphics</span></span><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Without those import statements, the
+Java compiler would not recognize the classes Applet and Graphics, which the
+applet class refers to.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>The Applet CLASS:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Every applet is an extension of the <span
+class=SpellE><i>java.applet.Applet</i></span><i> class</i>. The base Applet
+class provides methods that a derived Applet class may call to obtain
+information and services from the browser context.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>These include methods that do the
+following:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo4;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Get applet parameters<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo4;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Get the network location of the HTML file that contains
+     the applet<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo4;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Get the network location of the applet class directory<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo4;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Print a status message in the browser<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo4;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Fetch an image<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo4;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Fetch an audio clip<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo4;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Play an audio clip<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l3 level1 lfo4;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Resize the applet<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Additionally, the Applet class
+provides an interface by which the viewer or browser obtains information about
+the applet and controls the applet's execution. The viewer may:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo5;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>request information about the author, version and
+     copyright of the applet<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo5;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>request a description of the parameters the applet
+     recognizes<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo5;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>initialize the applet<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo5;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>destroy the applet<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo5;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>start the applet's execution<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo5;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>stop the applet's execution<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The Applet class provides default
+implementations of each of these methods. Those implementations may be
+overridden as necessary.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The &quot;Hello, World&quot; applet
+is complete as it stands. The only method overridden is the paint method.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Invoking an Applet:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>An applet may be invoked by
+embedding directives in an HTML file and viewing the file through an applet
+viewer or Java-enabled browser.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The &lt;applet&gt; tag is the basis
+for embedding an applet in an HTML file. Below is an example that invokes the
+&quot;Hello, World&quot; applet:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">&lt;</span>html<span style="color: #666666">&gt;</span>
+<span style="color: #666666">&lt;</span>title<span style="color: #666666">&gt;</span>The Hello<span style="color: #666666">,</span> World Applet<span style="color: #666666">&lt;/</span>title<span style="color: #666666">&gt;</span>
+<span style="color: #666666">&lt;</span>hr<span style="color: #666666">&gt;</span>
+<span style="color: #666666">&lt;</span>applet code<span style="color: #666666">=</span><span style="color: #BA2121">&quot;HelloWorldApplet.class&quot;</span> width<span style="color: #666666">=</span><span style="color: #BA2121">&quot;320&quot;</span> height<span style="color: #666666">=</span><span style="color: #BA2121">&quot;120&quot;</span><span style="color: #666666">&gt;</span>
+If your browser was Java<span style="color: #666666">-</span>enabled<span style="color: #666666">,</span> a <span style="color: #BA2121">&quot;Hello, World&quot;</span>
+message would appear here<span style="color: #666666">.</span>
+<span style="color: #666666">&lt;/</span>applet<span style="color: #666666">&gt;</span>
+<span style="color: #666666">&lt;</span>hr<span style="color: #666666">&gt;</span>
+<span style="color: #666666">&lt;/</span>html<span style="color: #666666">&gt;</span>
+</pre></div>
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Based on the above examples, here is
+the live applet example: <u><span style='color:blue'>Applet Example</span></u>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Note:</span></b><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'> You can refer to <u><span style='color:blue'>HTML Applet
+Tag</span></u> to understand more about calling applet from HTML.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The code attribute of the
+&lt;applet&gt; tag is required. It specifies the Applet class to run. Width and
+height are also required to specify the initial size of the panel in which an
+applet runs. The applet directive must be closed with a &lt;/applet&gt; tag.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If an applet takes parameters,
+values may be passed for the parameters by adding &lt;<span class=SpellE>param</span>&gt;
+tags between &lt;applet&gt; and &lt;/applet&gt;. The browser ignores text and
+other tags between the applet tags.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Non-Java-enabled browsers do not
+process &lt;applet&gt; and &lt;/applet&gt;. Therefore, anything that appears
+between the tags, not related to the applet, is visible in non-Java-enabled
+browsers.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The viewer or browser looks for the
+compiled Java code at the location of the document. To specify otherwise, use
+the codebase attribute of the &lt;applet&gt; tag as shown:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">&lt;applet</span> <span style="color: #7D9029">codebase=</span><span style="color: #BA2121">&quot;http://amrood.com/applets&quot;</span>
+<span style="color: #7D9029">code=</span><span style="color: #BA2121">&quot;HelloWorldApplet.class&quot;</span> <span style="color: #7D9029">width=</span><span style="color: #BA2121">&quot;320&quot;</span> <span style="color: #7D9029">height=</span><span style="color: #BA2121">&quot;120&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+</pre></div>
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If an applet resides in a package
+other than the default, the holding package must be specified in the code
+attribute using the period character (.) to separate package/class components.
+For example:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">&lt;applet</span> <span style="color: #7D9029">code=</span><span style="color: #BA2121">&quot;mypackage.subpackage.TestApplet.class&quot;</span>
+           <span style="color: #7D9029">width=</span><span style="color: #BA2121">&quot;320&quot;</span> <span style="color: #7D9029">height=</span><span style="color: #BA2121">&quot;120&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+</pre></div>
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The following example demonstrates
+how to make an applet respond to setup parameters specified in the document.
+This applet displays a checkerboard pattern of black and a second color.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The second color and the size of
+each square may be specified as parameters to the applet within the document.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span class=SpellE><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>CheckerApplet</span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'> gets its parameters in the <span class=SpellE><span
+class=GramE>init</span></span><span class=GramE>(</span>) method. It may also
+get its parameters in the <span class=GramE>paint(</span>) method. However,
+getting the values and saving the settings once at the start of the applet,
+instead of at every refresh, is convenient and efficient.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The applet viewer or browser calls
+the <span class=SpellE><span class=GramE>init</span></span><span class=GramE>(</span>)
+method of each applet it runs. The viewer calls <span class=SpellE><span
+class=GramE>init</span></span><span class=GramE>(</span>) once, immediately
+after loading the applet. (<span class=SpellE><span class=GramE>Applet.init</span></span><span
+class=GramE>(</span>) is implemented to do nothing.) Override the default
+implementation to insert custom initialization code.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The <span class=SpellE><span
+class=GramE>Applet.getParameter</span></span><span class=GramE>(</span>) method
+fetches a parameter given the parameter's name (the value of a parameter is
+always a string). If the value is numeric or other non-character data, the
+string must be parsed.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The following is a skeleton of
+CheckerApplet.java:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.applet.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.awt.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">CheckerApplet</span> <span style="color: #008000; font-weight: bold">extends</span> Applet
+<span style="color: #666666">{</span>
+   <span style="color: #B00040">int</span> squareSize <span style="color: #666666">=</span> <span style="color: #666666">50;</span><span style="color: #408080; font-style: italic">// initialized to default size</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">init</span> <span style="color: #666666">()</span> <span style="color: #666666">{}</span>
+   <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">parseSquareSize</span> <span style="color: #666666">(</span>String param<span style="color: #666666">)</span> <span style="color: #666666">{}</span>
+   <span style="color: #008000; font-weight: bold">private</span> Color <span style="color: #0000FF">parseColor</span> <span style="color: #666666">(</span>String param<span style="color: #666666">)</span> <span style="color: #666666">{}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">paint</span> <span style="color: #666666">(</span>Graphics g<span style="color: #666666">)</span> <span style="color: #666666">{}</span>
+<span style="color: #666666">}</span>
+Here are CheckerApplet<span style="border: 1px solid #FF0000">&#39;</span>s init<span style="color: #666666">()</span> and <span style="color: #008000; font-weight: bold">private</span> parseSquareSize<span style="color: #666666">()</span> <span style="color: #A0A000">methods:</span>
+
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">init</span> <span style="color: #666666">()</span>
+<span style="color: #666666">{</span>
+   String squareSizeParam <span style="color: #666666">=</span> getParameter <span style="color: #666666">(</span><span style="color: #BA2121">&quot;squareSize&quot;</span><span style="color: #666666">);</span>
+   parseSquareSize <span style="color: #666666">(</span>squareSizeParam<span style="color: #666666">);</span>
+   String colorParam <span style="color: #666666">=</span> getParameter <span style="color: #666666">(</span><span style="color: #BA2121">&quot;color&quot;</span><span style="color: #666666">);</span>
+   Color fg <span style="color: #666666">=</span> parseColor <span style="color: #666666">(</span>colorParam<span style="color: #666666">);</span>
+   setBackground <span style="color: #666666">(</span>Color<span style="color: #666666">.</span><span style="color: #7D9029">black</span><span style="color: #666666">);</span>
+   setForeground <span style="color: #666666">(</span>fg<span style="color: #666666">);</span>
+<span style="color: #666666">}</span>
+<span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">parseSquareSize</span> <span style="color: #666666">(</span>String param<span style="color: #666666">)</span>
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>param <span style="color: #666666">==</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">)</span> <span style="color: #008000; font-weight: bold">return</span><span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">{</span>
+      squareSize <span style="color: #666666">=</span> Integer<span style="color: #666666">.</span><span style="color: #7D9029">parseInt</span> <span style="color: #666666">(</span>param<span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>Exception e<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+     <span style="color: #408080; font-style: italic">// Let default value remain</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The applet calls <span class=SpellE><span
+class=GramE>parseSquareSize</span></span><span class=GramE>(</span>) to parse
+the <span class=SpellE>squareSize</span> parameter. <span class=SpellE><span
+class=GramE>parseSquareSize</span></span><span class=GramE>(</span>) calls the
+library method <span class=SpellE>Integer.parseInt</span>(), which parses a
+string and returns an integer. <span class=SpellE><span class=GramE>Integer.parseInt</span></span><span
+class=GramE>(</span>) throws an exception whenever its argument is invalid.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Therefore, <span class=SpellE><span
+class=GramE>parseSquareSize</span></span><span class=GramE>(</span>) catches
+exceptions, rather than allowing the applet to fail on bad input.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The applet calls <span class=SpellE><span
+class=GramE>parseColor</span></span><span class=GramE>(</span>) to parse the
+color parameter into a Color value. <span class=SpellE><span class=GramE>parseColor</span></span><span
+class=GramE>(</span>) does a series of string comparisons to match the
+parameter value to the name of a predefined color. You need to implement these
+methods to make this applet works.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Specifying Applet Parameters:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The following is an example of an
+HTML file with a <span class=SpellE>CheckerApplet</span> embedded in it. The
+HTML file specifies both parameters to the applet by means of the &lt;<span
+class=SpellE>param</span>&gt; tag.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">&lt;html&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;title&gt;</span>Checkerboard Applet<span style="color: #008000; font-weight: bold">&lt;/title&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;hr&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;applet</span> <span style="color: #7D9029">code=</span><span style="color: #BA2121">&quot;CheckerApplet.class&quot;</span> <span style="color: #7D9029">width=</span><span style="color: #BA2121">&quot;480&quot;</span> <span style="color: #7D9029">height=</span><span style="color: #BA2121">&quot;320&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;param</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;color&quot;</span> <span style="color: #7D9029">value=</span><span style="color: #BA2121">&quot;blue&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;param</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;squaresize&quot;</span> <span style="color: #7D9029">value=</span><span style="color: #BA2121">&quot;30&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/applet&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;hr&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/html&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Note:</span></b><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'> Parameter names are not case sensitive.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Application Conversion to Applets:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>It is easy to convert a graphical
+Java application (that is, an application that uses the AWT and that you can
+start with the java program launcher) into an applet that you can embed in a
+web page.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here are the specific steps for
+converting an application to an applet.<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l6 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Make an HTML page with the appropriate tag to load the
+     applet code.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l6 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Supply a subclass of the <span class=SpellE>JApplet</span>
+     class. Make this class public. Otherwise, the applet cannot be loaded.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l6 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Eliminate the main method in the application. Do not
+     construct a frame window for the application. Your application will be
+     displayed inside the browser.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l6 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Move any initialization code from the frame window
+     constructor to the <span class=SpellE>init</span> method of the applet.
+     You don't need to explicitly construct the applet <span class=SpellE>object.the</span>
+     browser instantiates it for you and calls the <span class=SpellE>init</span>
+     method.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l6 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Remove the call to <span class=SpellE>setSize</span>;
+     for applets, sizing is done with the width and height parameters in the
+     HTML file.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l6 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Remove the call to <span class=SpellE>setDefaultCloseOperation</span>.
+     An applet cannot be closed; it terminates when the browser exits.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l6 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>If the application calls <span class=SpellE>setTitle</span>,
+     eliminate the call to the method. Applets cannot have title bars. (You
+     can, of course, title the web page itself, using the HTML title tag.)<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l6 level1 lfo6;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Don't call <span class=SpellE><span class=GramE>setVisible</span></span><span
+     class=GramE>(</span>true). The applet is displayed automatically.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Event Handling:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Applets inherit a group of
+event-handling methods from the Container class. The Container class defines
+several methods, such as <span class=SpellE>processKeyEvent</span> and <span
+class=SpellE>processMouseEvent</span>, for handling particular types of events,
+and then one catch-all method called <span class=SpellE>processEvent</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>In order to react an event, an
+applet must override the appropriate event-specific method.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.awt.event.MouseListener</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.awt.event.MouseEvent</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.applet.Applet</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.awt.Graphics</span><span style="color: #666666">;</span>
+ 
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">ExampleEventHandling</span> <span style="color: #008000; font-weight: bold">extends</span> Applet
+                        <span style="color: #008000; font-weight: bold">implements</span> MouseListener <span style="color: #666666">{</span>
+ 
+    StringBuffer strBuffer<span style="color: #666666">;</span>
+ 
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">init</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+        addMouseListener<span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">);</span>
+        strBuffer <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> StringBuffer<span style="color: #666666">();</span>
+        addItem<span style="color: #666666">(</span><span style="color: #BA2121">&quot;initializing the apple &quot;</span><span style="color: #666666">);</span>
+    <span style="color: #666666">}</span>
+ 
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">start</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+        addItem<span style="color: #666666">(</span><span style="color: #BA2121">&quot;starting the applet &quot;</span><span style="color: #666666">);</span>
+    <span style="color: #666666">}</span>
+ 
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">stop</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+        addItem<span style="color: #666666">(</span><span style="color: #BA2121">&quot;stopping the applet &quot;</span><span style="color: #666666">);</span>
+    <span style="color: #666666">}</span>
+ 
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">destroy</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+        addItem<span style="color: #666666">(</span><span style="color: #BA2121">&quot;unloading the applet&quot;</span><span style="color: #666666">);</span>
+    <span style="color: #666666">}</span>
+ 
+    <span style="color: #B00040">void</span> <span style="color: #0000FF">addItem</span><span style="color: #666666">(</span>String word<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+        System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span>word<span style="color: #666666">);</span>
+        strBuffer<span style="color: #666666">.</span><span style="color: #7D9029">append</span><span style="color: #666666">(</span>word<span style="color: #666666">);</span>
+        repaint<span style="color: #666666">();</span>
+    <span style="color: #666666">}</span>
+ 
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">paint</span><span style="color: #666666">(</span>Graphics g<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+        <span style="color: #408080; font-style: italic">//Draw a Rectangle around the applet&#39;s display area.</span>
+        g<span style="color: #666666">.</span><span style="color: #7D9029">drawRect</span><span style="color: #666666">(0,</span> <span style="color: #666666">0,</span>
+                  getWidth<span style="color: #666666">()</span> <span style="color: #666666">-</span> <span style="color: #666666">1,</span>
+                  getHeight<span style="color: #666666">()</span> <span style="color: #666666">-</span> <span style="color: #666666">1);</span>
+ 
+        <span style="color: #408080; font-style: italic">//display the string inside the rectangle.</span>
+        g<span style="color: #666666">.</span><span style="color: #7D9029">drawString</span><span style="color: #666666">(</span>strBuffer<span style="color: #666666">.</span><span style="color: #7D9029">toString</span><span style="color: #666666">(),</span> <span style="color: #666666">10,</span> <span style="color: #666666">20);</span>
+    <span style="color: #666666">}</span>
+ 
+  
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">mouseEntered</span><span style="color: #666666">(</span>MouseEvent event<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+    <span style="color: #666666">}</span>
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">mouseExited</span><span style="color: #666666">(</span>MouseEvent event<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+    <span style="color: #666666">}</span>
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">mousePressed</span><span style="color: #666666">(</span>MouseEvent event<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+    <span style="color: #666666">}</span>
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">mouseReleased</span><span style="color: #666666">(</span>MouseEvent event<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+    <span style="color: #666666">}</span>
+ 
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">mouseClicked</span><span style="color: #666666">(</span>MouseEvent event<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+        addItem<span style="color: #666666">(</span><span style="color: #BA2121">&quot;mouse clicked! &quot;</span><span style="color: #666666">);</span>
+    <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now, let us call this applet as
+follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">&lt;html&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;title&gt;</span>Event Handling<span style="color: #008000; font-weight: bold">&lt;/title&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;hr&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;applet</span> <span style="color: #7D9029">code=</span><span style="color: #BA2121">&quot;ExampleEventHandling.class&quot;</span>
+<span style="color: #7D9029">width=</span><span style="color: #BA2121">&quot;300&quot;</span> <span style="color: #7D9029">height=</span><span style="color: #BA2121">&quot;300&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/applet&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;hr&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/html&gt;</span>
+</pre></div>
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Initially, the applet will display
+&quot;initializing the applet. Starting the applet.&quot; Then once you click
+inside the rectangle &quot;mouse clicked&quot; will be displayed as well.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Based on the above examples, here is
+the live applet example: <u><span style='color:blue'>Applet Example</span></u>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Displaying Images:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>An applet can display images of the
+format GIF, JPEG, BMP, and others. To display an image within the applet, you
+use the <span class=SpellE><span class=GramE>drawImage</span></span><span
+class=GramE>(</span>) method found in the <span class=SpellE>java.awt.Graphics</span>
+class.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the example showing all
+the steps to show images:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.applet.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.awt.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.net.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">ImageDemo</span> <span style="color: #008000; font-weight: bold">extends</span> Applet
+<span style="color: #666666">{</span>
+  <span style="color: #008000; font-weight: bold">private</span> Image image<span style="color: #666666">;</span>
+  <span style="color: #008000; font-weight: bold">private</span> AppletContext context<span style="color: #666666">;</span>
+  <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">init</span><span style="color: #666666">()</span>
+  <span style="color: #666666">{</span>
+      context <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">getAppletContext</span><span style="color: #666666">();</span>
+      String imageURL <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">getParameter</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;image&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span>imageURL <span style="color: #666666">==</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">)</span>
+      <span style="color: #666666">{</span>
+         imageURL <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;java.jpg&quot;</span><span style="color: #666666">;</span>
+      <span style="color: #666666">}</span>
+      <span style="color: #008000; font-weight: bold">try</span>
+      <span style="color: #666666">{</span>
+         URL url <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> URL<span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">getDocumentBase</span><span style="color: #666666">(),</span> imageURL<span style="color: #666666">);</span>
+         image <span style="color: #666666">=</span> context<span style="color: #666666">.</span><span style="color: #7D9029">getImage</span><span style="color: #666666">(</span>url<span style="color: #666666">);</span>
+      <span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #666666">(</span>MalformedURLException e<span style="color: #666666">)</span>
+      <span style="color: #666666">{</span>
+         e<span style="color: #666666">.</span><span style="color: #7D9029">printStackTrace</span><span style="color: #666666">();</span>
+         <span style="color: #408080; font-style: italic">// Display in browser status bar</span>
+         context<span style="color: #666666">.</span><span style="color: #7D9029">showStatus</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Could not load image!&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">paint</span><span style="color: #666666">(</span>Graphics g<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      context<span style="color: #666666">.</span><span style="color: #7D9029">showStatus</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Displaying image&quot;</span><span style="color: #666666">);</span>
+      g<span style="color: #666666">.</span><span style="color: #7D9029">drawImage</span><span style="color: #666666">(</span>image<span style="color: #666666">,</span> <span style="color: #666666">0,</span> <span style="color: #666666">0,</span> <span style="color: #666666">200,</span> <span style="color: #666666">84,</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">);</span>
+      g<span style="color: #666666">.</span><span style="color: #7D9029">drawString</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;www.javalicense.com&quot;</span><span style="color: #666666">,</span> <span style="color: #666666">35,</span> <span style="color: #666666">100);</span>
+   <span style="color: #666666">}</span> 
+<span style="color: #666666">}</span>
+</pre></div>
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now, let us call this applet as
+follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">&lt;html&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;title&gt;</span>The ImageDemo applet<span style="color: #008000; font-weight: bold">&lt;/title&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;hr&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;applet</span> <span style="color: #7D9029">code=</span><span style="color: #BA2121">&quot;ImageDemo.class&quot;</span> <span style="color: #7D9029">width=</span><span style="color: #BA2121">&quot;300&quot;</span> <span style="color: #7D9029">height=</span><span style="color: #BA2121">&quot;200&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;param</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;image&quot;</span> <span style="color: #7D9029">value=</span><span style="color: #BA2121">&quot;java.jpg&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/applet&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;hr&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/html&gt;</span>
+</pre></div>
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Based on the above examples, here is
+the live applet example: <u><span style='color:blue'>Applet Example</span></u>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Playing Audio:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>An applet can play an audio file
+represented by the <span class=SpellE>AudioClip</span> interface in the <span
+class=SpellE>java.applet</span> package. The <span class=SpellE>AudioClip</span>
+interface has three methods, including:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l4 level1 lfo7;tab-stops:list .5in'><span
+     class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>public</span></b></span><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'> void play():</span></b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     Plays the audio clip one time, from the beginning.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l4 level1 lfo7;tab-stops:list .5in'><span
+     class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>public</span></b></span><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'> void loop():</span></b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     Causes the audio clip to replay continually.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l4 level1 lfo7;tab-stops:list .5in'><span
+     class=GramE><b><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+     mso-fareast-font-family:"Times New Roman"'>public</span></b></span><b><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'> void stop():</span></b><span style='font-size:12.0pt;
+     font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>
+     Stops playing the audio clip.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To obtain an <span class=SpellE>AudioClip</span>
+object, you must invoke the <span class=SpellE><span class=GramE>getAudioClip</span></span><span
+class=GramE>(</span>) method of the Applet class. The <span class=SpellE><span
+class=GramE>getAudioClip</span></span><span class=GramE>(</span>) method
+returns immediately, whether or not the URL resolves to an actual audio file.
+The audio file is not downloaded until an attempt is made to play the audio
+clip.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following is the example showing all
+the steps to play an audio:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.applet.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.awt.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.net.*</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">AudioDemo</span> <span style="color: #008000; font-weight: bold">extends</span> Applet
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">private</span> AudioClip clip<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">private</span> AppletContext context<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">init</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      context <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">getAppletContext</span><span style="color: #666666">();</span>
+      String audioURL <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">getParameter</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;audio&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span>audioURL <span style="color: #666666">==</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">)</span>
+      <span style="color: #666666">{</span>
+         audioURL <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;default.au&quot;</span><span style="color: #666666">;</span>
+      <span style="color: #666666">}</span>
+      <span style="color: #008000; font-weight: bold">try</span>
+      <span style="color: #666666">{</span>
+         URL url <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> URL<span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">getDocumentBase</span><span style="color: #666666">(),</span> audioURL<span style="color: #666666">);</span>
+         clip <span style="color: #666666">=</span> context<span style="color: #666666">.</span><span style="color: #7D9029">getAudioClip</span><span style="color: #666666">(</span>url<span style="color: #666666">);</span>
+      <span style="color: #666666">}</span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #666666">(</span>MalformedURLException e<span style="color: #666666">)</span>
+      <span style="color: #666666">{</span>
+         e<span style="color: #666666">.</span><span style="color: #7D9029">printStackTrace</span><span style="color: #666666">();</span>
+         context<span style="color: #666666">.</span><span style="color: #7D9029">showStatus</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Could not load audio file!&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">start</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span>clip <span style="color: #666666">!=</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">)</span>
+      <span style="color: #666666">{</span>
+         clip<span style="color: #666666">.</span><span style="color: #7D9029">loop</span><span style="color: #666666">();</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">stop</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span>clip <span style="color: #666666">!=</span> <span style="color: #008000; font-weight: bold">null</span><span style="color: #666666">)</span>
+      <span style="color: #666666">{</span>
+         clip<span style="color: #666666">.</span><span style="color: #7D9029">stop</span><span style="color: #666666">();</span>
+      <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now, let us call this applet as
+follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">&lt;html&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;title&gt;</span>The ImageDemo applet<span style="color: #008000; font-weight: bold">&lt;/title&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;hr&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;applet</span> <span style="color: #7D9029">code=</span><span style="color: #BA2121">&quot;ImageDemo.class&quot;</span> <span style="color: #7D9029">width=</span><span style="color: #BA2121">&quot;0&quot;</span> <span style="color: #7D9029">height=</span><span style="color: #BA2121">&quot;0&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;param</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;audio&quot;</span> <span style="color: #7D9029">value=</span><span style="color: #BA2121">&quot;test.wav&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/applet&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;hr&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/html&gt;</span>
+</pre></div>
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You can use your test.wav at your PC
+to test the above example.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

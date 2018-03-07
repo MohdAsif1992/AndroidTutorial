@@ -1,0 +1,115 @@
+<html>
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";color:#000066';mso-font-kerning:18.0pt'>Android Architecture<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Android operating system is a stack
+of software components which is roughly divided into five sections and four
+main layers as shown below in the architecture diagram.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:0in;margin-bottom:
+.0001pt;line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Linux kernel<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:0in;margin-bottom:
+.0001pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>At the bottom of the layers is Linux
+- Linux 2.6 with approximately 115 patches. This provides basic system
+functionality like process management, memory management, device management
+like camera, keypad, display etc. Also, the kernel handles all the things that
+Linux is really good at such as networking and a vast array of device drivers,
+which take the pain out of interfacing to peripheral hardware.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Libraries<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>On top of Linux kernel there is a
+set of libraries including open-source Web browser engine <span class=SpellE>WebKit</span>,
+well known library <span class=SpellE>libc</span>, SQLite database which is a
+useful repository for storage and sharing of application data, libraries to
+play and record audio and video, SSL libraries responsible for Internet
+security etc.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Android Runtime<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This is the third section of the
+architecture and available on the second layer from the bottom. This section
+provides a key component called <span class=SpellE><b>Dalvik</b></span><b>
+Virtual Machine</b> which is a kind of Java Virtual Machine specially designed
+and optimized for Android.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The <span class=SpellE>Dalvik</span>
+VM makes use of Linux core features like memory management and multi-threading,
+which is intrinsic in the Java language. The <span class=SpellE>Dalvik</span>
+VM enables every Android application to run in its own process, with its own
+instance of the <span class=SpellE>Dalvik</span> virtual machine.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The Android runtime also provides a
+set of core libraries which enable Android application developers to write
+Android applications using standard Java programming language.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Application Framework<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The Application Framework layer
+provides many higher-level services to applications in the form of Java
+classes. Application developers are allowed to make use of these services in
+their applications.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Applications<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You will find all the Android
+application at the top layer. You will write your application to be installed
+on this layer only. Examples of such applications are Contacts Books, Browser, <span
+class=GramE>Games</span> etc.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:16.0pt;
+mso-bidi-font-size:16.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";color:#000066';mso-font-kerning:18.0pt'>Android Architecture<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-no-proof:yes'><img border=0 width=560 height=450 id="_x0000_i1025"
+src="img/android_artitech.jpg" alt="Eclipse Home page"></span><span style='font-size:
+10.0pt'><o:p></o:p></span></p>
+
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

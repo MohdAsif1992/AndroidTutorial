@@ -1,0 +1,491 @@
+<html>
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Android Resources Organizing &amp;
+Accessing<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>There are many more items which you
+use to build a good Android application. Apart from coding for the application,
+you take care of various other <b>resources</b> like static content that your
+code uses, such as bitmaps, colors, layout definitions, user interface strings,
+animation instructions, and more. These resources are always maintained
+separately in various sub-directories under <b>res/</b> directory of the
+project.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This tutorial will explain you how
+you can organize your application resources, specify alternative resources and
+access them in your applications.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Organize Resources<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You should place each type of
+resource in a specific subdirectory of your project's <b>res/</b> directory.
+For example, here's the file hierarchy for a simple project:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">MyProject<span style="color: #666666">/</span>
+    src<span style="color: #666666">/</span> 
+        MyActivity<span style="color: #666666">.</span><span style="color: #7D9029">java</span> 
+    res<span style="color: #666666">/</span>
+        drawable<span style="color: #666666">/</span> 
+            icon<span style="color: #666666">.</span><span style="color: #7D9029">png</span> 
+        layout<span style="color: #666666">/</span> 
+            activity_main<span style="color: #666666">.</span><span style="color: #7D9029">xml</span>
+            info<span style="color: #666666">.</span><span style="color: #7D9029">xml</span>
+        values<span style="color: #666666">/</span> 
+            strings<span style="color: #666666">.</span><span style="color: #7D9029">xml</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The <b>res/</b> directory contains
+all the resources in various subdirectories. Here we have an image resource,
+two layout resources, and a string resource file. Following table gives a
+detail about the resource directories supported inside project res/ directory.<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.5pt;
+ border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
+ 1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width="20%" style='width:20.0%;border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Directory<o:p></o:p></span></b></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:12.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Resource
+  Type<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>anim</span></span><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>/<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>XML files that define property
+  animations. They are saved in res/<span class=SpellE>anim</span>/ folder and
+  accessed from the <span class=SpellE><b>R.anim</b></span> class.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>color/<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>XML files that define a state list
+  of colors. They are saved in res/color/ and accessed from the <span
+  class=SpellE><b>R.color</b></span> class.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>drawable</span></span><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'>/<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Image files like .<span
+  class=SpellE>png</span>, .jpg, .gif or XML files that are compiled into
+  bitmaps, state lists, shapes, animation <span class=SpellE>drawables</span>.
+  They are saved in res/<span class=SpellE>drawable</span>/ and accessed from
+  the <span class=SpellE><b>R.drawable</b></span> class.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>layout/<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>XML files that define a user
+  interface layout. They are saved in res/layout/ and accessed from the <span
+  class=SpellE><b>R.layout</b></span> class.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>menu/<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>XML files that define application
+  menus, such as an Options Menu, Context Menu, or Sub Menu. They are saved in
+  res/menu/ and accessed from the <span class=SpellE><b>R.menu</b></span>
+  class.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>raw/<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Arbitrary files to save in their
+  raw form. You need to call <span class=SpellE><span class=GramE><i>Resources.openRawResource</i></span></span><span
+  class=GramE><i>(</i></span><i>)</i> with the resource ID, which is <span
+  class=SpellE><i>R.raw.filename</i></span> to open such raw files.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>values/<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>XML files that contain simple
+  values, such as strings, integers, and colors. For example, here are some
+  filename conventions for resources you can create in this directory: <o:p></o:p></span></p>
+  <ul type=disc>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+       class=GramE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>arrays.xml</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'> for resource arrays, and
+       accessed from the <span class=SpellE><b>R.array</b></span> class.<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+       class=GramE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>integers.xml</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'> for resource integers, and
+       accessed from the <span class=SpellE><b>R.integer</b></span> class.<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+       class=GramE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>bools.xml</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'> for resource <span
+       class=SpellE>boolean</span>, and accessed from the <span class=SpellE><b>R.bool</b></span>
+       class.<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+       class=GramE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>colors.xml</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'> for color values, and
+       accessed from the <span class=SpellE><b>R.color</b></span> class.<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+       class=GramE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>dimens.xml</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'> for dimension values, and
+       accessed from the <span class=SpellE><b>R.dimen</b></span> class.<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+       class=GramE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>strings.xml</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'> for string values, and
+       accessed from the <span class=SpellE><b>R.string</b></span> class.<o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+       class=GramE><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'>styles.xml</span></span><span
+       style='font-size:12.0pt;font-family:"Times New Roman","serif";
+       mso-fareast-font-family:"Times New Roman"'> for styles, and accessed
+       from the <span class=SpellE><b>R.style</b></span> class.<o:p></o:p></span></li>
+  </ul>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>xml/<o:p></o:p></span></p>
+  </td>
+  <td style='border:none;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'>Arbitrary XML files that can be
+  read at runtime by calling <span class=SpellE><span class=GramE><i>Resources.getXML</i></span></span><span
+  class=GramE><i>(</i></span><i>)</i>. You can save various configuration files
+  here which will be used at run time.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Alternative Resources<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Your application should provide
+alternative resources to support specific device configurations. For example,
+you should include alternative <span class=SpellE>drawable</span> resources <span
+class=GramE>( <span class=SpellE>ie.images</span></span> ) for different screen
+resolution and alternative string resources for different languages. At
+runtime, Android detects the current device configuration and loads the
+appropriate resources for your application.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To specify configuration-specific
+alternatives for a set of resources, follow the following steps:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo2;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Create a new directory in res/ named in the form <b>&lt;<span
+     class=SpellE>resources_name</span>&gt;-&lt;<span class=SpellE>config_qualifier</span>&gt;</b>.
+     Here <span class=SpellE><b>resources_name</b></span> will be any of the
+     resources mentioned in the above table, like layout, <span class=SpellE>drawable</span>
+     etc. The <b>qualifier</b> will specify an individual configuration for
+     which these resources are to be used. You can check official documentation
+     for a complete list of qualifiers for different type of resources.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l1 level1 lfo2;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Save the respective alternative resources in this new
+     directory. The resource files must be named exactly the same as the
+     default resource files as shown in the below example, but these files will
+     have content specific to the alternative. For example though image file
+     name will be same but for high resolution screen, its resolution will be
+     high.<o:p></o:p></span></li>
+</ul>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">MyProject<span style="color: #666666">/</span>
+    src<span style="color: #666666">/</span> 
+        MyActivity<span style="color: #666666">.</span><span style="color: #7D9029">java</span> 
+    res<span style="color: #666666">/</span>
+        drawable<span style="color: #666666">/</span> 
+            icon<span style="color: #666666">.</span><span style="color: #7D9029">png</span>
+            background<span style="color: #666666">.</span><span style="color: #7D9029">png</span>
+        drawable<span style="color: #666666">-</span>hdpi<span style="color: #666666">/</span> 
+            icon<span style="color: #666666">.</span><span style="color: #7D9029">png</span>
+            background<span style="color: #666666">.</span><span style="color: #7D9029">png</span> 
+        layout<span style="color: #666666">/</span> 
+            activity_main<span style="color: #666666">.</span><span style="color: #7D9029">xml</span>
+            info<span style="color: #666666">.</span><span style="color: #7D9029">xml</span>
+        values<span style="color: #666666">/</span> 
+            strings<span style="color: #666666">.</span><span style="color: #7D9029">xml</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Below is another example which
+specifies layout for a default language and alternative layout for <span
+class=SpellE><span class=GramE>arabic</span></span> language.<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">MyProject<span style="color: #666666">/</span>
+    src<span style="color: #666666">/</span> 
+        MyActivity<span style="color: #666666">.</span><span style="color: #7D9029">java</span> 
+    res<span style="color: #666666">/</span>
+        drawable<span style="color: #666666">/</span> 
+            icon<span style="color: #666666">.</span><span style="color: #7D9029">png</span>
+            background<span style="color: #666666">.</span><span style="color: #7D9029">png</span>
+        drawable<span style="color: #666666">-</span>hdpi<span style="color: #666666">/</span> 
+            icon<span style="color: #666666">.</span><span style="color: #7D9029">png</span>
+            background<span style="color: #666666">.</span><span style="color: #7D9029">png</span> 
+        layout<span style="color: #666666">/</span> 
+            activity_main<span style="color: #666666">.</span><span style="color: #7D9029">xml</span>
+            info<span style="color: #666666">.</span><span style="color: #7D9029">xml</span>
+        layout<span style="color: #666666">-</span>ar<span style="color: #666666">/</span>
+            main<span style="color: #666666">.</span><span style="color: #7D9029">xml</span>
+        values<span style="color: #666666">/</span> 
+            strings<span style="color: #666666">.</span><span style="color: #7D9029">xml</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Accessing Resources<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>During your application development
+you will need to access defined resources either in your code, or in your
+layout XML files. Following section explains how to access your resources in
+both the scenarios:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Accessing Resources in Code<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>When <span class=GramE>your</span>
+Android application is compiled, a <b>R</b> class gets generated, which
+contains resource IDs for all the resources available in your <b>res/</b>
+directory. You can use R class to access that resource using sub-directory and <span
+class=GramE>resource</span> name or directly resource ID.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To access <i>res/<span class=SpellE>drawable</span>/myimage.png</i>
+and set an <span class=SpellE>ImageView</span> you will use following code:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">ImageView imageView <span style="color: #666666">=</span> <span style="color: #666666">(</span>ImageView<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">myimageview</span><span style="color: #666666">);</span>
+imageView<span style="color: #666666">.</span><span style="color: #7D9029">setImageResource</span><span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">drawable</span><span style="color: #666666">.</span><span style="color: #7D9029">myimage</span><span style="color: #666666">);</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here first line of the code make use
+of <span class=SpellE><i>R.id.myimageview</i></span> to get <span class=SpellE>ImageView</span>
+defined with id <span class=SpellE><i>myimageview</i></span> in a Layout file.
+Second line of code makes use of <span class=SpellE><i>R.drawable.myimage</i></span>
+to get an image with name <span class=SpellE><b>myimage</b></span> available in
+<span class=SpellE>drawable</span> sub-directory under <b>/res</b>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Consider next example where <i>res/values/strings.xml</i>
+has following definition:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;resources&gt;</span>
+    <span style="color: #008000; font-weight: bold">&lt;string</span>  <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;hello&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Hello, World!<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/resources&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now you can set the text on a <span
+class=SpellE>TextView</span> object with ID <span class=SpellE>msg</span> using
+a resource ID as follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">TextView msgTextView <span style="color: #666666">=</span> <span style="color: #666666">(</span>TextView<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">msg</span><span style="color: #666666">);</span>
+msgTextView<span style="color: #666666">.</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">string</span><span style="color: #666666">.</span><span style="color: #7D9029">hello</span><span style="color: #666666">);</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Consider a layout <i>res/layout/activity_main.xml</i>
+with the following definition:<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;LinearLayout</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+   <span style="color: #7D9029">android:orientation=</span><span style="color: #BA2121">&quot;vertical&quot;</span> <span style="color: #008000; font-weight: bold">&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;TextView</span> <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/text&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+   <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;Hello, I am a TextView&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;Button</span> <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/button&quot;</span>
+   <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+   <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+   <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;Hello, I am a Button&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/LinearLayout&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This application code will load this
+layout for an Activity, in the <span class=SpellE><span class=GramE>onCreate</span></span><span
+class=GramE>(</span>) method as follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onCreate</span><span style="color: #666666">(</span>Bundle savedInstanceState<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+    <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">.</span><span style="color: #7D9029">onCreate</span><span style="color: #666666">(</span>savedInstanceState<span style="color: #666666">);</span>
+    setContentView<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">layout</span><span style="color: #666666">.</span><span style="color: #7D9029">main_activity</span><span style="color: #666666">);</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:3'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Accessing Resources in XML<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Consider the following resource XML <i>res/values/strings.xml</i>
+file that includes a color resource and a string resource:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;resources&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;color</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;opaque_red&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>#f00<span style="color: #008000; font-weight: bold">&lt;/color&gt;</span>
+   <span style="color: #008000; font-weight: bold">&lt;string</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;hello&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>Hello!<span style="color: #008000; font-weight: bold">&lt;/string&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/resources&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now you can use these resources in
+the following layout file to set the text color and text string as follows:<o:p></o:p></span></p>
+
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;EditText</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+    <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+    <span style="color: #7D9029">android:textColor=</span><span style="color: #BA2121">&quot;@color/opaque_red&quot;</span>
+    <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;@string/hello&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now if you will go through previous
+chapter once again where I have explained <b>Hello World!</b> <span
+class=GramE>example</span>, and I'm sure you will have better understanding on
+all the concepts explained in this chapter. So I highly recommend to check
+previous chapter for working example and check how I have used various
+resources at very basic level.<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

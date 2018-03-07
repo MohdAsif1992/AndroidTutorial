@@ -1,0 +1,332 @@
+<html>
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Java Generics</span></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>It would be nice if we could write a
+single sort method that could sort the elements in an Integer array, a String
+array or an array of any type that supports ordering.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Java <b>Generic</b> methods and
+generic classes enable programmers to specify, with a single method
+declaration, a set of related methods or, with a single class declaration, a
+set of related types, respectively.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Generics also provide compile-time
+type safety that allows programmers to catch invalid types at compile time.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Using Java Generic concept, we might
+write a generic method for sorting an array of objects, then invoke the generic
+method with Integer arrays, <span class=GramE>Double</span> arrays, String
+arrays and so on, to sort the array elements.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Generic Methods:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>You can write a single generic
+method declaration that can be called with arguments of different types. Based
+on the types of the arguments passed to the generic method, the compiler
+handles each method call appropriately. Following are the rules to define
+Generic Methods:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>All generic method declarations have a type parameter
+     section delimited by angle brackets (&lt; and &gt;) that precedes the
+     method's return type <span class=GramE>( &lt;</span> E &gt; in the next
+     example).<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Each type parameter section contains one or more type
+     parameters separated by commas. A type parameter, also known as a type
+     variable, is an identifier that specifies a generic type name.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>The type parameters can be used to declare the return type
+     and act as placeholders for the types of the arguments passed to the
+     generic method, which are known as actual type arguments.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>A generic method's body is declared like that of any
+     other method. Note that type parameters can represent only reference types,
+     not primitive types (like <span class=SpellE>int</span>, double and char).
+     <o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following example illustrates how we
+can print array of different type using a single Generic method:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">GenericMethodTest</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">// generic method printArray                        </span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #666666">&lt;</span> E <span style="color: #666666">&gt;</span> <span style="color: #B00040">void</span> printArray<span style="color: #666666">(</span> E<span style="color: #666666">[]</span> inputArray <span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #408080; font-style: italic">// Display array elements             </span>
+         <span style="color: #008000; font-weight: bold">for</span> <span style="color: #666666">(</span> E element <span style="color: #666666">:</span> inputArray <span style="color: #666666">){</span>       
+            System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">printf</span><span style="color: #666666">(</span> <span style="color: #BA2121">&quot;%s &quot;</span><span style="color: #666666">,</span> element <span style="color: #666666">);</span>
+         <span style="color: #666666">}</span>
+         System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">();</span>
+    <span style="color: #666666">}</span>
+ 
+    <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span> String args<span style="color: #666666">[]</span> <span style="color: #666666">)</span>
+    <span style="color: #666666">{</span>
+        <span style="color: #408080; font-style: italic">// Create arrays of Integer, Double and Character</span>
+        Integer<span style="color: #666666">[]</span> intArray <span style="color: #666666">=</span> <span style="color: #666666">{</span> <span style="color: #666666">1,</span> <span style="color: #666666">2,</span> <span style="color: #666666">3,</span> <span style="color: #666666">4,</span> <span style="color: #666666">5</span> <span style="color: #666666">};</span>
+        Double<span style="color: #666666">[]</span> doubleArray <span style="color: #666666">=</span> <span style="color: #666666">{</span> <span style="color: #666666">1.1,</span> <span style="color: #666666">2.2,</span> <span style="color: #666666">3.3,</span> <span style="color: #666666">4.4</span> <span style="color: #666666">};</span>
+        Character<span style="color: #666666">[]</span> charArray <span style="color: #666666">=</span> <span style="color: #666666">{</span> <span style="color: #BA2121">&#39;H&#39;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&#39;E&#39;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&#39;L&#39;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&#39;L&#39;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&#39;O&#39;</span> <span style="color: #666666">};</span>
+ 
+        System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span> <span style="color: #BA2121">&quot;Array integerArray contains:&quot;</span> <span style="color: #666666">);</span>
+        printArray<span style="color: #666666">(</span> intArray  <span style="color: #666666">);</span> <span style="color: #408080; font-style: italic">// pass an Integer array</span>
+ 
+        System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span> <span style="color: #BA2121">&quot;\nArray doubleArray contains:&quot;</span> <span style="color: #666666">);</span>
+        printArray<span style="color: #666666">(</span> doubleArray <span style="color: #666666">);</span> <span style="color: #408080; font-style: italic">// pass a Double array</span>
+ 
+        System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span> <span style="color: #BA2121">&quot;\nArray characterArray contains:&quot;</span> <span style="color: #666666">);</span>
+        printArray<span style="color: #666666">(</span> charArray <span style="color: #666666">);</span> <span style="color: #408080; font-style: italic">// pass a Character array</span>
+    <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Array <span class=SpellE>integerArray</span> contains:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>1 2 3 4 5 6<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Array <span class=SpellE>doubleArray</span> contains:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>1.1 2.2 3.3 4.4 <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Array <span class=SpellE>characterArray</span> contains:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>H E L <span class=SpellE>L</span> O<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Bounded Type Parameters:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>There may be times when you'll want
+to restrict the kinds of types that are allowed to be passed to a type
+parameter. For example, a method that operates on numbers might only want to
+accept instances of Number or its subclasses. This is what bounded type
+parameters are for.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>To declare a bounded type parameter,
+list the type parameter's name, followed by <span class=GramE>the extends</span>
+keyword, followed by its upper bound.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following example illustrates how
+extends is used in a general sense to mean either &quot;extends&quot; (as in
+classes) or &quot;implements&quot; (as in interfaces). This example is Generic
+method to return the largest of three Comparable objects:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">MaximumTest</span>
+<span style="color: #666666">{</span>
+   <span style="color: #408080; font-style: italic">// determines the largest of three Comparable objects</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #666666">&lt;</span>T <span style="color: #008000; font-weight: bold">extends</span> Comparable<span style="color: #666666">&lt;</span>T<span style="color: #666666">&gt;&gt;</span> T maximum<span style="color: #666666">(</span>T x<span style="color: #666666">,</span> T y<span style="color: #666666">,</span> T z<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>                     
+      T max <span style="color: #666666">=</span> x<span style="color: #666666">;</span> <span style="color: #408080; font-style: italic">// assume x is initially the largest      </span>
+      <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span> y<span style="color: #666666">.</span><span style="color: #7D9029">compareTo</span><span style="color: #666666">(</span> max <span style="color: #666666">)</span> <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span> <span style="color: #666666">){</span>
+         max <span style="color: #666666">=</span> y<span style="color: #666666">;</span> <span style="color: #408080; font-style: italic">// y is the largest so far</span>
+      <span style="color: #666666">}</span>
+      <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span> z<span style="color: #666666">.</span><span style="color: #7D9029">compareTo</span><span style="color: #666666">(</span> max <span style="color: #666666">)</span> <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span> <span style="color: #666666">){</span>
+         max <span style="color: #666666">=</span> z<span style="color: #666666">;</span> <span style="color: #408080; font-style: italic">// z is the largest now                </span>
+      <span style="color: #666666">}</span>
+      <span style="color: #008000; font-weight: bold">return</span> max<span style="color: #666666">;</span> <span style="color: #408080; font-style: italic">// returns the largest object  </span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span> String args<span style="color: #666666">[]</span> <span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">printf</span><span style="color: #666666">(</span> <span style="color: #BA2121">&quot;Max of %d, %d and %d is %d\n\n&quot;</span><span style="color: #666666">,</span>
+                   <span style="color: #666666">3,</span> <span style="color: #666666">4,</span> <span style="color: #666666">5,</span> maximum<span style="color: #666666">(</span> <span style="color: #666666">3,</span> <span style="color: #666666">4,</span> <span style="color: #666666">5</span> <span style="color: #666666">)</span> <span style="color: #666666">);</span>
+ 
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">printf</span><span style="color: #666666">(</span> <span style="color: #BA2121">&quot;Maxm of %.1f,%.1f and %.1f is %.1f\n\n&quot;</span><span style="color: #666666">,</span>
+                   <span style="color: #666666">6.6,</span> <span style="color: #666666">8.8,</span> <span style="color: #666666">7.7,</span> maximum<span style="color: #666666">(</span> <span style="color: #666666">6.6,</span> <span style="color: #666666">8.8,</span> <span style="color: #666666">7.7</span> <span style="color: #666666">)</span> <span style="color: #666666">);</span>
+ 
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">printf</span><span style="color: #666666">(</span> <span style="color: #BA2121">&quot;Max of %s, %s and %s is %s\n&quot;</span><span style="color: #666666">,</span><span style="color: #BA2121">&quot;pear&quot;</span><span style="color: #666666">,</span>
+         <span style="color: #BA2121">&quot;apple&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;orange&quot;</span><span style="color: #666666">,</span> maximum<span style="color: #666666">(</span> <span style="color: #BA2121">&quot;pear&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;apple&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;orange&quot;</span> <span style="color: #666666">)</span> <span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Maximum of 3, 4 and 5 is 5<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Maximum of 6.6, 8.8 and 7.7 is 8.8<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Maximum of pear, apple and orange is pear<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Generic Classes:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A generic class declaration looks
+like a non-generic class declaration, except that the class name is followed by
+a type parameter section.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>As with generic methods, the type
+parameter section of a generic class can have one or more type parameters
+separated by commas. These classes are known as parameterized classes or
+parameterized types because they accept one or more parameters.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman"'>Example:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Following example illustrates how we
+can define a generic class:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Box</span><span style="color: #666666">&lt;</span>T<span style="color: #666666">&gt;</span> <span style="color: #666666">{</span>
+ 
+  <span style="color: #008000; font-weight: bold">private</span> T t<span style="color: #666666">;</span>
+ 
+  <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">add</span><span style="color: #666666">(</span>T t<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+    <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">t</span> <span style="color: #666666">=</span> t<span style="color: #666666">;</span>
+  <span style="color: #666666">}</span>
+ 
+  <span style="color: #008000; font-weight: bold">public</span> T <span style="color: #0000FF">get</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+    <span style="color: #008000; font-weight: bold">return</span> t<span style="color: #666666">;</span>
+  <span style="color: #666666">}</span>
+ 
+  <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String<span style="color: #666666">[]</span> args<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+     Box<span style="color: #666666">&lt;</span>Integer<span style="color: #666666">&gt;</span> integerBox <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Box<span style="color: #666666">&lt;</span>Integer<span style="color: #666666">&gt;();</span>
+     Box<span style="color: #666666">&lt;</span>String<span style="color: #666666">&gt;</span> stringBox <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Box<span style="color: #666666">&lt;</span>String<span style="color: #666666">&gt;();</span>
+   
+     integerBox<span style="color: #666666">.</span><span style="color: #7D9029">add</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> Integer<span style="color: #666666">(10));</span>
+     stringBox<span style="color: #666666">.</span><span style="color: #7D9029">add</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> String<span style="color: #666666">(</span><span style="color: #BA2121">&quot;Hello World&quot;</span><span style="color: #666666">));</span>
+ 
+     System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">printf</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Integer Value :%d\n\n&quot;</span><span style="color: #666666">,</span> integerBox<span style="color: #666666">.</span><span style="color: #7D9029">get</span><span style="color: #666666">());</span>
+     System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">printf</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;String Value :%s\n&quot;</span><span style="color: #666666">,</span> stringBox<span style="color: #666666">.</span><span style="color: #7D9029">get</span><span style="color: #666666">());</span>
+  <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Integer <span class=GramE>Value :10</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>String <span class=GramE>Value :Hello</span> World<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

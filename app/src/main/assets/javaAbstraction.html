@@ -1,0 +1,348 @@
+<html>
+
+<body lang=EN-US link=blue vlink="#954F72" style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:18.0pt;color:#000066'>Java Abstraction<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Abstraction refers to the ability to
+make a class abstract in OOP. An abstract class is one that cannot be
+instantiated. All other functionality of the class still exists, and its
+fields, methods, and constructors are all accessed in the same manner. You just
+cannot create an instance of the abstract class.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If a class is abstract and cannot be
+instantiated, the class does not have much use unless it is subclass. This is
+typically how abstract classes come about during the design phase. A parent
+class contains the common functionality of a collection of child classes, but
+the parent class itself is too abstract to be used on its own.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Abstract Class:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Use the <b>abstract</b> keyword to
+declare a class abstract. The keyword appears in the class declaration
+somewhere before the class keyword.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">/* File name : Employee.java */</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">abstract</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Employee</span>
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">private</span> String name<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">private</span> String address<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">int</span> number<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #0000FF">Employee</span><span style="color: #666666">(</span>String name<span style="color: #666666">,</span> String address<span style="color: #666666">,</span> <span style="color: #B00040">int</span> number<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Constructing an Employee&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">name</span> <span style="color: #666666">=</span> name<span style="color: #666666">;</span>
+      <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">address</span> <span style="color: #666666">=</span> address<span style="color: #666666">;</span>
+      <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">number</span> <span style="color: #666666">=</span> number<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">double</span> <span style="color: #0000FF">computePay</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+     System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Inside Employee computePay&quot;</span><span style="color: #666666">);</span>
+     <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">0.0;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">mailCheck</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Mailing a check to &quot;</span> <span style="color: #666666">+</span> <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">name</span>
+       <span style="color: #666666">+</span> <span style="color: #BA2121">&quot; &quot;</span> <span style="color: #666666">+</span> <span style="color: #008000; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #7D9029">address</span><span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> String <span style="color: #0000FF">toString</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">return</span> name <span style="color: #666666">+</span> <span style="color: #BA2121">&quot; &quot;</span> <span style="color: #666666">+</span> address <span style="color: #666666">+</span> <span style="color: #BA2121">&quot; &quot;</span> <span style="color: #666666">+</span> number<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> String <span style="color: #0000FF">getName</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">return</span> name<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> String <span style="color: #0000FF">getAddress</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #008000; font-weight: bold">return</span> address<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">setAddress</span><span style="color: #666666">(</span>String newAddress<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      address <span style="color: #666666">=</span> newAddress<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">int</span> <span style="color: #0000FF">getNumber</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+     <span style="color: #008000; font-weight: bold">return</span> number<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Notice that nothing is different in
+this Employee class. The class is now abstract, but it still has three fields,
+seven methods, and one constructor.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Now if you would try as follows:<o:p></o:p></span></p>
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">/* File name : AbstractDemo.java */</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">AbstractDemo</span>
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String <span style="color: #666666">[]</span> args<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      <span style="color: #408080; font-style: italic">/* Following is not allowed and would raise error */</span>
+      Employee e <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Employee<span style="color: #666666">(</span><span style="color: #BA2121">&quot;George W.&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Houston, TX&quot;</span><span style="color: #666666">,</span> <span style="color: #666666">43);</span>
+ 
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;\n Call mailCheck using Employee reference--&quot;</span><span style="color: #666666">);</span>
+      e<span style="color: #666666">.</span><span style="color: #7D9029">mailCheck</span><span style="color: #666666">();</span>
+    <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>When you would compile above class
+then you would get the following error:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Employee.java:46: Employee is abstract; cannot be instantiated<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'><span style='mso-spacerun:yes'>      </span>Employee e = new <span
+class=GramE>Employee(</span>&quot;George W.&quot;, &quot;Houston, TX&quot;,
+43);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'><span style='mso-spacerun:yes'>                   </span>^<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>1 error<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Extending Abstract Class:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>We can extend Employee class in
+normal way as follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">/* File name : Salary.java */</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Salary</span> <span style="color: #008000; font-weight: bold">extends</span> Employee
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">double</span> salary<span style="color: #666666">;</span> <span style="color: #408080; font-style: italic">//Annual salary</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #0000FF">Salary</span><span style="color: #666666">(</span>String name<span style="color: #666666">,</span> String address<span style="color: #666666">,</span> <span style="color: #B00040">int</span> number<span style="color: #666666">,</span> <span style="color: #B00040">double</span>
+      salary<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+       <span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">(</span>name<span style="color: #666666">,</span> address<span style="color: #666666">,</span> number<span style="color: #666666">);</span>
+       setSalary<span style="color: #666666">(</span>salary<span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">mailCheck</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+       System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Within mailCheck of Salary class &quot;</span><span style="color: #666666">);</span>
+       System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Mailing check to &quot;</span> <span style="color: #666666">+</span> getName<span style="color: #666666">()</span>
+       <span style="color: #666666">+</span> <span style="color: #BA2121">&quot; with salary &quot;</span> <span style="color: #666666">+</span> salary<span style="color: #666666">);</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">double</span> <span style="color: #0000FF">getSalary</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+       <span style="color: #008000; font-weight: bold">return</span> salary<span style="color: #666666">;</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">setSalary</span><span style="color: #666666">(</span><span style="color: #B00040">double</span> newSalary<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+       <span style="color: #008000; font-weight: bold">if</span><span style="color: #666666">(</span>newSalary <span style="color: #666666">&gt;=</span> <span style="color: #666666">0.0)</span>
+       <span style="color: #666666">{</span>
+          salary <span style="color: #666666">=</span> newSalary<span style="color: #666666">;</span>
+       <span style="color: #666666">}</span>
+   <span style="color: #666666">}</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">double</span> <span style="color: #0000FF">computePay</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Computing salary pay for &quot;</span> <span style="color: #666666">+</span> getName<span style="color: #666666">());</span>
+      <span style="color: #008000; font-weight: bold">return</span> salary<span style="color: #666666">/52;</span>
+   <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Here, we cannot instantiate a new
+Employee, but if we instantiate a new Salary object, the Salary object will
+inherit the three fields and seven methods from Employee.<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">*</span> File name <span style="color: #666666">:</span> AbstractDemo<span style="color: #666666">.</span><span style="color: #7D9029">java</span> <span style="color: #666666">*/</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">AbstractDemo</span>
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String <span style="color: #666666">[]</span> args<span style="color: #666666">)</span>
+   <span style="color: #666666">{</span>
+      Salary s <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Salary<span style="color: #666666">(</span><span style="color: #BA2121">&quot;Mohd Mohtashim&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Ambehta, UP&quot;</span><span style="color: #666666">,</span> <span style="color: #666666">3,</span> <span style="color: #666666">3600.00);</span>
+      Employee e <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> Salary<span style="color: #666666">(</span><span style="color: #BA2121">&quot;John Adams&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Boston, MA&quot;</span><span style="color: #666666">,</span> <span style="color: #666666">2,</span> <span style="color: #666666">2400.00);</span>
+ 
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Call mailCheck using Salary reference --&quot;</span><span style="color: #666666">);</span>
+      s<span style="color: #666666">.</span><span style="color: #7D9029">mailCheck</span><span style="color: #666666">();</span>
+ 
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;\n Call mailCheck using Employee reference--&quot;</span><span style="color: #666666">);</span>
+      e<span style="color: #666666">.</span><span style="color: #7D9029">mailCheck</span><span style="color: #666666">();</span>
+    <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>This would produce the following
+result:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Constructing an Employee<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Constructing an Employee<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Call <span class=SpellE>mailCheck</span> <span class=GramE>using<span
+style='mso-spacerun:yes'>  </span>Salary</span> reference --<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Within <span class=SpellE>mailCheck</span> of Salary class<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Mailing check to <span class=SpellE>Mohd</span> <span class=SpellE>Mohtashim</span>
+with salary 3600.0<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Call <span class=SpellE>mailCheck</span> using Employee reference--<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Within <span class=SpellE>mailCheck</span> of Salary class<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:12.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:red'>Mailing check to John Adams with salary 2400.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:2'><b><span style='font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman"'>Abstract Methods:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If you want a class to contain a
+particular method but you want the actual implementation of that method to be
+determined by child classes, you can declare the method in the parent class as
+abstract.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>The abstract keyword is also used to
+declare a method as abstract. An abstract method consists of a method
+signature, but no method body.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Abstract method would have no
+definition, and its signature is followed by a semicolon, not curly braces as
+follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">abstract</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Employee</span>
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">private</span> String name<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">private</span> String address<span style="color: #666666">;</span>
+   <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">int</span> number<span style="color: #666666">;</span>
+  
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">abstract</span> <span style="color: #B00040">double</span> <span style="color: #0000FF">computePay</span><span style="color: #666666">();</span>
+  
+   <span style="color: #408080; font-style: italic">//Remainder of class definition</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Declaring a method as abstract has
+two results:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>The class must also be declared abstract. If a class
+     contains an abstract method, the class must be abstract as well.<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     line-height:normal;mso-list:l0 level1 lfo1;tab-stops:list .5in'><span
+     style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+     "Times New Roman"'>Any child class must either override the abstract
+     method or declare itself abstract.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>A child class that inherits an
+abstract method must override it. If they do not, they must be abstract and any
+of their children must override it.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>Eventually, a descendant class has
+to implement the abstract method; otherwise, you would have a hierarchy of abstract
+classes that cannot be instantiated.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman"'>If Salary is extending Employee
+class, then it is required to implement <span class=SpellE><span class=GramE>computePay</span></span><span
+class=GramE>(</span>) method as follows:<o:p></o:p></span></p>
+
+<!--  --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">/* File name : Salary.java */</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Salary</span> <span style="color: #008000; font-weight: bold">extends</span> Employee
+<span style="color: #666666">{</span>
+   <span style="color: #008000; font-weight: bold">private</span> <span style="color: #B00040">double</span> salary<span style="color: #666666">;</span> <span style="color: #408080; font-style: italic">// Annual salary</span>
+ 
+   <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">double</span> <span style="color: #0000FF">computePay</span><span style="color: #666666">()</span>
+   <span style="color: #666666">{</span>
+      System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Computing salary pay for &quot;</span> <span style="color: #666666">+</span> getName<span style="color: #666666">());</span>
+      <span style="color: #008000; font-weight: bold">return</span> salary<span style="color: #666666">/52;</span>
+   <span style="color: #666666">}</span>
+ 
+   <span style="color: #408080; font-style: italic">//Remainder of class definition</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+</div>
+
+</body>
+
+</html>
