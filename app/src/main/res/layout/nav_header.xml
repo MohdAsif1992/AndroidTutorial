@@ -3,20 +3,23 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:background="@mipmap/headerbg"
+    android:background="@color/cardview_dark_background"
     android:id="@+id/headerlayout">
+
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="100dp"
         android:id="@+id/imageView"
         android:background="@mipmap/account"
+        android:layout_marginLeft="5dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="25dp"/>
+        android:contentDescription="@string/contentDescription_image_view" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="www.educavillage.com"
-        android:textSize="18sp"
+        android:text="@string/nav_header_text"
+        android:textColor="@color/white"
+        android:textSize="22sp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
         android:padding="5dp"/>

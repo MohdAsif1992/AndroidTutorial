@@ -18,7 +18,7 @@
                    android:id="@+id/txt_java_overview"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:text="Overview"
+                   android:text="@string/java_overview"
                    android:textSize="19sp"
                    android:textColor="@color/textblack"
                    android:padding="15dp" />
@@ -33,7 +33,7 @@
                     android:id="@+id/txt_java_environment_setup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Environment Setup"
+                    android:text="@string/java_environment_setup"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -48,7 +48,7 @@
                     android:id="@+id/txt_history_of_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="History of Java"
+                    android:text="@string/history_of_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -63,7 +63,7 @@
                     android:id="@+id/txt_java_what_is_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="What is Java"
+                    android:text="@string/java_what_is_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -78,7 +78,7 @@
                     android:id="@+id/txt_features_of_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Features of java"
+                    android:text="@string/features_of_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -93,7 +93,7 @@
                     android:id="@+id/txt_java_difference_between_JDK_JRE_JVM"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Difference between JDK,JRE and JVM"
+                    android:text="@string/java_difference_between_JDK_JRE_JVM"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -108,7 +108,7 @@
                     android:id="@+id/txt_java_JVM"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Java JVM (Java Virtual Machine)"
+                    android:text="@string/java_JVM"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -123,7 +123,7 @@
                     android:id="@+id/txt_java_basic_syntax"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Basic Syntax"
+                    android:text="@string/java_basic_syntax"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -138,7 +138,7 @@
                 android:id="@+id/txt_java_objects_an_classes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Objects and Classes"
+                android:text="@string/java_objects_an_classes"
                 android:textSize="19sp"
                 android:textColor="@color/textblack"
                 android:padding="15dp"/>
@@ -153,7 +153,7 @@
                     android:id="@+id/txt_java_basic_data_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Basic Data Types"
+                    android:text="@string/java_basic_data_type"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -168,7 +168,7 @@
                     android:id="@+id/txt_java_variable_types"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Variable Types"
+                    android:text="@string/java_variable_types"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -183,7 +183,7 @@
                     android:id="@+id/txt_java_modifier_types"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="modifier Types"
+                    android:text="@string/java_modifier_types"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -198,7 +198,7 @@
                     android:id="@+id/txt_java_basic_operators"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Basic Operators"
+                    android:text="@string/java_basic_operators"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -213,7 +213,7 @@
                     android:id="@+id/txt_java_loops"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Loops"
+                    android:text="@string/java_loops"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -228,7 +228,7 @@
                     android:id="@+id/txt_java_decision_making"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Decision Making"
+                    android:text="@string/java_decision_making"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -243,7 +243,7 @@
                     android:id="@+id/txt_numbers_class_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Numbers Class"
+                    android:text="@string/numbers_class_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -258,7 +258,7 @@
                     android:id="@+id/txt_character_class_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Character Class"
+                    android:text="@string/character_class_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -273,7 +273,7 @@
                     android:id="@+id/txt_strings_class_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Strings Class"
+                    android:text="@string/strings_class_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -288,7 +288,7 @@
                     android:id="@+id/txt_arrays_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Arrays"
+                    android:text="@string/arrays_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -303,7 +303,7 @@
                     android:id="@+id/txt_date_and_time_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Date and Time"
+                    android:text="@string/date_and_time_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -318,7 +318,7 @@
                     android:id="@+id/txt_regular_expressions_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Regular Expressions"
+                    android:text="@string/regular_expressions_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -333,7 +333,7 @@
                     android:id="@+id/txt_java_methods"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Methods"
+                    android:text="@string/java_methods"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -348,7 +348,7 @@
                     android:id="@+id/txt_streams_files_and_io_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Streams Files and I/O"
+                    android:text="@string/streams_files_and_io_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -363,7 +363,7 @@
                     android:id="@+id/txt_exceptions_handling_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Exceptions Handling"
+                    android:text="@string/exceptions_handling_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -378,7 +378,7 @@
                     android:id="@+id/txt_inheritance_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Inheritance"
+                    android:text="@string/inheritance_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -393,7 +393,7 @@
                     android:id="@+id/txt_overriding_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Overriding"
+                    android:text="@string/overriding_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -409,7 +409,7 @@
                     android:id="@+id/txt_polymorphism_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Polymorphism"
+                    android:text="@string/polymorphism_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -424,8 +424,8 @@
                     android:id="@+id/txt_abstraction_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Abstraction"
-                    android:textSize="19dp"
+                    android:text="@string/abstraction_in_java"
+                    android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
             </android.support.v7.widget.CardView>
@@ -439,7 +439,7 @@
                     android:id="@+id/txt_encapsulation_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Encapsulation"
+                    android:text="@string/encapsulation_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -454,7 +454,7 @@
                     android:id="@+id/txt_interfaces_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Interfaces"
+                    android:text="@string/interfaces_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -469,7 +469,7 @@
                     android:id="@+id/txt_packages_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Packages"
+                    android:text="@string/packages_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -484,7 +484,7 @@
                     android:id="@+id/txt_data_structures_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Data Structures"
+                    android:text="@string/data_structures_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -499,7 +499,7 @@
                     android:id="@+id/txt_collections_framework_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Collections Framework"
+                    android:text="@string/collections_framework_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -514,7 +514,7 @@
                     android:id="@+id/txt_generics_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=" Generics"
+                    android:text="@string/generics_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -529,7 +529,7 @@
                     android:id="@+id/txt_serialization_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Serialization"
+                    android:text="@string/serialization_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -544,7 +544,7 @@
                     android:id="@+id/txt_networking_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Networking"
+                    android:text="@string/networking_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -559,7 +559,7 @@
                     android:id="@+id/txt_sending_mail_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sending Email"
+                    android:text="@string/sending_mail_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -574,7 +574,7 @@
                     android:id="@+id/txt_multithreading_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Multithreading"
+                    android:text="@string/multithreading_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -589,7 +589,7 @@
                     android:id="@+id/txt_applet_basics_in_java"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Applet Basics"
+                    android:text="@string/applet_basics_in_java"
                     android:textSize="19sp"
                     android:textColor="@color/textblack"
                     android:padding="15dp"/>
@@ -602,7 +602,7 @@
                         android:id="@+id/txt_documentation_comments"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Documentation Comment"
+                        android:text="@string/documentation_comments"
                         android:textSize="19sp"
                         android:textColor="@color/textblack"
                         android:padding="15dp"/>

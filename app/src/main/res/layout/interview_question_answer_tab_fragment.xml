@@ -4,12 +4,5 @@
     android:layout_width="match_parent"
     android:background="#fff"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Question Answer"
-        android:textColor="#D50000"
-        android:textSize="50dp"
-        android:id="@+id/textView"/>
+
 </RelativeLayout>

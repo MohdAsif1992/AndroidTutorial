@@ -14,9 +14,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by faiz on 16-Jan-18.
+  Created by faiz on 16-Jan-18.
  */
 public class AndroidTabFragment extends Fragment implements View.OnClickListener {
+
 
     @BindView(R.id.txt_android_overview) TextView overview;
     @BindView(R.id.txt_android_environment_setup) TextView environmentSetup;
@@ -48,7 +49,9 @@ public class AndroidTabFragment extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.android_tab_fragment, container, false);
-        ButterKnife.bind(this, view);
+        ButterKnife.bind(this,view);
+
+
 
         overview.setOnClickListener(this);
         environmentSetup.setOnClickListener(this);
@@ -86,123 +89,123 @@ public class AndroidTabFragment extends Fragment implements View.OnClickListener
                 androidOverviewIntent.putExtra("url1", "file:///android_asset/android_Overview.html");
                 this.startActivity(androidOverviewIntent);
                 break;
-            case R.id.txt_android_environment_setup:
+           case R.id.txt_android_environment_setup:
                 Intent androidEnvironmentSetupIntent = new Intent(getContext(), AndroidAllTopicsActivity.class);
-               androidEnvironmentSetupIntent.putExtra("url2", "file:///android_asset/androidEnvironmentSetup.html");
+                androidEnvironmentSetupIntent.putExtra("url2", "file:///android_asset/androidEnvironmentSetup.html");
                 this.startActivity(androidEnvironmentSetupIntent);
                 break;
             case R.id.txt_android_architecture:
-                Intent architectureIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                Intent architectureIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
                 architectureIntent.putExtra("url3", "file:///android_asset/androidArchitecture.html");
                 this.startActivity(architectureIntent);
                 break;
             case R.id.txt_android_application_components:
-                Intent applicationComponentsIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                Intent applicationComponentsIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
                 applicationComponentsIntent.putExtra("url4", "file:///android_asset/androidApplicationComponents.html");
                 this.startActivity(applicationComponentsIntent);
                 break;
             case R.id.txt_android_hello_world_example:
-                Intent helloWorldExampleIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                Intent helloWorldExampleIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
                 helloWorldExampleIntent.putExtra("url5", "file:///android_asset/androidHelloWorldExample.html");
                 this.startActivity(helloWorldExampleIntent);
                 break;
             case R.id.txt_android_resources_organizing:
-                Intent resourcesOrganizingIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
-               resourcesOrganizingIntent.putExtra("url6", "file:///android_asset/androidResourcesOrganizing.html");
+                Intent resourcesOrganizingIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                resourcesOrganizingIntent.putExtra("url6", "file:///android_asset/androidResourcesOrganizing.html");
                 this.startActivity(resourcesOrganizingIntent);
                 break;
             case R.id.txt_android_activities:
-                Intent activitiesIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
-               activitiesIntent.putExtra("url7", "file:///android_asset/androidActivities.html");
+                Intent activitiesIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                activitiesIntent.putExtra("url7", "file:///android_asset/androidActivities.html");
                 this.startActivity(activitiesIntent);
                 break;
             case R.id.txt_android_services:
-                Intent servicesIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
-              servicesIntent.putExtra("url8", "file:///android_asset/androidServices.html");
+                Intent servicesIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                servicesIntent.putExtra("url8", "file:///android_asset/androidServices.html");
                 this.startActivity(servicesIntent);
                 break;
             case R.id.txt_android_broadcast_receivers:
-                Intent broadcastReceiversIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
-               broadcastReceiversIntent.putExtra("url9", "file:///android_asset/androidBroadcastReceivers.html");
+                Intent broadcastReceiversIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                broadcastReceiversIntent.putExtra("url9", "file:///android_asset/androidBroadcastReceivers.html");
                 this.startActivity(broadcastReceiversIntent);
                 break;
             case R.id.txt_android_content_providers:
-                Intent contentProviders=new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                Intent contentProviders = new Intent(getActivity(), AndroidAllTopicsActivity.class);
                 contentProviders.putExtra("url10", "file:///android_asset/androidContentProviders.html");
                 this.startActivity(contentProviders);
                 break;
 
             case R.id.txt_android_fragments:
-                Intent fragmentsIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                Intent fragmentsIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
                 fragmentsIntent.putExtra("url11", "file:///android_asset/androidFragments.html");
                 this.startActivity(fragmentsIntent);
                 break;
             case R.id.txt_android_intents_and_filters:
-                Intent intentsAndFiltersIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                Intent intentsAndFiltersIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
                 intentsAndFiltersIntent.putExtra("url12", "file:///android_asset/androidIntentsAndFilters.html");
                 this.startActivity(intentsAndFiltersIntent);
                 break;
             case R.id.txt_android_styles_and_themes:
-                Intent stylesAndThemesIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                Intent stylesAndThemesIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
                 stylesAndThemesIntent.putExtra("url13", "file:///android_asset/androidStylesAndThemes.html");
                 this.startActivity(stylesAndThemesIntent);
                 break;
             case R.id.txt_android_custom_components:
-                Intent customComponents=new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                Intent customComponents = new Intent(getActivity(), AndroidAllTopicsActivity.class);
                 customComponents.putExtra("url14", "file:///android_asset/androidCustomComponents.html");
                 this.startActivity(customComponents);
                 break;
             case R.id.txt_android_ui_layouts:
-                Intent uiLayoutsIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
-               uiLayoutsIntent.putExtra("url15", "file:///android_asset/androidUILayouts.html");
+                Intent uiLayoutsIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                uiLayoutsIntent.putExtra("url15", "file:///android_asset/androidUILayouts.html");
                 this.startActivity(uiLayoutsIntent);
                 break;
             case R.id.txt_android_ui_controls:
-                Intent uiControlsIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                Intent uiControlsIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
                 uiControlsIntent.putExtra("url16", "file:///android_asset/androidUIControls.html");
                 this.startActivity(uiControlsIntent);
                 break;
             case R.id.txt_android_event_handling:
-                Intent eventHandlingIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                Intent eventHandlingIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
                 eventHandlingIntent.putExtra("url17", "file:///android_asset/androidEventHandling.html");
                 this.startActivity(eventHandlingIntent);
-                break;case R.id.txt_android_drag_and_drop:
-                Intent dragAndDropIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
-               dragAndDropIntent.putExtra("url18", "file:///android_asset/androidDragAndDrop.html");
+                break;
+            case R.id.txt_android_drag_and_drop:
+                Intent dragAndDropIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                dragAndDropIntent.putExtra("url18", "file:///android_asset/androidDragAndDrop.html");
                 this.startActivity(dragAndDropIntent);
                 break;
 
             case R.id.txt_android_notifications:
-                Intent notificationsIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                Intent notificationsIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
                 notificationsIntent.putExtra("url19", "file:///android_asset/androidNotifications.html");
                 this.startActivity(notificationsIntent);
                 break;
             case R.id.txt_android_location_based_services:
-                Intent locationBasedServicesIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                Intent locationBasedServicesIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
                 locationBasedServicesIntent.putExtra("url20", "file:///android_asset/androidLocationBasedServices.html");
                 this.startActivity(locationBasedServicesIntent);
                 break;
             case R.id.txt_android_sending_email:
-                Intent sendingEmailIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                Intent sendingEmailIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
                 sendingEmailIntent.putExtra("url21", "file:///android_asset/androidSendingEmail.html");
                 this.startActivity(sendingEmailIntent);
                 break;
             case R.id.txt_android_sending_sms:
-                Intent sendingSMSIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
-               sendingSMSIntent.putExtra("url22", "file:///android_asset/androidSendingSMS.html");
+                Intent sendingSMSIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                sendingSMSIntent.putExtra("url22", "file:///android_asset/androidSendingSMS.html");
                 this.startActivity(sendingSMSIntent);
                 break;
             case R.id.txt_android_phone_calls:
-                Intent phoneCallsIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                Intent phoneCallsIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
                 phoneCallsIntent.putExtra("url23", "file:///android_asset/androidPhoneCalls.html");
                 this.startActivity(phoneCallsIntent);
                 break;
             case R.id.txt_android_publishing_application:
-                Intent publishingApplicationIntent=new Intent(getActivity(), AndroidAllTopicsActivity.class);
+                Intent publishingApplicationIntent = new Intent(getActivity(), AndroidAllTopicsActivity.class);
                 publishingApplicationIntent.putExtra("url24", "file:///android_asset/publishingAndroidApplication.html");
                 this.startActivity(publishingApplicationIntent);
                 break;
         }
     }
 }
-

@@ -6,21 +6,20 @@
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activity.JavaAllTopicsActivity">
+
     <android.support.v7.widget.Toolbar
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/orange"
-        android:id="@+id/toolbar"
+        android:id="@+id/java_toolbar"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="ANDROID TUTORIAL"
+        app:title="@string/app_name"
         app:navigationIcon="@mipmap/back_btn"/>
 
     <WebView
         android:id="@+id/webView_java"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </WebView>
-
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

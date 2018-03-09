@@ -6,17 +6,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".activity.EducavillageActivity">
+
     <android.support.v7.widget.Toolbar
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/orange"
-        android:id="@+id/toolbar"
+        android:id="@+id/educavillage_toolbar"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="EDUCAVILLAGE"
+        app:title="@string/app_name_webView"
         app:navigationIcon="@mipmap/back_btn"/>
+
     <WebView
-        android:id="@+id/web_view"
+        android:id="@+id/educavillage_webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

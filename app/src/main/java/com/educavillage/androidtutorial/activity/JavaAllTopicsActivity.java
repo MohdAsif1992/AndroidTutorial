@@ -24,7 +24,7 @@ public class JavaAllTopicsActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_java_all_topics);
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar = (Toolbar) findViewById(R.id.java_toolbar);
 
         mToolbar.setTitle(getString(R.string.app_name));
         mToolbar.setNavigationIcon(R.mipmap.back_btn);

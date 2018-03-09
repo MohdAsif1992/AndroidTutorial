@@ -9,15 +9,19 @@ import android.view.ViewGroup;
 
 import com.educavillage.androidtutorial.R;
 
-/**
- * Created by faiz on 16-Jan-18.
+
+/*
+  Created by faiz on 16-Jan-18.
  */
 
 public class SqliteTabFragment extends Fragment {
+    public View view;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.sqlite_tab_fragment,null);
-        return rootView;
-    }
+         super.onCreateView(inflater, container, savedInstanceState);
+          view=inflater.inflate(R.layout.sqlite_tab_fragment,container,false);
+         return view;
+
+}
 }

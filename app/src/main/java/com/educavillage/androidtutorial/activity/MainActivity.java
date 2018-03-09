@@ -24,29 +24,19 @@ public Toolbar toolbar;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /**
-         *Setup the DrawerLayout and NavigationView
-         */
+
         myDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         myNavigationView = (NavigationView) findViewById(R.id.nav_drawer) ;
-        /**
-         * Lets inflate the very first fragment
-         * Here , we are inflating the HomeFragment as the first Fragment
-         */
+
         myFragmentManager = getSupportFragmentManager();
         myFragmentTransaction = myFragmentManager.beginTransaction();
         myFragmentTransaction.replace(R.id.containerView, new HomeFragment()).commit();
-        /**
-         * Setup click events on the Navigation View Items.
-         */
+
         myNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem selectedMenuItem) {
                 switch (selectedMenuItem.getItemId()) {
-                    //Replacing the main content with ContentFragment Which is our Inbox View;
-
                     case R.id.nav_item_web:
-                        // launch new intent instead of loading fragment
                         startActivity(new Intent(MainActivity.this, EducavillageActivity.class));
                         myDrawerLayout.closeDrawers();
                         return true;
@@ -61,10 +51,7 @@ public Toolbar toolbar;
                 return true;
             }
         });
-        /*
-          Setup Drawer Toggle of the Toolbar
-         */
-         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.acitivity_main_toolbar);
         ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(this, myDrawerLayout, toolbar,R.string.app_name,
                 R.string.app_name);
         myDrawerLayout.setDrawerListener(mDrawerToggle);
